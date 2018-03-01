@@ -1,0 +1,9 @@
+.book.font-family-1{
+    font-family: "Belleza", sans-serif;
+}
+.book.font-family-0{
+    font-family: "Belleza", sans-serif;
+}
+.book {
+    height: calc(100% - 17px) !important;
+}
