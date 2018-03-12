@@ -1,5 +1,9 @@
 # API DOCUMENTATION
 ---
+In this module we'll talk about documentation and give a high level view of what our routes and endpoints will look like with our Server. 
+
+<hr />
+
 
 TODO: Show the endpoints that we'll be building in a table or in a screenshot. 
 
