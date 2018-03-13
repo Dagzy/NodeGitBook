@@ -1,6 +1,7 @@
 #NODEMON
 ---
-In this module we'll set up Nodemon, a tool for automating changes to the server. TODO: Say it better.
+When you make a change to code on the client side, you just have to refresh the web page to see the effect of that change. With a server, however, it gets a little more complicated. Any changes that you make won't take effect until you stop and restart the server. When you're testing routes or endpoints and making minute changes over and over, that constant stop/start routine can get kind of ridiculous. Fortunately, we have a tool that will automatically restart your server every time you save a file: Nodemon.
+
 
 <hr />
 
@@ -16,11 +17,11 @@ STEPS
 2. In the server directory, run npm install -g nodemon
 3. Run nodemon app.js. This should start the server up. 
 
-TODO: Example screenshot of Terminal:
+![nodemon](assets/nodemon.png)
 
 4. Stop the app with Ctrl+C.
 5. Practice running the app with Nodemon. 
-6. You might not see the beauty of Nodemon now, but you will when you make a lot of changes to your server. Try changing the conosole.log statement and saving in `app.js`:
+6. You might not see the beauty of Nodemon now, but you will when you make a lot of changes to your server. Try changing the console.log statement and saving in `app.js`:
 
 ```js
 

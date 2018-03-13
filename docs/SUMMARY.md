@@ -16,7 +16,7 @@
             * [02 - express intro]()
             * [03 - express server]()
         * [02 - Development Tools]()
-            * [01 - nodemon intro]()
+            * [01 - nodemon intro](javascript_library/06-Express-Server/02-dev-tools/01-nodemon-intro.md)
             * [02 - Postman intro]()
             * [03 - Postman set up]()
             * [04 - Swagger intro]()
