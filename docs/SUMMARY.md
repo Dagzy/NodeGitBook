@@ -50,7 +50,6 @@
             * [03 - User Model]()
             * [04 - Definition Model]()
             * [03 - Log Model]()
-
         * [07 - SQL Fundamentals]()
             * [01 - CREATE_TABLE]()
         * [08 - Authentication]()
