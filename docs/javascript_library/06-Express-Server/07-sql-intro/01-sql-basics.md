@@ -14,3 +14,12 @@ NOTE: We don't want to go overboard here because we want them just getting a fee
 TODO: Just show how to see some data in Postgres.
 
 Do a query for users, do a create, etc.
+
+Here is a query for entering test data:
+```sql
+
+INSERT INTO tests(testdata, "createdAt", "updatedAt") 
+VALUES('stuff 2','2017-05-01 10:17:00','2017-05-01 10:17:00');
+
+
+```
