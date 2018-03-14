@@ -34,6 +34,17 @@ router.post('/createuser', function (req, res) {
 
 module.exports = router;
 ```
+
+### TESTING
+Run in Postman. You will not see the token in Postman response yet:
+![screenshot](assets/2-no-token-postman.PNG)
+
+You should see token in the console.
+![screenshot](assets/1-token-console.PNG)
+
+
+
+
 ### ANALYSIS
 TODO: Link to the docs.
 TODO: Go to the JWT docs and break the above stuff down.
@@ -42,3 +53,5 @@ TODO: Go to the JWT docs and break the above stuff down.
 3. 
 4. 
 5. 
+
+
