@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
 
 // app.use('/api/cors/error', function(req, res){
 // 	res.send("This is an endpoint that won't arrive in another domain because of cors errors.");
