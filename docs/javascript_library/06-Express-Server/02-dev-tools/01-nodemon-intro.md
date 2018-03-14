@@ -6,6 +6,7 @@ When you make a change to code on the client side, you just have to refresh the 
 <hr />
 
 
+
 ### FINISHED CODE
 Check out the finished code. We highly advise that you do not copy and paste. We offer this to you to help guide you and help you practice.
 
