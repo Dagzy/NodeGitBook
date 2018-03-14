@@ -31,4 +31,5 @@ router.post('/testpost/three', function (req, res) {
 
 
 ### Challenge
-Create a request and it to the above route. IN PG Admin, click the button that looks like a lightning bolt to refresh the table. If successful, your database should look like ![this](../assets/03-test3data.png)
+Create a request and it to the above route. Your request must match the object syntax from above or Postman will not be able to read it. In PG Admin, click the button that looks like a lightning bolt to refresh the table. If successful, your database should look like ![this](../assets/03-test3data.png) <br>
+Also try sending data of a different type, like a number or `true`. What happens?
