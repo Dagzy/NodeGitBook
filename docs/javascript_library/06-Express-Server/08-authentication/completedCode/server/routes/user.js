@@ -1,3 +1,42 @@
+var express = require('express')
+var router = express.Router()
+var sequelize = require('../db');
+var User = sequelize.import('../models/user');
+var TestModel = sequelize.import('../models/test');
+
+/***************
+** HOME PAGE***
+**************/
+router.get('/', function (req, res) {
+  res.send('This is a home page');
+})
+
+/***************
+** HOME PAGE***
+**************/
+router.post('/createuser', function(req, res){
+
+  var username = "Paul";
+  var pass = "40";
+
+  User.create({
+      username: username,
+      passwordhash: pass
+
+  }).then(
+      console.log("hello")
+  );
+})
+
+  
+module.exports = router;
+
+
+
+
+
+
+
 // // var router = require('express').Router();
 // var sequelize = require('../db.js');
 // var User = sequelize.import('../models/user');

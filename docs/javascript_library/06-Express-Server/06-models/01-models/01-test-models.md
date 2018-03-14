@@ -14,4 +14,20 @@ module.exports = function (sequelize, DataTypes) {
 ```
 
 
+### Analysis
+TODO: Explain this code:
+
+1. 
+2. 
+3. 
+4. 
+
+### Challenge
+TODO: Explain the challenge. They need to write two models...
+    `user.js`
+    `log.js`
+
+TODO: Add the criteria
+
+
 
