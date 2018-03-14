@@ -28,7 +28,6 @@ router.post('/testpost/four', function (req, res) {
 <hr >
 
 ### Analysis
-TODO: Explain this code:
 
 1. We use an asynchronous function to force the message to wait for the insert statement to finish.
 2. The callback function will print the success message to the console.
