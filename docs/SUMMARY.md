@@ -4,7 +4,6 @@
         * [00 - Intro ]()
             * [1 - Purpose](javascript_library/06-Express-Server/00-intro/01-purpose.md)
             * [2 - Objectives](javascript_library/06-Express-Server/00-intro/02-set-up.md)
-            * [3 - Set up](javascript_library/06-Express-Server/00-intro/03-documentation.md)
         * [01 - Server Set up]()
             * [01 - Server intro](javascript_library/06-Express-Server/01-server-setup/01-server-intro.md)
             * [02 - npm packages](javascript_library/06-Express-Server/01-server-setup/02-server-dependencies.md)

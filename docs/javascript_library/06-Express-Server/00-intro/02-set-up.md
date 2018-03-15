@@ -2,6 +2,9 @@
 ---
 In this module we'll set up our file structure for an Express Server. Our theme will be for a Workout Log, and we will use this as a demo app, but you can use our patterns and approach to build it for just about any application that requires routing, authentication, and persistence. 
 
+<hr >
+
+### File Structure
 Create the following folders and files in your JavaScript library:
 ```
     javascript-library
