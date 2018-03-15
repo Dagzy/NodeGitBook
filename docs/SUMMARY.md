@@ -62,7 +62,7 @@
         * [08 - Session]()
             * [00 - Session Intro](javascript_library/06-Express-Serer/08-session/00-session-intro.md)
             * [01 - Sign In Method](javascript_library/06-Express-Serer/08-session/01-signinmethod.md)
-        * [09 - Authentication]()
+        * [09 - Authentication](test)
         * [10 - Middleware]()
             * [00 - Test Client](javascript_library/06-Express-Server/10-middleware/00-test-client.md)
             * [01 - CORS intro](javascript_library/06-Express-Server/10-middleware/01-middleware-intro.md)
