@@ -12,13 +12,13 @@ First, install the `dotenv` package. Let's go ahead and add it to our package.js
 
 ```js
 "dependencies": {
-    "body-parser": "^1.15.1",
-    "dotenv": "^4.0.0", //<--- ADD THIS
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1", //<--- ADD THIS
     "express": "^4.13.4",
-    "jsonwebtoken": "^7.2.1",
-    "pg": "^4.5.6",
+    "jsonwebtoken": "^8.2.0",
+    "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^3.23.3"
+    "sequelize": "^4.37.0"
   }
 ```
 

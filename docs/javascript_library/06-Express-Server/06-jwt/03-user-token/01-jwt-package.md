@@ -7,13 +7,13 @@ We have successfully set up user accounts in our database. Until we set up authe
 Go to your `package.json` and add the following code:
 ```js
  "dependencies": {
-    "body-parser": "^1.15.1",
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "http-server": "^0.11.1",
-    "jsonwebtoken": "^7.4.3", // <--- ADD THIS LINE
-    "pg": "^4.5.6",
+    "jsonwebtoken": "^8.2.0", // <--- ADD THIS LINE
+    "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^3.23.3"
+    "sequelize": "^4.37.0"
   },
 ```
 The notation is important; the `^` symbol locks in this version of `jwt` and prevents it from updating in the future. When things update, they usually break. This will prevent that headache. Then run `npm update`.
