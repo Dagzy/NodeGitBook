@@ -4,10 +4,6 @@ In this module we'll simply get a starter up going with Express.
 
 <hr>
 
-### Screenshot
-![screenshot](assets/01-clientserverdiagram.png)
-
-
 ### File Structure
 TODO
 
@@ -34,13 +30,8 @@ When we go to http://localhost:3000/, we will see the application running:
 
 ![screenshot](assets/02-server-running-dom)
 
-TODO: Add something to use with Postman here?
-
-
-### Video Support
-TODO: Check to see if this throws them off....It might have stuff that they don't have.....We no longer have a client.....
-
-https://youtu.be/OcNSIg1W6m0
+TODO: Explain the screenshot above....
+TODO: Add a screenshot of the console....
 
 
 ### Completed Code

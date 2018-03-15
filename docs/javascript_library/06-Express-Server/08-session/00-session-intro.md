@@ -1,6 +1,6 @@
 #SESSION
 ---
 
-What is a session?
+TODO: What is a session?
 
 Discuss signing in....

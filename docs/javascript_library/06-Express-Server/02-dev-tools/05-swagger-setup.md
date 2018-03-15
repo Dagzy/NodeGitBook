@@ -7,3 +7,4 @@ In this module we'll handle setting up Swagger for managing our API documentatio
 ### Swagger Set Up
 
 
+TODO PAUL: This is last on the list. This might not happen in this iteration.
