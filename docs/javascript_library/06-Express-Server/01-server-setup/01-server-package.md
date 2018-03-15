@@ -35,11 +35,11 @@ TODO: Check on newer versions of these packages.
  "author": "YOUR NAME HERE",  
  "license": "MIT",
  "dependencies": {
-   "body-parser": "^1.15.1",
-   "express": "^4.13.4",
-   "pg": "^4.5.6",
+   "body-parser": "^1.18.2",
+   "express": "^4.16.3",
+   "pg": "^7.4.1",
    "pg-hstore": "^2.3.2",
-   "sequelize": "^3.23.3"
+   "sequelize": "^4.37.0"
  }
 }
 ```
