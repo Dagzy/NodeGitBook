@@ -2,6 +2,7 @@
 ---
 
 ### What is JWT?
+JWT stands for **J**SON **W**eb **T**oken.
 TODO: JWT explain with diagram.... <br>
 
 ### Another Way to Think About JWT
