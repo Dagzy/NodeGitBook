@@ -1,6 +1,6 @@
 # USER OBJECT UPDATE
 ---
-In this module we'll add a token to the user object.
+Now that we have our token, let's use it! We'll add it to the response object in order to send it back to the client. 
 
 <hr>
 
@@ -33,22 +33,12 @@ module.exports = router;
 ```
 
 ### Postman
-![screenshot](3-token-postman.PNG)
+![screenshot](03-token-postman.PNG)
 
 ### ANALYSIS
-1. TODO: 1-2 sentences analyzing add the sessionToken property.
+1. The server sends the token back to the client in the response. Most of the time, the client will store the token in localStorage, where it can be used in future requests. The token will be valid until it is removed or expired.
 
+<hr/>
 
-
-
-
-
-```
-### ANALYSIS
-TODO: Link to the docs.
-TODO: Go to the JWT docs and break the above stuff down.
-1. 
-2. 
-3. 
-4. 
-5. 
+# MAJOR SECURITY RISK
+At the moment, our signature is available for everyone in the world to see via github. This is extremely dangerous because there are robots and processes that scour public repositories looking for passwords and secret phrases. In the next lecture, we'll discuss a way to help keep sensitive information like this hidden.
