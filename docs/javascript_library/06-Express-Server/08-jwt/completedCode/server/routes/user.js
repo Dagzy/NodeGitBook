@@ -35,26 +35,26 @@ router.get('/', function (req, res) {
 // })
 
 
-// module.exports = router;
+//  module.exports = router;
 
 
 //STEP 2
 //TEST WITH PM
-// router.post('/createuser', function (req, res) {
+router.post('/createuser', function (req, res) {
 
-//   var username = req.body.user.username;
-//   var pass = req.body.user.password;
+  var username = req.body.user.username;
+  var pass = req.body.user.password;
 
-//   User.create({
-//     username: username,
-//     passwordhash: pass
+  User.create({
+    username: username,
+    passwordhash: pass
 
-//   }).then(
-//     console.log("hello")
-//   );
-// })
+  }).then(
+    console.log("hello")
+  );
+})
 
-// module.exports = router;
+module.exports = router;
 
 
 //STEP 3
@@ -123,30 +123,30 @@ router.get('/', function (req, res) {
 
 
 //STEP 5
-router.post('/createuser', function(req, res) {
-		var username = req.body.user.username;
-		var pass = req.body.user.password;
+// router.post('/createuser', function(req, res) {
+// 		var username = req.body.user.username;
+// 		var pass = req.body.user.password;
 
-		User.create({
-			username: username,
-			passwordhash: pass
-		}).then(
+// 		User.create({
+// 			username: username,
+// 			passwordhash: pass
+// 		}).then(
 
-			function createSuccess(user){
-			    var token = jwt.sign({id: user.id}, "i_am_secret", {expiresIn: 60*60*24});
-          console.log(token);
-				res.json({
-						user: user,
-						message: 'created',
-						sessionToken: token
-				});
-			},
-			function createError(err){
-				res.send(500, err.message);
-			}
-		);
-	});
+// 			function createSuccess(user){
+// 			    var token = jwt.sign({id: user.id}, "i_am_secret", {expiresIn: 60*60*24});
+//           console.log(token);
+// 				res.json({
+// 						user: user,
+// 						message: 'created',
+// 						sessionToken: token
+// 				});
+// 			},
+// 			function createError(err){
+// 				res.send(500, err.message);
+// 			}
+// 		);
+// 	});
 
-module.exports = router;
+// module.exports = router;
 
 

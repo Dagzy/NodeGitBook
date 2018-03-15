@@ -3,6 +3,9 @@
 --    testdata varchar(25) NOT NULL
 --);
 
+--View all data from a table
+--SELECT * FROM testdata
+
 --Drop table query
 --DROP TABLE tests;
 

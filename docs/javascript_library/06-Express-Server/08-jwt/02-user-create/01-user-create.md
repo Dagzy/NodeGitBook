@@ -1,12 +1,12 @@
 # USER CREATE
 ---
-
-Before we set up a token for the users, we'll use Sequelize in conjunction with our Sequelize User model to create a new user in the database. 
+So far, we've just been putting data into a table in our database. However, if someone were to look at that data, there's no way to tell who actually put the data there. Additionally, there's no security protocols in place, so anyone can connect to the database and modify its contents in whatever way they choose. We can use JWT to fix both of these issues. We have a little bit of prep to do first, though: We'll use Sequelize and our User model to create a new user in the database. 
 
 <hr />
 
+### CreateUser Route
+In order to create a user, we first have to set up a new route, which we'll call `createuser`. We'll create a simple sign up process, only requiring a username and a password. For testing purposes, we'll hard-code the values for each right now. Just like we imported the `test` model previously, we now import the `user` model. This forces any new user to conform to the model, as well as tell the database where to put the new data. Notice that we don't have any response to tell us if it worked right now.
 
-##
 ```js
 var express = require('express')
 var router = express.Router()
@@ -42,9 +42,39 @@ module.exports = router;
 ```
 
 ### POSTMAN
-TODO: Postman test with screenshots. Re-explain.
+Now that our route is set up, we can test it with Postman. First, though, open up your database in PG Admin and look at the data in the `users` table. It should be blank, like 
+<br>![this](../assets/blankUserTable.png) <br>
 
+Start your server then open Postman. Send a post request to the `createuser` route. Because we hard-coded the values for `username` and `password`, we don't actually have to include anything in the body section at the moment. You should see something like the following in Postman, PG Admin, and the console: <br>
+![Postman](../assets/testUserConsole.png)<br>
+![console](../assets/testUserPostman.png)<br>
+![database](..assets/testsUserDatabase.png)<br>
 
+Sometimes Postman will be stuck at "Waiting for response", because we aren't actually sending a response, and sometimes it might say that it couldn't connect to the database. We'll take care of that in a moment, but as long as you see the user in the table in PG Admin, you're fine.
+
+### Creating a User
+Now that we have a working route, let's add a user of our own. We remove the pre-set values of `username` and `password`, using the values that we'll supply instead. We'll keep the `console.log(hello)` for the moment as well. 
+```js
+router.post('/createuser', function (req, res) {
+
+  var username = req.body.user.username;
+  var pass = req.body.user.password;
+
+  User.create({
+    username: username,
+    passwordhash: pass
+
+  }).then(
+    console.log("hello")
+  );
+})
+
+module.exports = router;
+```
+Pull Postman back up. We'll post to the same route, but this time we'll supply a username and password. Notice that the server is expecting an object with the property `user`, which has its own properties `username` and `password`. After you `POST` the request, check PG Admin to see if your user was added to the table. Hopefully, you'll see results like this: <br>
+![console](../assets/step2Console.png)
+![Postman](../assets/step2Postman.png)
+![Database](../assets/step2Database.png)
 
 ```js
 //STEP 3
@@ -111,8 +141,7 @@ router.post('/createuser', function (req, res) {
 
 module.exports = router;
 ```
-
-
+```js
 //STEP 4
 // router.post('/', function(req, res) {
 // 		var username = req.body.user.username;
@@ -191,3 +220,4 @@ module.exports = router;
 // 	});
 
 // module.exports = router;
+```
