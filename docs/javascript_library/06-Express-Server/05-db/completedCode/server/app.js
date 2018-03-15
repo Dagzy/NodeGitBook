@@ -5,6 +5,9 @@ var sequelize = require('./db');
 
 sequelize.sync(); // tip: {force: true} for resetting tables
 
+
+app.use(require('./middleware/headers'));
+
 app.use('/testroutes', testRoutes)
 
 app.use('/api/test', function(req, res){
