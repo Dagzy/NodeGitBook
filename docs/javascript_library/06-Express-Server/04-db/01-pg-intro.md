@@ -11,5 +11,5 @@ PostgreSQL, also commonly called "Postgres", was originally created in 1986 at t
 ### PG Admin
 PG Admin was originally created as pgmanager in 1998, a Windows-based GUI tool to manage PostgreSQL databases. Several versions of the program later, PG Admin 4 was released in 2016. Written in C++, it was focused on cloud-based databases, while also providing support for local and physical databases.
 
-pgAdmin, now pgadmin 4, is the most popular Open Source administration and development platform for PostgreSQL.
+pgAdmin, now pgAdmin 4, is the most popular Open Source administration and development platform for PostgreSQL.
 

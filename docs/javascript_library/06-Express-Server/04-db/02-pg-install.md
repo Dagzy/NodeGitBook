@@ -11,7 +11,7 @@ In this module you'll be working here:
 
 ### Install Directions
 1. Come up with a Postgres password right now. Make it unique. Don’t make it into a password that you use for anything else. 
-2. **Please take the time to record this password somewhere safe**. Resetting a PostgreSql can be a pain, and it drives your instructors crazy. Several previous students have spent hours attempting to reset their password. I use Letmein1234!. This will be for local use. 
+2. **Please take the time to record this password somewhere safe**. Resetting a PostgreSql password is not impossible, but is very challenging and, more importantly, very time consuming. Take the time to document this password. Several previous students have spent many hours attempting to reset their password. I use Letmein1234!. This will be for local use only, so there is no fear of someone else accessing your database using this password. 
 3. RECORD YOUR PASSWORD SOMEWHERE!!!
 4. Let’s Install Postgres https://www.postgresql.org/download/
 5. When the download is done, go through the install steps. <b>NOTE: You should set the port to 5432 (this is the default DO NOT change it, please!!).</b>
