@@ -5,6 +5,9 @@ In this module we'll set up a few of the server packages that will be used in th
 <hr />
 
 
+### Orientation
+![screenshot](assets/01-clientserverdiagram.png)
+
 ### What is a dependency?
 TODO: Explain a dependency....
 

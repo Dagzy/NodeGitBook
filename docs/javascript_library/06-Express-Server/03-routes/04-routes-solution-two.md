@@ -1,5 +1,10 @@
 #CHALLENGE #2 SOLUTIONS
 ---
+In this module we give you the answer to the challenges. Spoilers ahead.
+
+<hr />
+
+#CHALLENGE #2 SOLUTIONS
 
 Here are the routes to add to the `testroutes.js` file:
 ```js

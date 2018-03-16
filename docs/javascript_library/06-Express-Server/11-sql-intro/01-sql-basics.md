@@ -39,3 +39,41 @@ Need a query to delete a row.
 Need a query to add a property to the table.
 Need a query to drop the tests table.
 Need a script that will drop the table, then rebuild the table with 3 new properties. Something like that.
+
+### Foreign Key
+Relational databases will also use "foreign keys", which is information from another table that helps organize the data. Let's consider a `person` table: 
+
+**Employee Table**
+
+|ID|First Name|Last Name |Occupation|Location      |DepartmentID (foreign key from Department table)|
+|:-|:---------|:---------|:---------|:-------------|:---------------------------------|
+|1 |Aaron     |Ofengender|Developer |Launch Fishers|1                                 |
+|2 |John      |Bon Jovi  |Custodian|Launch Fishers|3                                 |
+|3 |Mike      |Nesmith   |Outside Sales|Launch Fishers|2                                 |
+|4 |Tom       |Petty     |Inside Sales|Launch Fishers|2                                 |
+|5 |Tom       |Waits     |Custodian|Downtown|3                                 |
+|6 |Frank     |Zappa    |Developer|Launch Fishers|1                                 |
+
+Notice that each Employee has a unique ID(don't get this confused with employee id). This is the id for their row in the table.
+
+Let's consider another table:
+Now let's say we want to tie the job table to the person table, so that it updates whenever the first updates. In this example, we can make the `ID` number from the person table a foreign key that, while the primary key is still the `ID` number from the job table.
+
+**Employee Table**
+
+|ID|First Name|Last Name |Occupation|Location      |ID (foreign key from Department table)|
+|:-|:---------|:---------|:---------|:-------------|:---------------------------------|
+|1 |Aaron     |Ofengender|Developer |Launch Fishers|1                                 |
+|2 |John      |Bon Jovi  |Custodian|Launch Fishers|3                                 |
+
+**Department Table**
+
+|ID|Department|
+|:-|:---------|
+|1 |IT        |
+|2 |Sales     |
+|3 |Custodial |
+
+
+Notice that the two `id` numbers can be different. Anytime an item is modified in some way in the person table, we can set up the ability to modify the job table however is necessary (i.e. record is deleted in person table, record with same `First Name` is deleted from job table).
+

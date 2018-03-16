@@ -1,17 +1,16 @@
-# Common Terms
+# COMMON TERMS
 ---
 In this module we'll introduce you to some common terms found in Server/API.
 
 <hr >
-
-### Orientation
-![screenshot](assets/01-clientserverdiagram.png)
 
 ### Parts of the Server
 TODO: Make a table to define the following items in 1-2 short sentences.
 
 | Concept       | Definition    | 
 | ------------- |:-------------:|
+| server         | a route is a neat thing that's neat because it's neat          |
+| client         | a route is a neat thing that's neat because it's neat          |
 | route         | a route is a neat thing that's neat because it's neat          |
 | endpoint      | an endpoint is neat                                            |
 | database      | are neat      |
