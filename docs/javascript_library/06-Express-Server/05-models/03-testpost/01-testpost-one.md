@@ -1,4 +1,4 @@
-# TEST ROUTES
+# Route Set up
 ---
 
 This module will test our route by attempting to connect to the database. If the route is wrong, a big ERROR message will be thrown back at us from Postman.

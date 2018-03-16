@@ -1,4 +1,4 @@
-# TEST POST TWO
+# CREATE METHOD
 ---
 
 Now that we know our route works, let's test our model. In this test, the data that will be sent through the model has already been provided.

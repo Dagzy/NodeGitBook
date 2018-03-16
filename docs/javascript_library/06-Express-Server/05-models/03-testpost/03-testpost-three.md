@@ -1,4 +1,4 @@
-#TEST POST THREE
+# REQ.BODY()
 ---
 
 Our model works and we were able to put something in the database. NICE! Now let's change our request to accept data that we give it, then put that data into the database.
