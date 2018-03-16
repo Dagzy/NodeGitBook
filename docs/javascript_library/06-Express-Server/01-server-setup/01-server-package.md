@@ -18,7 +18,6 @@ To initialize npm, go through the following steps:
 
 
 ### PACKAGE.JSON
-TODO: Check on newer versions of these packages.
 1. Take out the contents of the `package.json` file.
 2. Replace the contents with this code:  
 
@@ -45,6 +44,6 @@ TODO: Check on newer versions of these packages.
 ```
 
 3. Run `npm update`. This will read all of the new dependencies above and load them all in the node_modules folder. 
-4. Know that adding these new packages to `package.json` file allows us to freeze the particular versions of each dependency so that they harmonize together without breaking. For instance, let’s say that dependency a has an update and changes versions.  That particular change might not work with dependency b,  which might cause the app to break. 
+4. Know that adding these new packages to `package.json` file allows us to freeze the particular versions of each dependency so that they harmonize together without breaking. For instance, let’s say that dependency "a" has an update and changes versions.  That particular change might not work with dependency "b",  which might cause the app to break. 
 
 We'll talk about what these dependencies do as we go through this application. 
