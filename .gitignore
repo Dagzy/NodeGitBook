@@ -37,3 +37,6 @@ book.mobi
 
 # VS Code stuff
 .vscode/
+
+# Merge conflict
+./docs/javascript_library/06-Express-Server/01-server-setup/01-server-package.md
