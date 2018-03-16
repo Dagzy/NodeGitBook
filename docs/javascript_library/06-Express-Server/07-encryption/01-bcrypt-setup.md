@@ -75,4 +75,6 @@ Test in
 ![screenshot](assets/02-bycrpt-postgres-view.PNG)
 
 ### Analysis
-We're adding the `hashSync` function to our new User object so that we don't store the password in a format that is easy to read. We supply the original password and tell bcrypt to use the salt 10 times. The resulting hash value can be seen both screenshots above. We'll use this same process again in the near future when we add authentication to our database.
+We're adding the `hashSync` function to our new User object so that we don't store the password in a format that is easy to read. We supply the original password and tell bcrypt to use the salt 10 times. The resulting hash value can be seen both screenshots above. <br>
+
+At the moment, we have the ability to add new users to our database. Unfortunately, those users currently do not have a way back in after the initial signup, which defeats the purpose of having an account. In the next chapter, we'll setup a login route for existing users to access the database with their credentials.
