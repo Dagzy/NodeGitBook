@@ -10,7 +10,7 @@ First, install the bcrypt package. Let's go ahead and add it to our `package.jso
 
 ```js
 "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "bcryptjs": "^2.4.3", //<----- ADD THIS
     "body-parser": "^1.18.2",
     "dotenv": "^5.0.1",
     "express": "^4.13.4",
@@ -21,20 +21,21 @@ First, install the bcrypt package. Let's go ahead and add it to our `package.jso
   }
 
 ```
-
+Once installed, we have to add it to the database. Just like with `jwt`, create a new variable. For its declaration, use the `require` statement for `bcryptjs`.
 
 ```js
 var router = require('express').Router();
 var sequelize = require('../db.js');
 var User = sequelize.import('../models/user');
-var bcrypt = require('bcryptjs');
+var bcrypt = require('bcryptjs'); //<---- ADD THIS
 var jwt = require('jsonwebtoken');
 
 ```
 
 
 ### Examining bcrypt.hashSync()
-TODO: Point to the bcrypt docs and show `hashSync`
+[bcryptjs Docs](https://github.com/dcodeIO/bcrypt.js) <br>
+TODO: Point to the bcrypt docs and show `hashSync` <br>
 TODO: Discuss hashing. There are screenshots in the original docs. 
 
 ### Adding bcrypt
@@ -74,6 +75,6 @@ Test in
 ![screenshot](assets/02-bycrpt-postgres-view.PNG)
 
 ### Analysis
-TODO: Here Bcrypt is used to.........
+We're adding the `hashSync` function to our new User object so that we don't store the password in a format that is easy to read. We supply the original password and tell bcrypt to use the salt 10 times. The resulting hash value can be seen both screenshots above. <br>
 
-
+At the moment, we have the ability to add new users to our database. Unfortunately, those users currently do not have a way back in after the initial signup, which defeats the purpose of having an account. In the next chapter, we'll setup a login route for existing users to access the database with their credentials.
