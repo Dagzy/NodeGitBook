@@ -40,7 +40,7 @@ router.post('/signin', function (req, res) {
 				bcrypt.compare(req.body.user.password, user.passwordhash, function (err, matches) {
 					console.log(matches);
 					if (matches) {
-						var token = jwt.sign({ id: user.id }, "i_am_secret", { expiresIn: 60 * 60 * 24 });
+						var token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: 60 * 60 * 24 });
 						res.json({
 							user: user,
 							message: "successfully authenticated",
@@ -80,7 +80,7 @@ module.exports = router;
 // ********************/
 
 
-// router.post('/', function(req, res) {
+// router.post('/signin', function(req, res) {
 //             //1     //2       //3                                   //4
 // 	User.findOne( { where: { username: req.body.user.username } } ).then(
     
@@ -93,6 +93,8 @@ module.exports = router;
 // 		}
 // 	);
 // });
+
+// module.exports = router;
 
 
 
@@ -143,6 +145,8 @@ module.exports = router;
 // 	);
 // });
 
+// module.exports = router;
+
 
 
 // /******************* 
@@ -175,7 +179,7 @@ module.exports = router;
 // 	);
 // });
 
-
+// module.exports = router;
 
 // /******************* 
 //  * STEP 6: signin
