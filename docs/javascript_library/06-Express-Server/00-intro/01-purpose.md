@@ -6,8 +6,8 @@ In this chapter of our `javascript_library`, we'll learn to build a custom serve
 
 
 ### Client/Server Model
-In this chapter, Chapter 7, we'll be living on the back end:
-TODO: Need client server image with the server circled - PAUL
+Here, we'll be living on the back end:
+![screenshot](../../../assets/01-clientserverdiagram.png)
 
 ### Big Objectives
 There will be a lot covered in this chapter. As you proceed, you'll start to see how things are connected, but slow down and take your time if you have trouble comprehending any of it. <br>
