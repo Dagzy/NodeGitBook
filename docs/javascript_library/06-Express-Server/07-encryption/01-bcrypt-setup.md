@@ -10,14 +10,14 @@ First, install the bcrypt package. Let's go ahead and add it to our `package.jso
 
 ```js
 "dependencies": {
-    "bcryptjs": "^2.4.0",
-    "body-parser": "^1.15.1",
-    "dotenv": "^4.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
     "express": "^4.13.4",
-    "jsonwebtoken": "^7.2.1",
-    "pg": "^4.5.6",
+    "jsonwebtoken": "^8.2.0",
+	"pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^3.23.3"
+    "sequelize": "^4.37.0"
   }
 
 ```
