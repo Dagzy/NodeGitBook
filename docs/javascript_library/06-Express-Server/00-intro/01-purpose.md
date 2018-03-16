@@ -8,6 +8,8 @@ In this chapter of our `javascript_library`, we'll learn to build a custom serve
 ### Client/Server Model
 Here, we'll be living on the back end:
 ![screenshot](../../../assets/01-clientserverdiagram.png)
+<br>
+Where, with the API lessons and challenge, we interacted with the client side, here, we will be connecting and building on the backend using Postman and PostgreSQL.
 
 ### Big Objectives
 There will be a lot covered in this chapter. As you proceed, you'll start to see how things are connected, but slow down and take your time if you have trouble comprehending any of it. <br>

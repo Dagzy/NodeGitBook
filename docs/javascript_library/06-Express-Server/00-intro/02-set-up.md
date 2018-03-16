@@ -23,10 +23,13 @@ Create the following folders and files in your JavaScript library:
 
 ### .gitignore
 
-1. Add `node_modules/` to your `.gitignore`. Anytime you work with npm packages, make sure this is in your `.gitignore`. If you forget, hundreds or thousands of extra, unnecessary files will be uploaded to your github repository. Simple add this to the `.gitignore` file:
+  1. Add `node_modules/` to your `.gitignore`. <br>
+  Anytime you work with npm packages, make sure this is in your `.gitignore`. If you forget, hundreds or thousands of extra, unnecessary files will be uploaded to your Github repository. <br>
+  This also protects you from including valuable information on the open-source Github.<br>
+  Simply add this to the `.gitignore` file:
 
-```
-node_modules/
-```
+  ```
+  node_modules/
+  ```
 
-2. `app.js` can be left blank for now.
+  2. `app.js` can be left blank for now.
