@@ -51,6 +51,7 @@ Before this will work, we have to add bring these routes into `app.js`.
 
 1. Go to `app.js`.
 2. Add the following code:
+
 ```js
 var express = require('express');
 var app = express();
@@ -82,11 +83,11 @@ app.use('/testroutes', testRoutes)
 <hr />
 
 
-### Practice
+### Challenge #1
 We could talk all day about this, but it won't make sense until you play around. Try the following:
 1. Create a route that is the following url:
 `http://localhost:3000/testroutes/about`
 
 2. When you test the app in Postman, you should get a response like this:
-![screenshot](02-testroute-about.PNG)
+![screenshot](assets/02-testroute-about.PNG)
 
