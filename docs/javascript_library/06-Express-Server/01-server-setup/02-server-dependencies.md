@@ -6,23 +6,24 @@ In this module we'll set up a few of the server packages that will be used in th
 
 
 ### Orientation
-![screenshot](assets/01-clientserverdiagram.png)
+![screenshot](../../../assets/01-clientserverdiagram.png)
 
 ### What is a dependency?
-TODO: Explain a dependency....
+A dependency is a necessary requirement for a class or interface to use.<br>
+It is like this: if you have a TV remote, you also need the dependency of batteries; you cannot use the remote without also using those batteries.  Furthermore, you cannot continuously reuse that remote unless you also coninuously reuse those batteries.  And, if your batteries fail, you can no longer use your remote.
 
 ### Project Dependencies
-TODO: Table that summarizes in 1-2 sentences what each one of these does.
+
 | Package       | Purpose    | 
 | ------------- |:-------------:|
-| bcrypt        | stuff        |
-| body-parser   | stuff      |
-| dotenv        | stuff      |
-| express       | stuff      |
-| jsonwebtoken  | stuff      |
-| pg            | stuff      |
-| pg-hstore     | stuff      |
-| sequelize     | stuff      |
+| bcrypt        | Password-specific hashing that protects your password from being stored in plain text |
+| body-parser   |  |
+| dotenv        |  |
+| express       |  |
+| jsonwebtoken  |  |
+| pg            |  |
+| pg-hstore     |  |
+| sequelize     | something |
 
 ### npm init
 Let's initialize `npm` as our package manager for our dependencies. To initialize npm in the application, go through the following steps:
