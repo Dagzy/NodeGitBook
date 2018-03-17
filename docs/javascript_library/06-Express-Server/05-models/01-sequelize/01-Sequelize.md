@@ -44,8 +44,8 @@ Let's do some analysis
 |7 |The host points to the localhost for sequelize. This is 5432. |
 |8 |Identify the QL dialect being used. Could be MSSQL, SQLLite, too |
 |9 |Use the sequelize variable to access methods.|
-|10 |Call the authenticate method.|
-|11 |Create a promise.|
+|10 |Call the authenticate method. |
+|11 |Authenticate returns a promise. Use `.then()`.|
 |12 |Fire a function that shows if we're connected.|
 |13 |Fire an error if there are any.|
 |14 |Export the module.|
