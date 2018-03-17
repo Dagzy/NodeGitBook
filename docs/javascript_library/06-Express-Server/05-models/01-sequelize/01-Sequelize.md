@@ -5,9 +5,8 @@ In this module we will use Sequelize to connect our Server to pgadmin.
 <hr>
 
 
-
 ### Sequelize connection
-To use Sequelize, we'll have to establish a connection. This is a fairly common file that is often copy and pasted into projects for set up. Simply put, it's allowing us to connect from our project to the Postgres database:
+To use Sequelize, we'll have to establish a connection. This is the standard approach from the [docs](http://docs.sequelizejs.com/manual/installation/getting-started.html#test-the-connection), and it is often copy and pasted into projects for set up. Simply put, it's allowing us to connect from our project to the Postgres database. Here we do a simple breakdown of the code:
 
 ```js
 //1

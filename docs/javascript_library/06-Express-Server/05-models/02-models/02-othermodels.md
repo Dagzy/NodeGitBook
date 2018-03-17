@@ -1,31 +1,14 @@
 # PROJECT MODELS
 ---
+In this module we'll add two models that will be used in later in our project. 
 
 <hr>
 
-### LOG MODEL
-```js
-// build a model in sqllize
-module.exports = function (sequelize, DataTypes) {
-	return sequelize.define('log', {
-		description: DataTypes.STRING,
-		result: DataTypes.STRING,
-		owner: DataTypes.INTEGER,
-		def: DataTypes.STRING
-	}, {
-		});
-};
-
-```
-
-
+TODO: TEST THESE
 
 ### USER MODEL
 
 ```js
-//user model created using sequelize
-//talks to the table user
-
 module.exports = function (sequelize, DataTypes) {
     return sequelize.define('user', {
         username: DataTypes.STRING,
@@ -35,26 +18,16 @@ module.exports = function (sequelize, DataTypes) {
 
 ```
 
-### DEFINITION MODEL
+### LOG MODEL
 ```js
-module.exports = function(sequelize, DataTypes) {
-//With define, the first argument is going to represent a column in the db table
-		return sequelize.define('definition', {
-			description: DataTypes.STRING,
-			logType: DataTypes.STRING, /* by time, reps, weight, ... */
-			owner: DataTypes.INTEGER
-		},{
+module.exports = function (sequelize, DataTypes) {
+	return sequelize.define('log', {
+		description: DataTypes.STRING,
+		result: DataTypes.STRING,
+		owner: DataTypes.INTEGER,
+		def: DataTypes.STRING
 	});
 };
 
-
-/*
-POSTMAN TEST:
-{
-	"definition":{
-		"description":"Running my heart out as fast I could for 70 miles.",
-		"logType":"sprints"
-	}
-}
-*/
 ```
+

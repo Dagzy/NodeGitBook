@@ -6,9 +6,6 @@ var bodyParser = require('body-parser');
 
 sequelize.sync(); // tip: {force: true} for resetting tables
 
-app.use(bodyParser.json());
-app.use(require('./middleware/headers'));
-
 app.use('/tests', testRoutes)
 
 app.use('/api/test', function(req, res){
