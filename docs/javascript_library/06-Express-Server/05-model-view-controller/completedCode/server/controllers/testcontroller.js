@@ -12,16 +12,13 @@ router.get('/', function (req, res) {
 /**********************
  * TEST POSTS WITH TEST MODEL
  ********************/
-
 //Step 1 - Use this with Postman
-router.post('/testpost/one', function (req, res) {
+router.post('/one', function (req, res) {
   res.send("Test 1 went through!");
 });
 
-
-
 //STEP 2 - Use this with Postman
-router.post('/testpost/two', function (req, res) {
+router.post('/two', function (req, res) {
   let testData = "Test two";
   console.log(req);
   TestModel
@@ -33,9 +30,13 @@ router.post('/testpost/two', function (req, res) {
 
 
 //STEP 3 - Use this with Postman
-router.post('/testpost/three', function (req, res) {
+router.post('/three', function (req, res) {
   var testData = req.body.testdata.item;
-
+  console.log(`
+    testing
+    
+    
+    `, testData);
   TestModel
     .create({
       testdata: testData
@@ -46,7 +47,7 @@ router.post('/testpost/three', function (req, res) {
 
 
 //STEP 4 - Use this with Postman
-router.post('/testpost/four', function (req, res) {
+router.post('/four', function (req, res) {
   var testData = req.body.testdata.item;
   TestModel
     .create({
@@ -61,7 +62,7 @@ router.post('/testpost/four', function (req, res) {
 
 
 //STEP 5 - Use this with Postman
-router.post('/testpost/five', function (req, res) {
+router.post('/five', function (req, res) {
   var testData = req.body.testdata.item;
   TestModel
     .create({
@@ -77,7 +78,7 @@ router.post('/testpost/five', function (req, res) {
 
 
 //STEP 6 - Use this with Postman
-router.post('/testpost/six', function (req, res) {
+router.post('/six', function (req, res) {
   var testData = req.body.testdata.item;
   TestModel
     .create({
@@ -95,7 +96,7 @@ router.post('/testpost/six', function (req, res) {
 });
 
 
-router.post('/testpost/seven', function (req, res) {
+router.post('/seven', function (req, res) {
   var testData = req.body.testdata.item;
 
   TestModel

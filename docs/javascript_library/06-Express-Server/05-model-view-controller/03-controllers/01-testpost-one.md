@@ -1,8 +1,14 @@
 # Route Set up
 ---
 
-This module will test our route by attempting to connect to the database. If the route is wrong, a big ERROR message will be thrown back at us from Postman.
+In the next few modules we will build a controller method and use it to POST data and persist it to our database.
 <hr>
+
+
+### POST
+So far, we've made GET requests with HTTP. We have made requests that ask the server to send us some hard coded data. Now, we want to work with Postgres to store data that a user might send to it. We obviously want to know how to do this so that our users can save data and come back to it later. 
+
+Let's look at the flow of how this will work. 
 
 TODO: Use these photos to explain stuff
 ![server](assets/01-testdata.PNG)

@@ -1,7 +1,7 @@
 # SEQUELIZE
 ---
 
-In this module we'll introduce sequelize, a tool that helps us map our database.
+In this module we'll introduce sequelize, a tool that helps us build models to map to our database.
 
 <hr>
 
