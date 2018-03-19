@@ -8,7 +8,7 @@ It's great that our model and routes are working, but there was a slight hiccup 
 ```js
 
 //STEP 4 - Use this with Postman
-router.post('/testpost/four', function (req, res) {
+router.post('/test/four', function (req, res) {
   var testData = req.body.testdata.item;
   TestModel
     .create({

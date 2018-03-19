@@ -2,17 +2,13 @@
 ---
 
 In the next few modules we will build a controller method and use it to POST data and persist it to our database.
+
 <hr>
 
-
 ### POST
-So far, we've made GET requests with HTTP. We have made requests that ask the server to send us some hard coded data. Now, we want to work with Postgres to store data that a user might send to it. We obviously want to know how to do this so that our users can save data and come back to it later. 
+So far, we've made GET requests with HTTP. We have made requests that ask the server to send us some hard coded data. Now, we want to work with Postgres to store data that a user might send to it. Clearly, we want to be able to do this so that our users can save data and come back to it later. 
 
 Let's look at the flow of how this will work. 
-
-TODO: Use these photos to explain stuff
-![server](assets/01-testdata.PNG)
-![server](assets/01-testdatapg.PNG)
 
 ### Code
 
@@ -23,7 +19,7 @@ var sequelize = require('../db');
 var TestModel = sequelize.import('../models/test'); //1
 
       //2       //3           
-router.post('/testpost/one', function(req, res){
+router.post('/one', function(req, res){
   //4
   res.send("Got a post request.") //5
 })

@@ -9,15 +9,17 @@ router.get('/', function (req, res) {
   res.send('This is a big ole test route for routing')
 })
 
-/**********************
- * TEST POSTS WITH TEST MODEL
- ********************/
-//Step 1 - Use this with Postman
+
+/************************
+ * Route 1: Simple Response to POST req
+ ***********************/
 router.post('/one', function (req, res) {
   res.send("Test 1 went through!");
 });
 
-//STEP 2 - Use this with Postman
+/*********************************
+ * Route 2: Create new TestModel instance
+ **********************************/
 router.post('/two', function (req, res) {
   let testData = "Test two";
   console.log(req);
@@ -25,28 +27,27 @@ router.post('/two', function (req, res) {
     .create({
       testdata: testData
     })
-  console.log("Test two went through.")
+    res.send("Test 2 went through!");
 });
 
-
-//STEP 3 - Use this with Postman
+/*********************************
+ * Route 3: Get req.body from request
+ **********************************/
 router.post('/three', function (req, res) {
   var testData = req.body.testdata.item;
-  console.log(`
-    testing
-    
-    
-    `, testData);
+  console.log(testData);
   TestModel
     .create({
       testdata: testData
     })
-  console.log("Test three went through.")
+  res.send("Test 3 went through!");
 });
 
 
 
-//STEP 4 - Use this with Postman
+/*********************
+ * 4: Return a Promise
+ **********************/
 router.post('/four', function (req, res) {
   var testData = req.body.testdata.item;
   TestModel
@@ -55,13 +56,14 @@ router.post('/four', function (req, res) {
     })
     .then(
       function message() {
-        console.log("Step four achieved!");
+        res.send("Test 4 went through!");
       }
     );
 });
 
-
-//STEP 5 - Use this with Postman
+/*********************
+ * Route 5: Return data in a Promise
+ **********************/
 router.post('/five', function (req, res) {
   var testData = req.body.testdata.item;
   TestModel
@@ -71,13 +73,14 @@ router.post('/five', function (req, res) {
     .then(
       function message(testdata) {
         console.log(testdata);
-        console.log("Step five achieved!");
+        res.send(testData);
       }
     );
 });
 
-
-//STEP 6 - Use this with Postman
+/*********************
+ * Route 6: Return response as JSON
+ **********************/
 router.post('/six', function (req, res) {
   var testData = req.body.testdata.item;
   TestModel
@@ -86,16 +89,17 @@ router.post('/six', function (req, res) {
     })
     .then(
       function message(testdata) {
-        //send a response as json
         res.json({
           testdata: testdata
         });
-        console.log("step six");
       }
     );
 });
 
 
+/*********************
+ * Route 7: Handle errors
+ **********************/
 router.post('/seven', function (req, res) {
   var testData = req.body.testdata.item;
 
@@ -105,42 +109,15 @@ router.post('/seven', function (req, res) {
     })
     .then(
       function createSuccess(testdata) {
-        //send a response as json
         res.json({
           testdata: testdata
         });
-        console.log("step seven");
 
       },
       function createError(err) {
         res.send(500, err.message);
       }
     );
-});
-
-router.post('/testpost/eight', function (req, res) {
-  //var testData = req.body.testdata.item;
-  // Testing without Postman Body? VVV
-  var testData = req.body.testdata.item;
-
-  TestModel
-    .create({
-      testdata: testData
-    })
-
-    .then(
-      function createSuccess(testdata) {
-        //send a response as json
-        res.json({
-          testdata: testdata
-        });
-      },
-      function createError(err) {
-        res.send(500, err.message);
-      }
-    );
-  console.log("step eight");
-
 });
 
 module.exports = router;

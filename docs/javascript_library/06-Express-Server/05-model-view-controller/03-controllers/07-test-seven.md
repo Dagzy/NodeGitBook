@@ -7,7 +7,7 @@ So far we've been assuming that our data is correctly entered into the database 
 
 ```js
 
-router.post('/testpost/seven', function (req, res) {
+router.post('/test/seven', function (req, res) {
   var testData = req.body.testdata.item;
 
   TestModel

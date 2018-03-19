@@ -10,7 +10,7 @@ Now that we know our route works, let's test our model. In this test, the data t
 Use this with Postman
 
 ```js
-router.post('/testpost/two', function (req, res) {
+router.post('/test/two', function (req, res) {
   let testData = "Test two"; //1
   console.log(req); //2
   TestModel //3

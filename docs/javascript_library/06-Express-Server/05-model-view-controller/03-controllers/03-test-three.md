@@ -8,7 +8,7 @@ Our model works and we were able to put something in the database. NICE! Now let
 ```js
 
 //STEP 3 - Use this with Postman
-router.post('/testpost/three', function (req, res) {
+router.post('/test/three', function (req, res) {
   var testData = req.body.testdata.item; //1
 
   TestModel

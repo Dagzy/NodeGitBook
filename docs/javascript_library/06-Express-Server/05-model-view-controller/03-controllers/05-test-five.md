@@ -6,7 +6,7 @@ The way we displayed the success message before is kind of pointless. We don't n
 
 ```js
 //STEP 5 - Use this with Postman
-router.post('/testpost/five', function (req, res) {
+router.post('/test/five', function (req, res) {
   var testData = req.body.testdata.item;
   TestModel
     .create({

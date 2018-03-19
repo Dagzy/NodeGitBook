@@ -7,7 +7,7 @@ Up to this point we've been printing all our results to the console. This time, 
 ```js
 
 //STEP 6 - Use this with Postman
-router.post('/testpost/six', function (req, res) {
+router.post('/test/six', function (req, res) {
   var testData = req.body.testdata.item;
   TestModel
     .create({
