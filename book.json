@@ -1,13 +1,8 @@
 {
-    "plugins": ["my-theme", "expandable-chapters", "youtube", "downloadpdf"],
+    "plugins": ["my-theme", "expandable-chapters", "youtube"],
     "pluginsConfig": {
         "my-theme": {
             "font-family": "sans"
-        },
-        "downloadpdf": {
-            "base": "https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/",
-            "label": "Download PDF",
-            "multilingual": false
         }
     },
     "root": "./docs"
