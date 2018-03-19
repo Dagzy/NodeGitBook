@@ -44,7 +44,8 @@ function fetchHelloDataFromAPI() {
 			userData.innerHTML = "";	
 			for(r of residents){
 				console.log(r);
-				userData.insertAdjacentHTML('beforeend', "  " + r);
+				userData.innerHTML = r; //broken code
+				//userData.insertAdjacentHTML('beforeend', "  " + r); //working code
 			}
 		});
   }

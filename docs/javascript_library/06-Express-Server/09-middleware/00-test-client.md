@@ -45,7 +45,7 @@ Enter the following code into the `scripts.js` file. Like before, see if you can
 function fetchHelloDataFromAPI() {
 	var helloWorld = document.getElementById('para');
 	
-	fetch('http://localhost:3000/api/test')
+	fetch('http://localhost:3000/api/testing')
 		.then(function (response) {
 			console.log("Fetch response:", response)
 			return response.text() 
