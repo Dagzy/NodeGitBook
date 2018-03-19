@@ -10,7 +10,7 @@ app.use(require('./middleware/headers'));
 //http://localhost:3000/somedata.json
 app.use(express.static('data'))
 
-app.use('/api/test', function(req, res){
+app.use('/api/testing', function(req, res){
 	res.send("This is data from the /api/test endpoint. It's from the server.");
 });
 
