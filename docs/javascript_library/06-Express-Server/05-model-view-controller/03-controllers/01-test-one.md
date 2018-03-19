@@ -28,8 +28,6 @@ router.post('/one', function(req, res){
 <hr >
 
 ### Analysis
-TODO: Explain this code:
-
 1. Import the test model. This tells sequelize how much data the table requires and the data-types of each.
 2. The type of request we are sending. `POST` sends data to the database to be stored.
 3. The route we are using. This tells the database where we want to put our data.

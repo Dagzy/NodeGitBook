@@ -19,7 +19,7 @@
             * [03 - Challenge 1](javascript_library/06-Express-Server/03-routes/03-routes-solution.md)
             * [04 - Challenges 2 & 3](javascript_library/06-Express-Server/03-routes/04-routes-solution-two.md)
         * [04 - Database Intro]()
-            * [01 - DB Intro and Set up]()
+            * [00 - DB Intro and Set up]()
                 * [00 - DB Intro](javascript_library/06-Express-Server/04-db/00-db-intro/00-db-intro.md)
                 * [01 - PostgreSQL Intro](javascript_library/06-Express-Server/04-db/00-db-intro/01-pg-intro.md)
                 * [02 - Install](javascript_library/06-Express-Server/04-db/00-db-intro/02-pg-install.md)

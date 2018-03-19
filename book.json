@@ -1,8 +1,13 @@
 {
-    "plugins": ["my-theme", "expandable-chapters", "youtube"],
+    "plugins": ["my-theme", "expandable-chapters", "youtube", "downloadpdf"],
     "pluginsConfig": {
         "my-theme": {
             "font-family": "sans"
+        },
+        "downloadpdf": {
+            "base": "https://www.gitbook.com/book/eleven-fifty-academy/javascript-152-nodeserver/details",
+            "label": "Download PDF",
+            "multilingual": false
         }
     },
     "root": "./docs"
