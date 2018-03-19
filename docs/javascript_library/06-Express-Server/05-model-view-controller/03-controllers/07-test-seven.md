@@ -34,8 +34,6 @@ router.post('/test/seven', function (req, res) {
 <hr >
 
 ### Analysis
-TODO: Explain this code:
-
 1. Since we now have two functions returning a message, we change the name of the first to show that it fires upon success.
 2. Our new function fires only if something goes wrong.
 3. If we encounter a failure, the database will send back an error message. This is passed into our function as a parameter.

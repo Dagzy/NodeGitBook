@@ -8,7 +8,7 @@ In this chapter, we'll walk through several modules that will teach how to build
 ### Software Pattern
 We're going to be using a pattern that closely resembles something called MVC(Model, View, Controller). MVC is a common software pattern found throughout the software world and in many programming languages and applications. Take a look at a diagram of MVC to get an idea of how it works:
 
-![screenshot](assets/02-mvc.png)
+![screenshot](../02-models/assets/02-mvc.png)
 
 
 ### Views
