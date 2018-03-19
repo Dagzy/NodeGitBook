@@ -41,9 +41,11 @@ function fetchHelloDataFromAPI() {
 			var residents = json.residents;
 			console.log("Put this in the html");
 			console.log(json);
+			userData.innerHTML = "";	
 			for(r of residents){
 				console.log(r);
-				userData.innerHTML = r;
+				userData.innerHTML = r; //broken code
+				//userData.insertAdjacentHTML('beforeend', "  " + r); //working code
 			}
 		});
   }
