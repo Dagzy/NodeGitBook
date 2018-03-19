@@ -5,7 +5,7 @@
             "font-family": "sans"
         },
         "downloadpdf": {
-            "base": "https://www.gitbook.com/book/eleven-fifty-academy/javascript-152-nodeserver/details",
+            "base": "https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/",
             "label": "Download PDF",
             "multilingual": false
         }
