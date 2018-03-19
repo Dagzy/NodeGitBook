@@ -17,22 +17,22 @@ router.get('/', function (req, res) {
 ** HOME PAGE***
 **************/
 //Step one
-// router.post('/createuser', function (req, res) {
+router.post('/createuser', function (req, res) {
 
-//   var username = "Paulio";
-//   var pass = "Hello";
+  var username = "Paulio";
+  var pass = "Hello";
 
-//   // var username = req.body.user.username;
-//   // var pass = req.body.user.password;
+  // var username = req.body.user.username;
+  // var pass = req.body.user.password;
 
-//   User.create({
-//     username: username,
-//     passwordhash: pass
+  User.create({
+    username: username,
+    passwordhash: pass
 
-//   }).then(
-//     console.log("hello")
-//   );
-// })
+  }).then(
+    console.log("hello")
+  );
+})
 
 
 //  module.exports = router;

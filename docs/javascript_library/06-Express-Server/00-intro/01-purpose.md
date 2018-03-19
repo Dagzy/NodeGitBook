@@ -6,20 +6,19 @@ In this chapter of our `javascript_library`, we'll learn to build a custom serve
 
 
 ### Client/Server Model
-Here, we'll be living on the back end:
-![screenshot](../../../assets/01-clientserverdiagram.png)
+Where, with the API lessons and challenge, we interacted with the client side, here, we will be connecting and building on the back-end using Postman and PostgreSQL.
+
+![screenshot](assets/01-clientserverdiagram.png)
 <br>
-Where, with the API lessons and challenge, we interacted with the client side, here, we will be connecting and building on the backend using Postman and PostgreSQL.
 
 ### Big Objectives
 There will be a lot covered in this chapter. As you proceed, you'll start to see how things are connected, but slow down and take your time if you have trouble comprehending any of it. <br>
 
-Important Stuff:
-* Building your own API endpoints and routes with Express
-* Using tools to test those endpoints
-* Using `fetch` for more than `GET` requests: `POST`, `DELETE`, `PUT`
-* Start to use sequel (SQL) statements and sequelize to enter and retrieve information into databases
-* Setting up security protocols and authentication for individual user accounts
-* AND MORE
+Key Objectives:
+* Build your own API endpoints and routes with Express
+* Use tools to test those endpoints.
+* Start to use SQL statements and sequelize to enter and retrieve information into databases
+* Set up security protocols and authentication for individual user accounts
+* Build an demo api for a Workout App that implements MVC patterns and includes proper routing, authentication, and persistence. 
 
 

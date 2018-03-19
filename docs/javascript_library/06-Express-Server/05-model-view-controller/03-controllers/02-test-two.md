@@ -6,16 +6,15 @@ Now that we know our route works, let's test our model. In this test, the data t
 
 
 
-### SOLUTION
-Use this with Postman
-
+### Code
+Let's write a controller method:
 ```js
 router.post('/test/two', function (req, res) {
   let testData = "Test two"; //1
-  console.log(req); //2
-  TestModel //3
+
+  TestModel //2
     .create({
-      testdata: testData //4
+      testdata: testData //3
     })
   console.log("Test two went through.")
 });
@@ -25,10 +24,14 @@ router.post('/test/two', function (req, res) {
 
 ### Analysis
 
-1. The fixed test data that we're going to use in our model.
-2. Print the request to the console. Once we start reading data from some input, this will show if that data is being passed properly
-3. The model that we are using. This is also the table in which the data will be inserted.
-4. The column being used in the table and the data to be placed in that column. In other words: `{column: data}`
+1. Some fixed test data that we're going to use in our model.
+
+2. The model that we are using. This is also the table in which the data will be inserted.
+3. The column being used in the table and the data to be placed in that column. In other words: `{column: data}`
+
+### Screenshot
+Here's a screenshot to give you an idea of the flow here:
+![screenshot](assets/02-post-test.png)
 
 ### Challenge
 Create a request to the endpoint above. We are not sending a response back at the moment, so Postman may get stuck on "Waiting for Response". Check the database to see if the request succeeded. In PG Admin, click the following: `workoutlog --> schemas --> tables`. Then right-click on `test`, hover over `View/Edit Data`, then choose `All Rows`. If successful, you should see something like
