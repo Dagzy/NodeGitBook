@@ -14,7 +14,7 @@ The first step in performing a migration is to create the necessary files and fo
 |config|The configuration settings for your database migrations|
 |migrations|The actual migration files. *More on this later*.|
 |models|The files used to create your tables|
-|seeds|Files that can add data to your database. *More on this later*.|
+|seeders|Files that can add data to your database. *More on this later*.|
 <br>
 
 You can see that we had to change the name of our old `models` folder because this process creates a new one. If we hadn't, this step would've been skipped. It won't break your project if you don't change the name, but we're going to have to create new models in order to run migrations. This allows us to keep the old models separate from the new ones.

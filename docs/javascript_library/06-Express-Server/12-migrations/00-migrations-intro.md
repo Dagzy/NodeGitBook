@@ -19,3 +19,6 @@ npm install -g pg
 These commands install sequelize, the sequelize-cli, and postgres on your computer, and the global installation allows access to them from anywhere. Anytime you install something to be used via the command line, you need to close the terminal window and re-open it to use what you've installed. After re-opening the window, type `sequelize` into the command line. You should see something like this: <br>
 ![SequlizeCLI](assets/sequelizeCLIinstall.png) <br>
 If you see any errors, try running the above steps again. Once the cli is working, move on to the next module.
+
+### Further Reading
+This chapter will be following instructions laid out in the official Sequelize Migration Tutorial, found [here](http://docs.sequelizejs.com/manual/tutorial/migrations.html). Feel free to take a look if you want to learn more.
