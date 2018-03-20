@@ -5,9 +5,8 @@ The first step in performing a migration is to create the necessary files and fo
 <hr>
 
 ### Running Sequelize init
-1. Open your server folder in VS Code and rename your `models` folder to `oldModels`. We'll explain why in a moment.
-2. Open a terminal window and navigate to your server folder.
-3. In the terminal window, run `sequelize init`. This will create the following folders:
+1. Open a terminal window and navigate to your server folder.
+2. In the terminal window, run `sequelize init`. This will create the following folders:
 
 |Folder|Purpose|
 |:-----|:------|
@@ -16,11 +15,10 @@ The first step in performing a migration is to create the necessary files and fo
 |models|The files used to create your tables|
 |seeders|Files that can add data to your database. *More on this later*.|
 <br>
+*NOTE*: We already have a `models` folder, so that part is skipped.
 
-You can see that we had to change the name of our old `models` folder because this process creates a new one. If we hadn't, this step would've been skipped. It won't break your project if you don't change the name, but we're going to have to create new models in order to run migrations. This allows us to keep the old models separate from the new ones.
-
-4. Look at your project in VS Code. You should see all of the new folders.
-5. Inside the `config` folder, open `config.js`. We need to make a few changes.
+3. Look at your project in VS Code. You should see all of the new folders.
+4. Inside the `config` folder, open `config.js`. We need to make a few changes.
 
 ### config.js
 We need to give Sequelize some specific information in order to access our database. Currently, the `config.js` file looks like this:
