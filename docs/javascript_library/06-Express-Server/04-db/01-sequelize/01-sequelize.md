@@ -5,6 +5,10 @@ In this module we will use Sequelize to connect our Server to pgadmin.
 <hr>
 
 
+### Orientation
+In this module we'll be working with Sequelize and Postgres:
+![screenshot](assets/01-pg-youarehere.png)
+
 ### Sequelize connection
 To use Sequelize, we'll have to establish a connection. This is the standard approach from the [docs](http://docs.sequelizejs.com/manual/installation/getting-started.html#test-the-connection), and it is often copy and pasted into projects for set up. Simply put, it's allowing us to connect from our project to the Postgres database. Here we do a simple breakdown of the code:
 
@@ -31,12 +35,13 @@ module.exports = sequelize;
 ```
 
 ### Analysis
-Let's do some analysis
+Let's do some analysis of the code above. You do not need to memorize all of this information. Read through it, and then use it as a reference for when you need it next:
+
 |Concept|Analysis|
-|:-|:---------|
+|:------|:---------|
 |1 |Import the Sequelize package.|
 |2 |Create an instance of Sequelize for use in the module with the `sequelize` variable.|
-|3 |User the constructor to create a new Sequelize object.|
+|3 |Use the constructor to create a new Sequelize object.|
 |4 |Identify the db table to connect to.|
 |5 |The username for the db.|
 |6 |The password for the local db.|
@@ -46,7 +51,7 @@ Let's do some analysis
 |10 |Call the authenticate method. |
 |11 |Authenticate returns a promise. Use `.then()`.|
 |12 |Fire a function that shows if we're connected.|
-|13 |Fire an error if there are any.|
+|13 |Fire an error if there are any errors.|
 |14 |Export the module.|
 
 

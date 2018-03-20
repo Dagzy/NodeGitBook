@@ -1,7 +1,7 @@
 # PG INSTALL
 ---
 
-In this module we'll set up the Postgres database for our server using PG Admin.
+In this module we'll set up the Postgres database for our server using PG Admin and Sequelize.
 
 <hr />
 

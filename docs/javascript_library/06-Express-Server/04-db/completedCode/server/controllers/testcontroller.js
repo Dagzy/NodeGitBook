@@ -9,10 +9,11 @@ router.use(function timeLog (req, res, next) {
 // define the home page route
 router.get('/', function (req, res) {
   res.send('This is a big ole test route for routing')
-})
+});
+
 // define the about route
 router.get('/about', function (req, res) {
   res.send('This is an about route')
-})
+});
 
 module.exports = router;
