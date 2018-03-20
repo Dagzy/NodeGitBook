@@ -78,7 +78,7 @@
             * [03 - Running Migrations](javascript_library/06-Express-Server/12-migrations/03-running-migrations.md)
             * [04 - Reverting Migrations](javascript_library/06-Express-Server/12-migrations/04-reverting.md)
             * [05 - Seeds](javascript_library/06-Express-Server/12-migrations/05-seeds.md)
-            * [06 - Running Seeds](javascript_library/06-Express-Server/12-migrations/06-running-seeds.md)
+            * [06 - Reverting Seeds](javascript_library/06-Express-Server/12-migrations/06-reverting-seeds.md)
         * [13 - Workout Log Server]()
             * [00 - Intro](javascript_library/06-Express-Server/13-workoutlog-api/00-intro.md)
 
