@@ -8,6 +8,7 @@ We added some routes to `app.js` earlier, but didn't cover what was really happe
 We exported the middleware, now we need to use it when we spin up our server. Follow the steps:
 1. Go into `app.js`.
 2. Add the following code under the `bodyParser` variable:
+
 ```js
 var express = require('express');
 var app = express();
