@@ -2,8 +2,8 @@ require('dotenv').config();
 
 var express = require('express');
 var app = express();
-var testRoutes = require('./routes/testroutes')
-var userRoutes = require('./routes/user')
+var testRoutes = require('./controllers/testcontroller')
+var userRoutes = require('./controllers/user')
 var sequelize = require('./db');
 var bodyParser = require('body-parser');
 
