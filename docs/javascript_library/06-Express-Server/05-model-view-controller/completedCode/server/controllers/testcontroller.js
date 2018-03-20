@@ -1,7 +1,6 @@
 var express = require('express')
 var router = express.Router()
 var sequelize = require('../db');
-var User = sequelize.import('../models/user');
 var TestModel = sequelize.import('../models/test');
 
 // define the home page route
