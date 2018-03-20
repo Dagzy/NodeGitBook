@@ -1,4 +1,11 @@
+# INTRO
+---
+In this module we'll be introducing the Workout Log Server challenge. 
 
+
+
+
+NOT QUITE THERE YET....But something in this direction?
 ### Challenge
 Eventually, we'll be creating a Server for users to log details about their workouts. The final server that you create will require several models, including `user.js` and `log.js`. Use what you've learned here to create these models with the following types:
 
@@ -49,5 +56,3 @@ module.exports = function (sequelize, DataTypes) {
 };
 
 ```
-
-

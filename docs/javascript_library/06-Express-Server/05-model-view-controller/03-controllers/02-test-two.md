@@ -1,13 +1,16 @@
 # CREATE METHOD
 ---
+In this module we're going to create a second endpoint that accepts a POST with data, matches the request with a model, passes the data to Postgres, and sends a response.
 
+<hr />
+
+### Controller Method Two
 Now that we know our route works, let's test our model. In this test, the data that will be sent through the model has already been provided.
 <hr>
 
-
-
 ### Code
-Let's write a controller method:
+
+Let's write another controller method. This time you'll need to import the `test.js` model:
 ```js
 var express = require('express')
 var router = express.Router()
