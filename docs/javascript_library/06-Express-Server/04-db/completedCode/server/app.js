@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var testRoutes = require('./routes/testroutes')
+var testRoutes = require('./controllers/testcontroller')
 var sequelize = require('./db');
 
 sequelize.sync(); // tip: {force: true} for resetting tables

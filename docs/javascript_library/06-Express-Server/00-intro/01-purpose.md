@@ -11,6 +11,8 @@ Where, with the API lessons and challenge, we interacted with the client side, h
 ![screenshot](assets/01-clientserverdiagram.png)
 <br>
 
+<hr />
+
 ### Big Objectives
 There will be a lot covered in this chapter. As you proceed, you'll start to see how things are connected, but slow down and take your time if you have trouble comprehending any of it. <br>
 
