@@ -1,13 +1,13 @@
 var express = require('express');
 var app = express();
-var testController = require('./routes/testcontrollers')
-var userController = require('./routes/moretestroutes')
+var test = require('./controllers/testcontroller')
+var user = require('./controllers/usercontroller')
 
 /***************
 *****ROUTES*****
 ****************/
-app.use('/test', testController)
-app.use('/users', userController)
+app.use('/test', test)
+app.use('/user', user)
 
 app.use('/api/test', function(req, res){
 	res.send("This is data from the /api/test endpoint. It's from the server.");

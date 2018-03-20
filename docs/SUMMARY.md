@@ -17,7 +17,7 @@
             * [01 - Routes intro](javascript_library/06-Express-Server/03-routes/01-routes-intro.md)
             * [02 - Express Router() intro](javascript_library/06-Express-Server/03-routes/02-routes-express.md)
             * [03 - Challenge 1](javascript_library/06-Express-Server/03-routes/03-routes-solution.md)
-            * [04 - Challenges 2 & 3](javascript_library/06-Express-Server/03-routes/04-routes-solution-two.md)
+            * [04 - Challenges 2](javascript_library/06-Express-Server/03-routes/04-routes-solution-two.md)
         * [04 - Controllers Intro]()
             * [01 - Controllers intro](javascript_library/06-Express-Server/03-routes/01-controllers-intro.md)
         * [04 - Database Intro]()
