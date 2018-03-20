@@ -9,6 +9,11 @@ Now that we know our route works, let's test our model. In this test, the data t
 ### Code
 Let's write a controller method:
 ```js
+var express = require('express')
+var router = express.Router()
+var sequelize = require('../db');
+var TestModel = sequelize.import('../models/test'); //1
+
 router.post('/test/two', function (req, res) {
   let testData = "Test two"; //1
 
@@ -23,6 +28,7 @@ router.post('/test/two', function (req, res) {
 <hr >
 
 ### Analysis
+1. We import the test model. This tells sequelize how much data the table requires and the data-types of each.
 
 1. Some fixed test data that we're going to use in our model.
 

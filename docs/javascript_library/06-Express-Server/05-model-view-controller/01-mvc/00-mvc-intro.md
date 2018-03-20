@@ -1,20 +1,20 @@
 # PERSISTING DATA
 ---
 
-In this chapter, we'll walk through several modules that will teach how to build controller methods and routes that make POST requests containing data. Those requests will post data that will persist in our Postgres database and return that data to the client in a response. 
+In this chapter, we'll walk through several modules that will teach how to build controller methods and routes that make POST requests containing data. Those requests will post data that will persist in our Postgres database and return that data to the client in a response. To write this code we'll use a Model View Controller pattern, so we'll introduce you to MVC at this time.
 
 <hr>
 
 ### Software Pattern
-We're going to be using a pattern that closely resembles something called MVC(Model, View, Controller). MVC is a common software pattern found throughout the software world and in many programming languages and applications. Take a look at a diagram of MVC to get an idea of how it works:
+ MVC is a common software pattern found in many programming languages and applications. Take a look at a diagram of MVC to start getting an idea of how it works:
 
 ![screenshot](assets/02-mvc.png)
 
 ### Views
-For this chapter, we won't be dealing with the view, but we'll say that the view/client would be sending requests, receive responses, and work to display the data to users. For a temporary client we'll use Postman as view.
+For this chapter, we won't be dealing with the view, but we'll say that the view/client would be sending requests, receiving responses, and working to display the data to users. For a temporary client we'll use Postman in lieu of a View.
 
-### CONTROLLERS
-It's good to think of the controller as something that handles the heavier logic in the application. A controller is usually a method or methods that will handle some of the following things:
+### Controllers
+It's good to think of the controller as something that handles the heavier logic in the application. A controller is usually a method or methods that will handle some or all of the following things:
 
 1. Receiving the incoming request depending on the route.
 2. Processing the type of incoming request: GET, POST, PUT, DELETE.
@@ -32,7 +32,7 @@ Coding models are usually considered to be just this: `representations of the da
 
 
 ### Endpoints & Routes
-As mentioned in a previous module, when an HTTP request comes in it hits a route which finds the proper endpoint. When the router finds the proper endpoint, the proper controller method is fired and the controller method handles any necessary logic:
+As mentioned in a previous module, when an HTTP request comes in, it hits a route and finds the proper endpoint. When the router finds the proper endpoint, the proper controller method is fired, and the controller method handles any necessary logic. To practice learning about endpoints, controllers, and models, we'll be building the following endpoints in the modules ahead:
 
 ```
 http://localhost:3000/test/one - POST 
@@ -46,7 +46,7 @@ http://localhost:3000/test/seven - POST
 
 When we start up our server each of these will be available for processing a request. We'll work with each one as a way to learn the process of writing a controller method.
 
-Let's do some work with these things to get a better idea of this MVC pattern. We'll start by looking at models.
+Before we fire off controller methods, we'll start by building some data models.
 
 
 

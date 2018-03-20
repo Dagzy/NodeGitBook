@@ -1,39 +1,66 @@
-# Route Set up
+
+# ENDPOINT ONE
 ---
+In this module we'll get started on an endpoint that handles a simple POST request. 
 
-In the next few modules we will discuss how to build controller methods and use them to POST data and persist it to our database.
+<hr />
 
-<hr>
+### Overview
+Here's the flow of what we will have after this module:
 
-### POST
-So far, in previous modules, we've made GET requests with HTTP. We have made requests that ask the server to send us some hard coded data. Now, we want to work with Postgres to store data that a user might send to it. Clearly, we want to be able to do this so that our users can save data and come back to it later. 
+![screenshot](assets/01-mvc-test-one.png)
 
-Let's look at the flow of how this will work. 
+Notice that there is no database or models at this point.
+
+### Location
+We're going to be adding to our `testcontroller.js` file that we built in the back in our lessons on routing.
+```
+javascript-library
+    └── 5-Express Server
+        └── Server
+            └── controllers
+              └── testcontroller.js
+            └── models
+            └── app.js
+            └── db.js
+```
+
+<hr />
 
 ### Code
+
+Before proceeding, please clear out all previous test methods in `testcontroller.js`.  Add the following items to the file:
 
 ```js
 var express = require('express')
 var router = express.Router()
 var sequelize = require('../db');
-var TestModel = sequelize.import('../models/test'); //1
 
-      //2       //3           
+/****************************************
+ * Controller Method #1: Simple Response
+****************************************/
+      //1       //2           
 router.post('/one', function(req, res){
-  //4
-  res.send("Got a post request.") //5
+  //3
+  res.send("Got a post request.") 
 })
 ```
 
 <hr >
 
 ### Analysis
-1. Import the test model. This tells sequelize how much data the table requires and the data-types of each.
-2. The type of request we are sending. `POST` sends data to the database to be stored.
-3. The route we are using. This tells the database where we want to put our data.
-4. This will become the data we send in our request.
-5. The response once we're done. This will be sent to the client to tell the user whether or not the request was successful.
+1. We use the express router object to call the `post()` method. This corresponds to the type of HTTP request that we are sending. `POST` is telling the server that the incoming request has data coming with it. You use a POST request when you sign up for an application, send an email, send a tweet, post on a wall. POST sends data through HTTP to the server which might send the data to the database to be stored.
 
-### Challenge
-Use Postman to `POST` data to your database with the following route. Start your server with `nodemon`, then create a request. In this challenge, we aren't actually sending any data. We just want to see that we get the expected response back to test whether or not we can communicate with the database. Remember to select the `raw` and `application/json` options when sending the request.
+2. `one` will be the endpoint/route we are using. Our route will be named `http://localhost:3000/test/one`. After that we call a callback function which will fire off a response.
 
+3. When the client requests the given endpoint, we simply send a string in our  response.
+
+<hr />
+
+### Test
+Let's test this in Postman.
+1. Make sure your server is running.
+2. Open Postman.
+3. Enter the enpoint into the URL and press 'Send'.
+4. You should see the response:
+![screenshot](assets/01-postman.PNG)
