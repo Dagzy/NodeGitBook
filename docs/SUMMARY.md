@@ -73,7 +73,11 @@
             * [01 - SQL Basics](javascript_library/06-Express-Server/11-sql-intro/01-sql-basics.md)
         * [12 - Migrations]()
             * [00 - Intro](javascript_library/06-Express-Server/12-migrations/00-migrations-intro.md)
-            * [01 - Sample Migration](javascript_library/06-Express-Server/12-migrations/01-example-code.md)
+            * [01 - init and config](javascript_library/06-Express-Server/12-migrations/01-init-config.md)
+            * [02 - Creating the First Migration](javascript_library/06-Express-Server/12-migrations/02-first-migration.md)
+            * [03 - Running Migrations](javascript_library/06-Express-Server/12-migrations/03-running-migrations.md)
+            * [04 - Seeds](javascript_library/06-Express-Server/12-migrations/04-seeds.md)
+            * [05 - Running Seeds](javascript_library/06-Express-Server/12-migrations/05-running-seeds.md)
         * [13 - Workout Log Server]()
             * [00 - Intro](javascript_library/06-Express-Server/13-workoutlog-api/00-intro.md)
 
