@@ -99,4 +99,4 @@ In this module the following flow is happening:
 6. The object is sent and Postgres stores it. 
 7. The controller sends a response to Postman.
 
-There is a lot going on now, but we still need to iterate and add more routes to see how a full controller method would be built.
+There is a lot going on now, but we still need to iterate and add more endpoints, routes, and controller steps to see how a full controller method should be built.
