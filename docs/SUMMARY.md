@@ -76,8 +76,5 @@
             * [01 - Sample Migration](javascript_library/06-Express-Server/12-migrations/01-example-code.md)
         * [13 - Workout Log Server]()
             * [00 - Intro](javascript_library/06-Express-Server/13-workoutlog-api/00-intro.md)
-       
-       
-   
 
 <!-- * [Eleven Fifty Style Guide](StyleGuide/StyleGuide.md) -->
