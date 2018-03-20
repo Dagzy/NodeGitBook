@@ -65,10 +65,19 @@
             * [01 - CORS intro](javascript_library/06-Express-Server/09-middleware/01-middleware-intro.md)
             * [02 - Headers intro](javascript_library/06-Express-Server/09-middleware/02-headers.md)
             * [03 - App intro](javascript_library/06-Express-Server/09-middleware/03-app.md)
-        * [10 - SQL Fundamentals]()
-            * [00 - SQL Intro](javascript_library/06-Express-Server/10-sql-intro/00-sql-intro.md)
-            * [01 - SQL Basics](javascript_library/06-Express-Server/10-sql-intro/01-sql-basics.md)
-        * [11 - Migrations]()
+        * [10 - Authenticated Routes]()
+            * [00 - Intro](javascript_library/06-Express-Server/10-authenticated-routes/00-intro.md)
+            * [01 - Authenticated Routes](javascript_library/06-Express-Server/10-authenticated-routes/01-example.md)
+        * [11 - SQL Fundamentals]()
+            * [00 - SQL Intro](javascript_library/06-Express-Server/11-sql-intro/00-sql-intro.md)
+            * [01 - SQL Basics](javascript_library/06-Express-Server/11-sql-intro/01-sql-basics.md)
+        * [12 - Migrations]()
+            * [00 - Intro](javascript_library/06-Express-Server/12-migrations/00-intro.md)
+            * [01 - Sample Migration](javascript_library/06-Express-Server/12-migrations/01-example-code.md)
+        * [13 - Workout Log Server]()
+            * [00 - Intro](javascript_library/06-Express-Server/13-workoutlog-api/00-intro.md)
+       
+       
    
 
 <!-- * [Eleven Fifty Style Guide](StyleGuide/StyleGuide.md) -->

@@ -53,7 +53,9 @@ router.post('/one', function(req, res){
 
 2. `one` will be the endpoint/route we are using. Our route will be named `http://localhost:3000/test/one`. After that we call a callback function which will fire off a response.
 
-3. When the client requests the given endpoint, we simply send a string in our  response.
+3. When the client requests the given endpoint, we simply send a string in our response.
+
+KEY POINT: Notice that we are not yet talking to our model or database. We are simply sending an empty POST and sending back a string response. 
 
 <hr />
 
@@ -61,6 +63,8 @@ router.post('/one', function(req, res){
 Let's test this in Postman.
 1. Make sure your server is running.
 2. Open Postman.
-3. Enter the enpoint into the URL and press 'Send'.
-4. You should see the response:
+3. Open a new request. 
+4. Change the dropdown to POST.
+5. Enter the enpoint into the URL and press 'Send'.
+6. You should see the following response:
 ![screenshot](assets/01-postman.PNG)
