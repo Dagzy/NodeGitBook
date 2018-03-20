@@ -69,6 +69,7 @@
             * [00 - SQL Intro](javascript_library/06-Express-Server/10-sql-intro/00-sql-intro.md)
             * [01 - SQL Basics](javascript_library/06-Express-Server/10-sql-intro/01-sql-basics.md)
         * [11 - Migrations]()
+            * [00 - Migrations Intro](javascript_library/06-Express-Server/11-migrations/00-migrations-intro.md)
    
 
 <!-- * [Eleven Fifty Style Guide](StyleGuide/StyleGuide.md) -->
