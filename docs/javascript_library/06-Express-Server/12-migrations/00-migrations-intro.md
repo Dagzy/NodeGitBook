@@ -18,6 +18,7 @@ npm install -g pg
 
 These commands install sequelize, the sequelize-cli, and postgres on your computer, and the global installation allows access to them from anywhere. Anytime you install something to be used via the command line, you need to close the terminal window and re-open it to use what you've installed. After re-opening the window, type `sequelize` into the command line. You should see something like this: <br>
 ![SequlizeCLI](assets/sequelizeCLIinstall.png) <br>
+`sequelize` is the keyword for any of the commands described in this chapter, like `git` is used for git commands and actions. Any command used the rest of this chapter will need to start with `sequelize`. <br>
 If you see any errors, try running the above steps again. Once the cli is working, move on to the next module.
 
 ### Further Reading
