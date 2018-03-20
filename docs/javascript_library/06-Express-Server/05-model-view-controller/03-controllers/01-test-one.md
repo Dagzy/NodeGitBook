@@ -43,7 +43,7 @@ var sequelize = require('../db');
 router.post('/one', function(req, res){
   //3
   res.send("Got a post request.") 
-})
+});
 ```
 
 <hr >
@@ -65,6 +65,17 @@ Let's test this in Postman.
 2. Open Postman.
 3. Open a new request. 
 4. Change the dropdown to POST.
-5. Enter the enpoint into the URL and press 'Send'.
-6. You should see the following response:
+5. Enter the enpoint into the URL input field: `http://localhost:3000/test/one` 
+6. Press 'Send'.
+7. You should see the following response:
 ![screenshot](assets/01-postman.PNG)
+
+
+<hr />
+
+### Summary of the Flow
+In this module the following flow is happening:
+1. We make a POST request with Postman.
+2. The router sends that request to the `testcontroller`.
+3. The `testcontroller` method fires off a callback with a response.
+4. The callback sends back the response to Postman.
