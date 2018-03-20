@@ -56,3 +56,23 @@ Let's do some analysis of the code above. You do not need to memorize all of thi
 
 
 
+### app.js
+We also need to do some configuration in our `app.js` file.
+
+Do the following:
+1. Create a `sequelize` variable that imports the db file.
+2. Use the variable and call `.sync()`. This method will ensure that we sync all defined models to the DB.
+
+```js
+var express = require('express');
+var app = express();
+var test= require('./controllers/testcontroller')
+//1
+var sequelize = require('./db');
+
+//2
+sequelize.sync(); // tip: pass in {force: true} for resetting tables
+
+app.use('/test', test)
+
+```

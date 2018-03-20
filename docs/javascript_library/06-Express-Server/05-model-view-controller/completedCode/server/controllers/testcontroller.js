@@ -43,8 +43,6 @@ router.post('/three', function (req, res) {
   res.send("Test 3 went through!");
 });
 
-
-
 /*********************
  * 4: Return a Promise
  **********************/

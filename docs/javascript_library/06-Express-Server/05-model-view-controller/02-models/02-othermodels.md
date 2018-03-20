@@ -4,8 +4,6 @@ In this module we'll add two models that will be used in later in our project.
 
 <hr>
 
-TODO: TEST THESE
-
 ### USER MODEL
 
 ```js

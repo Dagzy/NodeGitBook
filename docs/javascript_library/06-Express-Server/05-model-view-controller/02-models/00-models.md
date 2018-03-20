@@ -9,6 +9,6 @@ Essentially, we will use models to define the data that we want to store. Essent
 
 ![screenshot](assets/01-sequelizepostgres.png)
 
-Again, you should see that our data model in the server will be very similar to the columns in the data table in Postgres. Sequelize handles a few timestamps for us.  
+Again, you should see that our data model in the server will be very similar to the columns in the data table in Postgres. Note that Sequelize handles a few timestamps for us.  
 
-Let's start learning how to configure this by building a test model. 
+Let's start learning how to configure this by building our own test model. 

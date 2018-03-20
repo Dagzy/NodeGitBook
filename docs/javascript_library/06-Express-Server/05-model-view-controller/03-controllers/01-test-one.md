@@ -1,12 +1,12 @@
 # Route Set up
 ---
 
-In the next few modules we will build a controller method and use it to POST data and persist it to our database.
+In the next few modules we will discuss how to build controller methods and use them to POST data and persist it to our database.
 
 <hr>
 
 ### POST
-So far, we've made GET requests with HTTP. We have made requests that ask the server to send us some hard coded data. Now, we want to work with Postgres to store data that a user might send to it. Clearly, we want to be able to do this so that our users can save data and come back to it later. 
+So far, in previous modules, we've made GET requests with HTTP. We have made requests that ask the server to send us some hard coded data. Now, we want to work with Postgres to store data that a user might send to it. Clearly, we want to be able to do this so that our users can save data and come back to it later. 
 
 Let's look at the flow of how this will work. 
 
