@@ -2,8 +2,9 @@ require('dotenv').config();
 
 var express = require('express');
 var app = express();
-var test = require('./controllers/testcontroller')
-var user = require('./controllers/usercontroller')
+var test = require('./controllers/testcontroller');
+var user = require('./controllers/usercontroller');
+
 var sequelize = require('./db');
 var bodyParser = require('body-parser');
 

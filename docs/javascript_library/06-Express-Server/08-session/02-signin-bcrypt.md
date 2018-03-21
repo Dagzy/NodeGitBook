@@ -38,6 +38,10 @@ router.post('/signin', function (req, res) {
 6. Print to the console if the password values match.
 7. Handle situations where matching isn't possible or user not found.
 
-Send another request to the `signin` route, but remember to include the password this time. We're not sending a response back yet when successful, so you'll know if worked if you see this in the console:
-![Success](assets/step3successConsole.png)
-
+### Test
+1. Fire up Postman.
+2. For the sake of clarity, let's be sure we can still create a new user:
+![screenshot](assets/02-create-user.PNG)
+3. Change the request endpoint to /signin instead of create and press send:
+![screenshot](assets/02-signin-user.PNG)
+4. It's important to note that the request body has stayed the same. Same user and same password as before. 

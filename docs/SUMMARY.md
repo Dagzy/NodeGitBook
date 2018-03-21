@@ -58,6 +58,8 @@
         * [08 - Session]()
             * [00 - Session Intro](javascript_library/06-Express-Server/08-session/00-session-intro.md)
             * [01 - Sign In Method](javascript_library/06-Express-Server/08-session/01-signinmethod.md)
+            * [02 - Sign In Bcrypt](javascript_library/06-Express-Server/08-session/02-signin-bcrypt.md)
+            * [03 - Sign In JWT](javascript_library/06-Express-Server/08-session/03-jwt.md)
         * [09 - Middleware]()
             * [00 - Test Client](javascript_library/06-Express-Server/09-middleware/00-test-client.md)
             * [01 - CORS intro](javascript_library/06-Express-Server/09-middleware/01-middleware-intro.md)

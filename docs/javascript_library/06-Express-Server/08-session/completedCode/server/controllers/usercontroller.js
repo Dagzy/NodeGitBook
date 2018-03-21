@@ -37,6 +37,10 @@ router.post('/createuser', function (req, res) {
 /***********************************
  * SIGNIN USER POST(See steps below)
 ************************************/
+
+/***************
+ * STEP 3: Completed Code
+****************/
 // router.post('/signin', function (req, res) {
 // 	User.findOne({ where: { username: req.body.user.username } }).then(
 // 		function (user) {
@@ -73,39 +77,16 @@ router.post('/createuser', function (req, res) {
 //  * STEP 1: signin
 // ********************/
 
-//7
-router.post('/signin', function(req, res) {
-            //1     //2       //3                                   //4
-	User.findOne( { where: { username: req.body.user.username } } ).then(
-    
-        //5
-        function(user) {
-            res.json(user);
-		},
-		//6
-		function(err) {
-			res.json(err);
-		}
-	);
-});
-
-module.exports = router;
-
-
-// /*************************** 
-//  * STEP 2: Match Conditional
-// ****************************/
-
-// router.post('/', function(req, res) {
+// //7
+// router.post('/signin', function(req, res) {
+//             //1     //2       //3                                   //4
 // 	User.findOne( { where: { username: req.body.user.username } } ).then(
-// 		function(user) {
-//             //1
-// 			if (user) {
-// 				console.log("User is a match!");
-// 			} else {
-// 				res.status(500).send({ error: "failed to authenticate" });
-// 			}
+    
+//         //5
+//         function(user) {
+//             res.json(user);
 // 		},
+// 		//6
 // 		function(err) {
 // 			res.json(err);
 // 		}
@@ -116,14 +97,12 @@ module.exports = router;
 
 
 // /******************* 
-//  * STEP 4: signin
+//  * STEP 2: BCRYPT
 // ********************/
-
 
 // router.post('/signin', function (req, res) {
 // 	User.findOne({ where: { username: req.body.user.username } }).then(
 // 		function (user) {
-// 			console.log("User:", user);
 // 			if (user) {
 // 				//1				//2						//3					//4
 // 				bcrypt.compare(req.body.user.password, user.passwordhash, function (err, matches) {
@@ -142,66 +121,37 @@ module.exports = router;
 // module.exports = router;
 
 
-
 // /******************* 
-//  * STEP 5: signin
+//  * STEP 3: JWT
 // ********************/
 
-// router.post('/signin', function (req, res) {
-// 	User.findOne({ where: { username: req.body.user.username } }).then(
-// 		function (user) {
-// 			console.log("User:", user);
-// 			if (user) {
-// 				bcrypt.compare(req.body.user.password, user.passwordhash, function (err, matches) {
-// 						//1
-// 					if (matches) {
-// 						//2				//3						//4				//5
-// 						var token = jwt.sign({ id: user.id }, "i_am_secret", { expiresIn: 60 * 60 * 24 });
-// 						console.log(token);
-// 					} else {
-// 						//6
-// 						res.status(500).send({ error: "you failed, yo" });
-// 					}
-// 				});
-// 			} else {
-// 				res.status(500).send({ error: "failed to authenticate" });
-// 			}
-// 		},
-// 		function (err) {
-// 			res.json(err);
-// 		}
-// 	);
-// });
+router.post('/signin', function(req, res) {
+	User.findOne( { where: { username: req.body.user.username } } ).then(
+		function(user) {
+			if (user) {
+				bcrypt.compare(req.body.user.password, user.passwordhash, function(err, matches){
+					if (matches) {
+						var token = jwt.sign({id: user.id}, process.env.JWT_SECRET, {expiresIn: 60*60*24 });
+						res.json({
+							user: user,
+							message: "successfully authenticated",
+							sessionToken: token
+						});
+					}else {
+						res.status(500).send({ error: "you failed, yo" });
+					}
+				});
+			} else {
+				res.status(500).send({ error: "failed to authenticate" });
+			}
+		},
+		function(err) {
+			res.json(err);
+		}
+	);
+});
 
-// module.exports = router;
+module.exports = router;
 
-// /******************* 
-//  * STEP 6: signin
-// ********************/
 
-// router.post('/signin', function (req, res) {
-// 	User.findOne({ where: { username: req.body.user.username } }).then(
-// 		function (user) {
-// 			if (user) {
-// 				bcrypt.compare(req.body.user.password, user.passwordhash, function (err, matches) {
-// 					if (matches) {
-// 						var token = jwt.sign({ id: user.id }, "i_am_secret", { expiresIn: 60 * 60 * 24 });
-// 							//1
-// 						res.json({
-// 							user: user, //2
-// 							message: "successfully authenticated", //3
-// 							sessionToken: token //4
-// 						});
-// 					} else {
-// 						res.status(500).send({ error: "you failed, yo" });
-// 					}
-// 				});
-// 			} else {
-// 				res.status(500).send({ error: "failed to authenticate" });
-// 			}
-// 		},
-// 		function (err) {
-// 			res.json(err);
-// 		}
-// 	);
-// });
+
