@@ -1,10 +1,19 @@
 # TOKEN CREATION
 ---
+In this module we'll discuss tokens and start creating tokens in our app.
 
-A token consists of three parts: The `header` (consists of the type of token and an algorithm to encode/decode), the `payload` (the data being sent via the token; in our case, the username and password), and a `signature` (used by the algorithm to encode/decode the token. Without the signature, the toke is useless). Go to the official [jwt](https://jwt.io/) website and play around first. You can create your own simulated token there to see how it works. When messing around, don't change anything in the header section because could potentially break the token. The other two can be changed however you'd like, though, and notice how the token changes when you do. <br>
+<hr />
 
-Now that you've seen how the token works, let's make one of our own.
-<hr>
+### Token Parts
+A token consists of three parts: 
+1. The `header` (consists of the type of token and an algorithm to encode/decode), 
+2. The `payload` (the data being sent via the token; in our case, the username and password)
+3. A `signature` (used by the algorithm to encode/decode the token. Without the signature, the toke is useless). 
+
+You don't have to dive deep now, maybe on your next iteration of learning, but you should at least go to the official [jwt](https://jwt.io/introduction/) website and look around. You can even create your own simulated token there to see how it works. The big takeaways are that there are heavy algorithms that make the token for you, and there are different parts of the token to learn about.<br>
+
+### The Code
+Let's go inside of the `usercontroller.js` file and into the `/createuser` POST method. Add the following code to the method:
 
 ```js
 router.post('/createuser', function (req, res) {
@@ -21,10 +30,11 @@ router.post('/createuser', function (req, res) {
     function createSuccess(user) {
         //1           //2     //3           //4               //5
       var token = jwt.sign({id: user.id}, "i_am_secret", {expiresIn: 60*60*24});
-      console.log(token); 
+
       res.json({
         user: user,
-        message: 'created' //6
+        message: 'created',
+        sessionToken: token //6
       });
     },
     function createError(err) {
@@ -37,17 +47,29 @@ module.exports = router;
 ```
 
 ### ANALYSIS
-[JWT Docs](https://github.com/auth0/node-jsonwebtoken). Take a look around here to see some of the functionality available. As for the above code:
+Let's walk through what we've added:
 1. Create a variable to hold the token.
 2. `.sign()` creates the token. It takes at least 2 parameters: the payload and the signature. You can also supply some specific options or a callback.
 3. This is the payload, or data we're sending. `user.id` is the primary key of the user table, and is number assigned to the user when created in the database.
-4. This is the signature, used to help encode and decode the token. You can make it anything you want.
+4. This is the signature, used to help encode and decode the token. You can make it anything you want, and we will make this private later.
 5. We set an option to make the token expire. Here, we're taking (seconds X minutes X hours); in other words, 1 day.
-6. Though we've created the token, we haven't actually added it to the object yet.
+6. We pass the value of the token back in our response. The server has now assigned a token to a specific user and the client will have that token to work with when we have a client.
 
 ### TESTING
-Run in Postman. You will not see the token in Postman response yet:
+1. Run in Postman:
 ![screenshot](assets/2-no-token-postman.PNG)
+ Notice that the token has come back as part of the response:
 
-You should see token in the console.
-![screenshot](assets/1-token-console.PNG)
+2. You should also check Postgres to be sure that the user has been added:
+![screenshot](assets/03-postgres-user.PNG)
+
+
+<hr />
+
+### Review
+1. When we create a user, the server will also create a token to send to the client. The server sends the token back to the client in the response. Most of the time, the client will store the token in localStorage, where it can be used in future requests. The token will be valid until it is removed or expired.
+
+<hr />
+
+# MAJOR SECURITY RISK
+At the moment, our signature, `"i_am_secret"`, is available for everyone in the world to see via github. This is extremely dangerous because there are robots and processes that scour public repositories looking for passwords and secret phrases. In our next module we'll discuss a way to help keep sensitive information like this hidden.

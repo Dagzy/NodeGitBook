@@ -1,12 +1,12 @@
 # USER CREATE ADDITIONS
 ---
 
-In this module we'll extend the user create controller method.
+In this module we'll refactor the user create controller method.
 
 <hr />
 
 ### Refactor
-Let's do a quick refactor. It's part of the game:
+Refactoring is just part of the game. We work in iterations. You write methods, you add to them, you take things away. In this chapter we don't have you rebuilding a POST controller method in seven steps like we did last time.  Let's do a quick refactor:
 
 ```js
 router.post('/createuser', function (req, res) {
@@ -52,85 +52,5 @@ Let's quickly test this iteration of the method with Postman.
 Check Postgres, too:
 ![screenshot](assets/02-postres-user.PNG)
 
-
-
-```js
-//STEP 4
-// router.post('/', function(req, res) {
-// 		var username = req.body.user.username;
-// 		var pass = req.body.user.password;
-// 		//Need to create a user object and use sequelize to put that user into
-
-// 		User.create({
-// 			username: username,
-// 			passwordhash: bcrypt.hashSync(pass, 10)
-// 		}).then(
-// 		//Sequelize is going to return the object it created from db.
-
-// 			function createSuccess(user){
-// 			    var token = jwt.sign({id: user.id}, "i_am_secret", {expiresIn: 60*60*24});
-
-// 				res.json({
-// 						user: user,
-// 						message: 'created',
-// 						sessionToken: token
-// 				});
-// 			},
-// 			function createError(err){
-// 				res.send(500, err.message);
-// 			}
-// 		);
-// 	});
-
-// module.exports = router;
-
-
-
-// // var router = require('express').Router();
-// var sequelize = require('../db.js');
-// var User = sequelize.import('../models/user');
-// var bcrypt = require('bcryptjs');
-// var jwt = require('jsonwebtoken');
-
-//Write the post method:
-// router.post('/', function(req, res){
-//     //1
-//     var username = req.body.user.username;
-//     var pass = req.body.user.password;
-// })
-
-//1 Explain how req.body is part of express.
-
-
-
-
-
-
-// router.post('/', function(req, res) {
-// 		var username = req.body.user.username;
-// 		var pass = req.body.user.password;
-// 		//Need to create a user object and use sequelize to put that user into
-
-// 		User.create({
-// 			username: username,
-// 			passwordhash: bcrypt.hashSync(pass, 10)
-// 		}).then(
-// 		//Sequelize is going to return the object it created from db.
-
-// 			function createSuccess(user){
-// 			    var token = jwt.sign({id: user.id}, "i_am_secret", {expiresIn: 60*60*24});
-
-// 				res.json({
-// 						user: user,
-// 						message: 'created',
-// 						sessionToken: token
-// 				});
-// 			},
-// 			function createError(err){
-// 				res.send(500, err.message);
-// 			}
-// 		);
-// 	});
-
-// module.exports = router;
-```
+### Next
+In the next module we'll add a token to the response. 
