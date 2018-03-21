@@ -1,4 +1,4 @@
-#TEST POST SEVEN
+# ERROR HANDLING
 ---
 In this module we'll write code that would handle errors, should something in our server go wrong. 
 
