@@ -2,7 +2,7 @@
 ---
 In this module we will add our token in with our sign in request.
 
-<hr>
+<hr />
 
 
 ### The Code
@@ -52,11 +52,13 @@ router.post('/signin', function(req, res) {
 2. Log in with a username and password that you know exist:
 ![screenshot](assets/03-signin-user.PNG)
 3. Try logging in with a user that doesn't exist or with a user exists with the wrong password:
-![fail](assets/step4fail.png)
+![fail](assets/03-sigin-fail.png)
 
 
 <hr />
 
 ### Quick Summary
 1. Here we've added bcrypt to compare passwords entered by the client with the password in the database. 
-2. If the log in is successful, 
+2. If the sign in is successful, we send a token back to the user.
+3. If the sign in is not successful, we send an authentication error.
+
