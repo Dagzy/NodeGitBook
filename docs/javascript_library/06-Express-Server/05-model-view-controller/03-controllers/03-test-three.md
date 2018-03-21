@@ -39,6 +39,7 @@ router.post('/three', function (req, res) {
 
 2. `create()` is a sequelize method. It creates a SQL statement that will insert our data into the database. You'll learn more about SQL later.
 
+<hr />
 
 ### body-parser
 In order to use the `req.body` middleware, we need to use a middleware package called `body-parser`. We installed this earlier. Go into `app.js` and add the following code:
@@ -96,3 +97,15 @@ app.listen(3000, function(){
 
 ![screenshot](assets/03-pg-admin.PNG)
 
+<hr />
+
+### Summary of the Flow
+In this module the following flow is happening:
+1. We make a POST request with Postman.
+2. `body-parser` breaks the request into JSON.
+3. The router sends the request to the `testcontroller`.
+4. The controller with the `/three` endpoint is called.
+5. The req.body.testdata.item is captured in the testData variable. 
+6. We then use the Sequelize `create()` method to create the object to be sent to the DB.
+7. The object is sent and Postgres stores it. 
+8. The controller sends a response to Postman.

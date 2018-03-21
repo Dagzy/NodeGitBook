@@ -5,7 +5,7 @@ In this chapter, we'll walk through several modules that will teach how to build
 
 <hr>
 
-### Software Pattern
+### The Model View Controller Software Pattern
  MVC is a common software pattern found in many programming languages and applications. Take a look at a diagram of MVC to start getting an idea of how it works:
 
 ![screenshot](assets/02-mvc.png)
@@ -23,13 +23,12 @@ It's good to think of the controller as something that handles the heavier logic
 5. Creating, updating, reading, or deleting objects in the database. 
 6. Sending off the response for the incoming request. 
 
-### MODELS
+### Models
 Coding models are usually considered to be just this: `representations of the data being handled`. Models can do the following:
 1. Represent the data being stored in the database. 
 2. Dictate the types of data that will be stored(string, boolean, integer)
 3. Handle some basic business logic in an application, for instance, character limit for a string being stored in the db, formatting for date and time details, and many other things that shape the data in the database.
 4. Used by the controller to handle logic.
-
 
 ### Endpoints & Routes
 As mentioned in a previous module, when an HTTP request comes in, it hits a route and finds the proper endpoint. When the router finds the proper endpoint, the proper controller method is fired, and the controller method handles any necessary logic. To practice learning about endpoints, controllers, and models, we'll be building the following endpoints in the modules ahead:

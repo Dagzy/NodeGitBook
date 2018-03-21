@@ -28,12 +28,14 @@ router.post('/four', function (req, res) {
 });
 
 ```
+<hr />
 
 ### Analysis
 Here are the updates that we've made:
 1. We call the `then()` method. As you'll read in the the MDN docs, the `then` method returns a Promise. Hence, we use this asynchronous function to force the message to wait for the insert statement to finish.
 2. The callback function will print the success message to the console.
 
+<hr />
 
 ### Testing
 Let's use Postman to test this:
@@ -57,8 +59,21 @@ Let's use Postman to test this:
 10. Press send.
 11. You should see the following
 ![screenshot](assets/04-postman.PNG)
-
 12. Let's also go to Postgres and make sure the data is there. To update the table, you can press the `Execute` button(the lightning bolt). 
 
 ![screenshot](assets/04-pg-admin.PNG)
+
+<hr />
+
+### Summary of the Flow
+In this module the following flow is happening:
+1. We make a POST request with Postman.
+2. `body-parser` breaks the request into JSON.
+3. The router sends the request to the `testcontroller`.
+4. The controller with the `/four` endpoint is called.
+5. The req.body.testdata.item is captured in the testData variable. 
+6. We then use the Sequelize `create()` method to create the object to be sent to the DB.
+7. The object is sent and Postgres stores it. 
+8. After the data is stored, we fire the `then()` method which returns a Promise.
+9. A method fires a response to Postman.
 

@@ -4,7 +4,6 @@ In this module we'll pass the request data back in our callback function
 
 <hr />
 
-
 ### Overview
 We now have a proper sequence, but the way we displayed the success message might not be what we want. We actually are probably going to want the data to be sent back to us after it's been saved in the db. The current response - `res.send("Step four");` is in no way really connected to the actual data. What if, for instance, we were saving an item to a To Do list? We would want the data to save, and then we would want to get it in our response. Let's pass some the data into the callback to provide a more detailed response to the user.
 
@@ -68,4 +67,20 @@ Let's use Postman to test this:
 13. You should also go to Postgres and make sure the data is there and that the `testdata` column matches the request and response:
 
 ![screenshot](assets/05-pg-admin.PNG)
+
+<hr />
+
+
+### Summary of the Flow
+In this module the following flow is happening:
+1. We make a POST request with Postman.
+2. `body-parser` breaks the request into JSON.
+3. The router sends the request to the `testcontroller`.
+4. The controller with the `/five` endpoint is called.
+5. The req.body.testdata.item is captured in the testData variable. 
+6. We then use the Sequelize `create()` method to create the object to be sent to the DB.
+7. The object is sent and Postgres stores it. 
+8. After the data is stored, we fire the `then()` method which returns a Promise.
+9. We call a method that takes in a parameter called testdata. It holds the response data.
+10. The method fires a response to Postman.
 

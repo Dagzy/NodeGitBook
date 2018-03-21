@@ -43,6 +43,19 @@ module.exports = router;
 ### Analysis
 1. The addition that we've made here is an error function. If the `create()` function returns an error, it will be picked up by the `createError()` method. That method will then send back a `500` error with a message. 
 
+<hr />
 
-
+### Summary of the Flow
+In this module the following flow is happening:
+1. We make a POST request with Postman.
+2. `body-parser` breaks the request into JSON.
+3. The router sends the request to the `testcontroller`.
+4. The controller with the `/five` endpoint is called.
+5. The req.body.testdata.item is captured in the testData variable. 
+6. We then use the Sequelize `create()` method to create the object to be sent to the DB.
+7. The object is sent and Postgres stores it. 
+8. After the data is stored, we fire the `then()` method which returns a Promise.
+9. We call a method that takes in a parameter called testdata. It holds the data for the response.
+10. The method sends the data back as JSON this time and the response goes to Postman.
+11. We also have an error for cases when our server throws an error.
 
