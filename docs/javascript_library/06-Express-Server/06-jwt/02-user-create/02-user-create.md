@@ -44,13 +44,13 @@ Let's quickly test this iteration of the method with Postman.
 1. Start your server then open Postman. 
 2. Figure out the endpoint to send a post request to. 
 3. Go to the body tab -> Choose Raw -> Change the dropdown to JSON.
-4. Enter the request body. {"user" : { "username": "kenn", "password":"linuxsirad" }}
+4. Enter the request body: `{"user" : { "username": "kenn", "password":"linuxsirad" }}`
 4. You should see the response string:
 ![screenshot](assets/02-postman.PNG)
 
 ### Postgres
 Check Postgres, too:
-![screenshot](assets/02-postres-user.PNG)
+![screenshot](assets/02-postgres-user.PNG)
 
 ### Next
 In the next module we'll add a token to the response. 

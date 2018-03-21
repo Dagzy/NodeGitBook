@@ -1,4 +1,4 @@
-#TEST POST FOUR
+# CRAFTING THE RESPONSE
 ---
 In this module we'll use the `then()` function to return a Promise for our request.
 
