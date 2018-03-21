@@ -3,7 +3,7 @@
     * [07 - Express Server]()
         * [00 - Intro ]()
             * [01 - Purpose](javascript_library/06-Express-Server/00-intro/01-purpose.md)
-            * [02 - Objectives](javascript_library/06-Express-Server/00-intro/02-set-up.md)
+            * [02 - Back-End Setup](javascript_library/06-Express-Server/00-intro/02-set-up.md)
             * [03 - Terms Cheat Sheet](javascript_library/06-Express-Server/00-intro/03-server-terms.md)
         * [01 - Server Set up]()
             * [01 - npm packages](javascript_library/06-Express-Server/01-server-setup/01-server-dependencies.md)

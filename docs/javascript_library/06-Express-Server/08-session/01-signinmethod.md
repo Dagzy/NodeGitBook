@@ -3,7 +3,6 @@
 In this module we'll start making the sign in method.
 
 <hr>
-
 ### The code
 Let's create our signin route. Add the following to the bottom of `usercontroller.js` file in `usercontroller.js`. Like the signup route, each step will keep building on top of the previous, until we have the finished product at the end.
 
