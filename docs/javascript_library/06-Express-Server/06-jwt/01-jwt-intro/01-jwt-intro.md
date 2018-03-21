@@ -1,27 +1,32 @@
 #JWT
 ---
+In this module we'll introduce JSON Web Token(JWT), sometimes referred to as Jot.
+
+<hr />
 
 ### What is JWT?
-JWT stands for **J**SON **W**eb **T**oken.
-TODO: JWT explain with diagram.... <br>
+JWT stands for **J**SON **W**eb **T**oken. It's an identifier to be added to the body of a request. So, when you send a request, you send a token with it. Let's look at a good analogy for how JWT works:
 
-### Another Way to Think About JWT
-Picture yourself going out to a bar to see a band. In order to get in and see this band, the bar is charging a $5 entry fee. You want to get in, but you don't want to pay. The doorman doesn't agree, and won't let you in. You try sneaking past, putting on a disguise, going around to backdoor, but you get caught every time. Finally you give in and pay the cover. The doorman smiles, stamps your hand, and waves you on through. You go in and the show starts, but you get a phone call and have to step outside. When you finish, the doorman looks at your hand and lets you in. It's a great show and the bar gets its money so everyone's happy! <br>
+You go to a venue to see a band. The venue is charging a $15 entry fee. You pay the fee, and then the doorman stamps your hand. You go in and the show starts.  Think of this as like signing up for an app, and your stamp is the token.
 
-This is a real-world version of using JWT. You are the client, the doorman is the server, the bar is the database, and the stamp is your token. If you try to get by the doorman without paying, you get shut out, just like trying to access something in the database that requires authentication. Paying the cover is like sending a request to the server for authentication, while getting stamp is receiving a successful response. The stamp lets you in the bar in the same way the token lets you into the protected section of a website or database.
+You leave the venue to get pizza and talk to your date. When you go back in, the doorman, who doesn't remember you at all, looks at your hand to see the stamp. When he sees it, he lets you in. That is what happens when you make another request in an app.
 
-### Why is it Useful?
-Think back to the idea of statelessness. Once a request is sent and a response is returned, both sides forget that either ever happened. It's like they never existed. <br>
+This is a real-world version of using JWT. You are the client, the venue is the server, and the stamp on your hand is the token. The doorman won't let you in without paying or a stamp. The app won't let you in without signing up or having a token with your request. And just like a stamp that will wash away in a few days, the JSON token will wear off in a certain amount of time. This time is decided by the developer. 
 
-Imagine the scenario with the bar again, but this time there's no stamp. You pay the doorman the cover, he checks your id, and then writes your name down on a list. When you get that phone call and go back outside, however, you don't have anything to show the doorman that you've already paid. He has to check your name against his list before he lets you in. He has a large list, though, so it takes some time. And this is after you've waited behind 15 other people doing the same thing. Then you get another call and have to go back outside and do it again! The stamp sounds pretty good about now, huh?<br>
+### Statelessness Review
+The token deals with the issue of statelessness in HTTP. Think back to the idea of statelessness. Once a request is sent and a response is returned, both sides forget that the other side exists. The client forgets the server, and the server forgets the client. Once you walk into the music venue, the doorman forgets you. If you come back out, you can't get back in without the stamp. This is statelessness.
 
-Statelessness is great for transferring information, but the fact that nothing is retained really hampers security and loading times. The token allows for some bits of information to be packaged together, freeing up space inside the request for other information. It also saves time assembling each request, as there's less that actually has to be crammed in. <br>
 
-While this might seem trivial and that a miniscule amount of time and space are saved, think back to the doorman with the list. Having to check that list every time for every person starts to add up over time. Eventually, you'll have people that miss the entire show because they spend the whole night outside in line, waiting to get in. Any little bit of savings is multiplied exponentially, making that savings worth it.
+### Authenticated Request
+We use a token for authenticated requests, that is when a user has to be authenticated(logged in) to do CRUD type stuff:
+* a user saves a note.
+* a user looks at a friends tweet
+* a user direct messages a friend.
+* a user loads up a bingeworthy Netflix show on their account and a record of that is stored in their parents' account because they are still freesharing. 
+
+These requests require tokens if the user is logged in. They are authenticated requests.
 
 ### Token vs. Cookie
-Most people have heard of cookies before. While they both store information, cookies and tokens have some fundamental differences. While the token is *stateless*, a cookie is *stateful*, meaning it keeps records of previous transactions. A cookie is information from a web page that is actually stored on a machine, while the token is stored in the browser. A cookie is checked once when opening a connection and destroyed when closing the connection; a token is validated with every request. Cookies also have a much longer expiration date and contain far more information than tokens. Finally, a the information in a cookie is created solely by the developer, whereas a token's information is created by the program according to some sort of algorithm. Some comparisons and evaluations of the differences between cookies and tokens can be found in the links below.
+It's important to know about the difference between a token and a cookie, and it's drifting out side of our scope right now. We will say that we are using token-based authentication. However, the cookie and token talk is necessary reading for you. Here's a required [article.](https://auth0.com/blog/cookies-vs-tokens-definitive-guide/)
 
-### Further Reading
-[https://auth0.com/blog/cookies-vs-tokens-definitive-guide/](https://auth0.com/blog/cookies-vs-tokens-definitive-guide/) <br>
-[https://stackoverflow.com/questions/17000835/token-authentication-vs-cookies](https://stackoverflow.com/questions/17000835/token-authentication-vs-cookies)<br>
+And a [Stack Overflow](https://stackoverflow.com/questions/17000835/token-authentication-vs-cookies) post.
