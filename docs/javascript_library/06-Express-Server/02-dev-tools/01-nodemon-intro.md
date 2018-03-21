@@ -1,6 +1,6 @@
-#NODEMON
+# NODEMON INTRO
 ---
-In this module we'll set up Nodemon for allowing us to more easily make changes to our server code.
+In this module, we'll set up Nodemon for allowing us to more easily make changes to our server code.
 
 <hr />
 
@@ -9,24 +9,22 @@ When you make a change to code on the client side, you just have to refresh the 
 
 <hr />
 
-### Set up 
+### Setup 
 
 1. In any directory, run `npm install -g nodemon`. This installs Nodemon globally on your machine. 
-2. Go into the server directory, where the `package.json` file is visible,  run `npm install --save-dev nodemon`. This saves Nodemon to your `devDependenies` in `package.json`.
-3. Still in the server directory, run `nodemon app.js`. This should start the server up. 
-
-![nodemon](assets/nodemon.png)
-
+2. Go into the server directory (where the `package.json` file is visible)  run `npm install --save-dev nodemon`. This saves Nodemon to your `devDependenies` in `package.json`.
+3. Still in the server directory, run `nodemon app.js`. This should start the server up. You should see the screenshot below.
 4. The app is now running. You can stop the app with `ctrl + c`.
-5. Practice running the app with Nodemon by starting it back up with the command. You can push up arrow in your terminal to get it back quickly.  
-6. With the server running and with nodemon started, change the console.log statement in `app.js` to a new phrase. Try this:
+5. Practice running the app with Nodemon by starting it back up with the command. You can push up arrow while in your terminal to get it back quickly.  
+6. With the server running and with Nodemon started, change the console.log statement in `app.js` to a new phrase. Try using the code block below.
+7. Press save. `nodemon` should fire back up, and you should see the new `console.log()` statement in your terminal.
 
+Screenshot for #3: <br>
+![nodemon](assets/nodemon.png) <br>
+
+Codeblock for #6: <br>
 ```js
 app.listen(3000, function(){
 	console.log('Hey man!!!')
 });
 ```
-
-7. Press save. `nodemon` should fire back up. 
-
-
