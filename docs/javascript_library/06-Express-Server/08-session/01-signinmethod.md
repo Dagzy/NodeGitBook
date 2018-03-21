@@ -1,7 +1,7 @@
 ### SIGN IN
 ---
 
-Let's create our signin route. Add the following to your bottom of `user.js` file in `routes`. Like the signup route, each step will keep building on top of the previous, until we have the finished product at the end.
+Let's create our signin route. Add the following to your bottom of `user.js` file in `controllers`. Like the signup route, each step will keep building on top of the previous, until we have the finished product at the end.
 ```js
 router.post('/signin', function(req, res) {
 
@@ -113,8 +113,9 @@ router.post('/signin', function (req, res) {
 3. If the passwords don't match, we send a response telling the client that the passwords don't match.
 
 Run two requests in Postman, one successful and one unsuccessful. You should see the following: <br>
-Success <br>
-![success](assets/step4success.png)
+Successful <br>
+![success](assets/step4success.png) <br>
+Unsuccessful <br>
 ![fail](assets/step4fail.png)
 
 ### STEP FIVE

@@ -1,6 +1,6 @@
 # FILE STRUCTURE
 ---
-In this module we'll set up our file structure for our Server. 
+In this module, we'll set up our file structure for our Server. 
 
 <hr >
 
@@ -17,11 +17,7 @@ Create the following folders and files in your JavaScript library:
 
 ### .gitignore
 
-1. Add `node_modules/` to your `.gitignore`. Again, anytime you work with npm packages, it's best practice to include this in your `.gitignore`. If you forget, hundreds or thousands of extra, unnecessary files will be pushed to your Github repository. <br>
-Simply add the following to the `.gitignore` file:
-
-```
-node_modules/
-```
+1. Add `node_modules/` to your `.gitignore`. Again, anytime you work with npm packages, it's best practice to include this in your `.gitignore`. If you forget, hundreds or thousands of extra, unnecessary files will be pushed to your GitHub repository. <br>
+Simply add the following to the `.gitignore` file: `node_modules/`
 
 2. `app.js` can be left blank for now.
