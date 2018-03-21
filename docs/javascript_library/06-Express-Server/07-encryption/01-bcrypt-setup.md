@@ -6,22 +6,7 @@ In this module we'll set up `bcrypt.js` in our application.
 <hr/>
 
 ### Import
-First, install the bcrypt package. Let's go ahead and add it to our `package.json` file and run `npm update`:
-
-```js
-"dependencies": {
-    "bcryptjs": "^2.4.3", //<----- ADD THIS
-    "body-parser": "^1.18.2",
-    "dotenv": "^5.0.1",
-    "express": "^4.13.4",
-    "jsonwebtoken": "^8.2.0",
-	"pg": "^7.4.1",
-    "pg-hstore": "^2.3.2",
-    "sequelize": "^4.37.0"
-  }
-
-```
-Once installed, we have to add it to the database. Just like with `jwt`, create a new variable. For its declaration, use the `require` statement for `bcryptjs`.
+We already have the `bcryptjs` package in our `package.json` file. Once installed, we have to add it to the database. Just like with `jwt`, create a new variable. For its declaration, use the `require` statement for `bcryptjs`.
 
 ```js
 var router = require('express').Router();
@@ -32,14 +17,8 @@ var jwt = require('jsonwebtoken');
 
 ```
 
-
-### Examining bcrypt.hashSync()
-[bcryptjs Docs](https://github.com/dcodeIO/bcrypt.js) <br>
-TODO: Point to the bcrypt docs and show `hashSync` <br>
-TODO: Discuss hashing. There are screenshots in the original docs. 
-
 ### Adding bcrypt
-Implement bcrypt into the create:
+Let's add bcrypt into the create method with the `pass` value for the `passwordhash` property:
 ```js
 router.post('/', function(req, res) {
 		var username = req.body.user.username;
@@ -67,14 +46,20 @@ router.post('/', function(req, res) {
 module.exports = router;
 ```
 
+### Examining bcrypt.hashSync()
+Here's a short diagram to give you an overview:
+![screenshot](assets/03-bcrypt-diagram.png)
+
+We're adding the `hashSync()` function to our new User object so that we don't store the password in a format that is easy to read. We supply the original password and tell bcrypt to use the salt 10 times.
+
+Like JWT, there is a lot more to know and do with bcrypt. We are giving you enough to get started, but it would be wise to take a look through the [bcryptjs Docs](https://github.com/dcodeIO/bcrypt.js).
+
 ### POSTMAN
 Test in Postman. 
 ![screenshot](assets/01-bcrypt-success.PNG)
 
-Test in 
+Test in Postgres:
 ![screenshot](assets/02-bycrpt-postgres-view.PNG)
 
-### Analysis
-We're adding the `hashSync` function to our new User object so that we don't store the password in a format that is easy to read. We supply the original password and tell bcrypt to use the salt 10 times. The resulting hash value can be seen both screenshots above. <br>
-
+### Conclusion
 At the moment, we have the ability to add new users to our database. Unfortunately, those users currently do not have a way back in after the initial signup, which defeats the purpose of having an account. In the next chapter, we'll setup a login route for existing users to access the database with their credentials.
