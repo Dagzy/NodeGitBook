@@ -6,6 +6,10 @@ var TestModel = sequelize.import('../models/test');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 
+
+/*********************
+ * CREATE USER POST
+**********************/
 router.post('/createuser', function (req, res) {
 	var username = req.body.user.username;
 	var pass = req.body.user.password;
@@ -30,65 +34,33 @@ router.post('/createuser', function (req, res) {
 });
 
 
-
-router.post('/signin', function (req, res) {
-	User.findOne({ where: { username: req.body.user.username } }).then(
-		function (user) {
-			console.log("User:", user);
-			if (user) {
-				console.log("User", user);
-				bcrypt.compare(req.body.user.password, user.passwordhash, function (err, matches) {
-					console.log(matches);
-					if (matches) {
-						var token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: 60 * 60 * 24 });
-						res.json({
-							user: user,
-							message: "successfully authenticated",
-							sessionToken: token
-						});
-					} else {
-						res.status(500).send({ error: "you failed, yo" });
-					}
-				});
-			} else {
-				res.status(500).send({ error: "failed to authenticate" });
-			}
-		},
-		function (err) {
-			res.json(err);
-		}
-	);
-});
-
-module.exports = router;
-
-
-
-
-/******************* 
- * STEP 1: SIGN IN USER
-********************/
-
-//2
-// router.post('/signin', function(req, res) {
-
-// });
-
-
-// /******************* 
-//  * STEP 2: signin
-// ********************/
-
-
-// router.post('/signin', function(req, res) {
-//             //1     //2       //3                                   //4
-// 	User.findOne( { where: { username: req.body.user.username } } ).then(
-    
-//         //6
-//         function(user) {
-//             console.log(user);
+/***********************************
+ * SIGNIN USER POST(See steps below)
+************************************/
+// router.post('/signin', function (req, res) {
+// 	User.findOne({ where: { username: req.body.user.username } }).then(
+// 		function (user) {
+// 			console.log("User:", user);
+// 			if (user) {
+// 				console.log("User", user);
+// 				bcrypt.compare(req.body.user.password, user.passwordhash, function (err, matches) {
+// 					console.log(matches);
+// 					if (matches) {
+// 						var token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: 60 * 60 * 24 });
+// 						res.json({
+// 							user: user,
+// 							message: "successfully authenticated",
+// 							sessionToken: token
+// 						});
+// 					} else {
+// 						res.status(500).send({ error: "you failed, yo" });
+// 					}
+// 				});
+// 			} else {
+// 				res.status(500).send({ error: "failed to authenticate" });
+// 			}
 // 		},
-// 		function(err) {
+// 		function (err) {
 // 			res.json(err);
 // 		}
 // 	);
@@ -97,10 +69,32 @@ module.exports = router;
 // module.exports = router;
 
 
-
 // /******************* 
-//  * STEP 3: signin
+//  * STEP 1: signin
 // ********************/
+
+//7
+router.post('/signin', function(req, res) {
+            //1     //2       //3                                   //4
+	User.findOne( { where: { username: req.body.user.username } } ).then(
+    
+        //5
+        function(user) {
+            res.json(user);
+		},
+		//6
+		function(err) {
+			res.json(err);
+		}
+	);
+});
+
+module.exports = router;
+
+
+// /*************************** 
+//  * STEP 2: Match Conditional
+// ****************************/
 
 // router.post('/', function(req, res) {
 // 	User.findOne( { where: { username: req.body.user.username } } ).then(

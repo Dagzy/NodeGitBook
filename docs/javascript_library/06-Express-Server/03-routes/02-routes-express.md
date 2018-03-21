@@ -31,6 +31,9 @@ router.get('/', function (req, res) {
     //7
   res.send('Hey!!! This is a test route!')
 });
+
+//8
+module.exports = router;
 ```
 
 ### Analysis
@@ -44,6 +47,7 @@ The `Router()` method will return a `route` object for us. You can read about it
 5. The first argument is the path. In this case, the path is just a `/`. More on this later.
 6. The second argument is a callback function. This is also sometimes called a “handler function”. This function gets called when the application receives a request to the specified route and HTTP method. The application “listens” for requests that match the specified route(s) and method(s), and when it detects a match, it calls the specified callback function.
 7. Inside our callback function we call `res.send()`. `send()` is an express method that can be called on the `res` or response object. Our response parameter is just a simple string. 
+8. We export the module for usage outside of the file.
 
 <hr >
 

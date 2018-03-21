@@ -1,6 +1,10 @@
 # SESSION
 ---
+In this module we'll discuss the concept of a session.
 
+<hr>
+
+### Scenario
 Picture the following situation: You just signed up for a new email account. You've already given the new account to everyone you know and have deleted the old one. When you try to login, however, you discover that there's no ability to access the account after it's created, so you can't access your new email! THE HORROR!!! <br>
 That might be a bit over-dramatic, but the point stands: It's not worth signing up for something if you can't get back into it later. As mentioned previously, the only way to get into the database right now is to sign up a new user. Let's fix that.
 

@@ -1,18 +1,15 @@
 ### SIGN IN
 ---
+In this module we'll start making the sign in method.
 
-Let's create our signin route. Add the following to your bottom of `user.js` file in `routes`. Like the signup route, each step will keep building on top of the previous, until we have the finished product at the end.
+<hr>
+
+### The code
+Let's create our signin route. Add the following to the bottom of `usercontroller.js` file in `usercontroller.js`. Like the signup route, each step will keep building on top of the previous, until we have the finished product at the end.
+
 ```js
+		//7
 router.post('/signin', function(req, res) {
-
-});
-
-```
-
-### `findOne()`
-The following code goes inside the empty `signin` route. Add it and we'll talk about what it's doing in a moment.
-```js
-router.post('/', function(req, res) {
             //1     //2       //3                                   //4
 	User.findOne( { where: { username: req.body.user.username } } ).then(
     
@@ -29,17 +26,20 @@ router.post('/', function(req, res) {
 
 ```
 ### Analysis
-1. `findOne` is sequelize method that does exactly what it says: it tries to find something within the database that we tell it to look for. It returns a promise.
-2. `Where` is a object within sequelize that tells the database to look for something matching its properties.
+1. The `findOne()` method is a sequelize method that does exactly what it says: it tries to find something within the database that we tell it to look for. This is called Data retrieval. Check out the Sequelize docs [here](http://docs.sequelizejs.com/manual/tutorial/models-usage.html).
+2. `where` is an object within sequelize that tells the database to look for something matching its properties.
 3. We're looking in the `username` column in the `user` table for something that matches the value passed from the client.
 4. The promise is handled within `.then()`.
 5. Function called when the promise is resolved. We print the user to the console.
 6. Function called when the promise is rejected. We print the error to the console. 
 
-### Postman
-Start your server and open Postman. Send a request to the `login` route with the username of of one of the users in your database. You should see the user object print to the console. <br>
+### Test
+Start your server and open Postman. Send a request to the `signin` route with the username of one of the users in your database. This needs to be a user that you've already created.  You should see the user object print to the console:
+![screenshot](assets/01-sigin-user.PNG)
+
+ <br>
 Send another request, this time with a user not in the database. You should see something like this:
-![Fail](assets/signinFail.png) <br>
+![Fail](assets/01-signin-no-user.png) <br>
 
 ### STEP THREE
 At the moment, we're only checking that the username matches something in the database. This would be a giant security issue, as the password provided isn't even needed! The following code goes in the function to resolve the promise. Enter it in and we'll talk after.
