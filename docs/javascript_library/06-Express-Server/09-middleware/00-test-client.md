@@ -1,10 +1,13 @@
 # TEST CLIENT
-Just based on the name, you can assume that middleware functions between things, in this case the client and the server. We've been working on our server this whole time, but we don't have a client. Let's build a simple client that we can use to test things later
+---
+In this module we're going to set up a Test Client for testing our requests. 
+
+<hr />
 
 ### File Structure
 ```
     └── 7-Express Server
-            └── Server
+            └── server
             └── client
                 └── index.html
                 └── scripts.js
@@ -12,7 +15,8 @@ Just based on the name, you can assume that middleware functions between things,
 <hr>
 
 ### index.html
-Copy the following code into the `index.html` file. Before we talk further about it, use what you learned previously about client-side programming and see if you can guess what this code is doing. Don't take more than a couple of minutes; no need to get stuck in a rut over this.
+Copy the following code into the `index.html` file. Before we talk more about it, use what you learned previously about client-side programming and see if you can guess what this code is doing:
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -39,7 +43,7 @@ Copy the following code into the `index.html` file. Before we talk further about
 You can see that we aren't doing too much here. We have 3 `<p>` elements, each with a `<button>` that calls a different function when clicked. Each of the `<p>` elements have an id attribute so that we can access them later. Our js file is linked at the bottom, but since we don't really care what this looks like, we don't have any css file linked. You should see this when you open the page in your browser: <br> ![this](assets/testclient.png) <hr>
 
 ### scripts.js
-Enter the following code into the `scripts.js` file. Like before, see if you can guess what this code is doing. We'll talk about it in a minute.
+Enter the following code into the `scripts.js` file. We'll talk about it in a minute.
 
 ```js
 function fetchHelloDataFromAPI() {
