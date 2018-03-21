@@ -72,7 +72,7 @@ app.use('/test', test)
 2. We call `app.use` and in the first parameter we create a base url called `/test`. So our base url will look like this:
 `http://localhost:3000/test`
 3. For our second parameter for the `use()` function, we pass in `test`. This means that all routes created in the `testcontroller.js` file will be sub-routes. It will look like this:
-`http://localhost:3000/testroutes` or `http://localhost:3000/testroutes/`
+`http://localhost:3000/test` or `http://localhost:3000/test/`
 
 <hr>
 
@@ -81,7 +81,7 @@ Let's test this now to get a better understanding.
 1. Run the application using `nodemon app.js`.
 2. Open Postman.
 3. In the url link, add the following route into the Request URL bar:
-`http://localhost:3000/testroutes/`
+`http://localhost:3000/test/`
 
 4. Make sure that you have the request set to a GET request and press SEND. When you send, you should get a response like this:
 ![screenshot](assets/01-testroute.PNG)
