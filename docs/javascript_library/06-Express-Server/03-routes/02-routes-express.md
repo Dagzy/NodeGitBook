@@ -31,6 +31,9 @@ router.get('/', function (req, res) {
     //7
   res.send('Hey!!! This is a test route!')
 });
+
+//8
+module.exports = router;
 ```
 
 ### Analysis
@@ -44,6 +47,7 @@ The `Router()` method will return a `route` object for us. You can read about it
 5. The first argument is the path. In this case, the path is just a `/`. More on this later.
 6. The second argument is a callback function. This is also sometimes called a “handler function”. This function gets called when the application receives a request to the specified route and HTTP method. The application “listens” for requests that match the specified route(s) and method(s), and when it detects a match, it calls the specified callback function.
 7. Inside our callback function we call `res.send()`. `send()` is an express method that can be called on the `res` or response object. Our response parameter is just a simple string. 
+8. We export the module for usage outside of the file.
 
 <hr >
 
@@ -68,7 +72,7 @@ app.use('/test', test)
 2. We call `app.use` and in the first parameter we create a base url called `/test`. So our base url will look like this:
 `http://localhost:3000/test`
 3. For our second parameter for the `use()` function, we pass in `test`. This means that all routes created in the `testcontroller.js` file will be sub-routes. It will look like this:
-`http://localhost:3000/testroutes` or `http://localhost:3000/testroutes/`
+`http://localhost:3000/test` or `http://localhost:3000/test/`
 
 <hr>
 
@@ -77,7 +81,7 @@ Let's test this now to get a better understanding.
 1. Run the application using `nodemon app.js`.
 2. Open Postman.
 3. In the url link, add the following route into the Request URL bar:
-`http://localhost:3000/testroutes/`
+`http://localhost:3000/test/`
 
 4. Make sure that you have the request set to a GET request and press SEND. When you send, you should get a response like this:
 ![screenshot](assets/01-testroute.PNG)
