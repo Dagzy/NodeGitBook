@@ -57,7 +57,7 @@ Let's walk through what we've added:
 
 ### TESTING
 1. Run in Postman:
-![screenshot](assets/2-no-token-postman.PNG)
+![screenshot](assets/03-postman-token.PNG)
  Notice that the token has come back as part of the response:
 
 2. You should also check Postgres to be sure that the user has been added:

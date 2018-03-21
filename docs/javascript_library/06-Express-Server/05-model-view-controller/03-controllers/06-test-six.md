@@ -1,4 +1,4 @@
-#TEST POST SIX
+# RETURNING JSON IN THE RESPONSE
 ---
 In this module we'll return the response as JSON instead of a simple string. 
 
