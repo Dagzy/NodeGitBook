@@ -1,13 +1,22 @@
 #TEST POST SIX
 ---
+In this module we'll return the response as JSON instead of a simple string. 
 
-Up to this point we've been printing all our results to the console. This time, we're going to actually return a response to the client. `console.log`s are great for testing purposes, but the client can't actually do anything with them.
+<hr />
+
+### Overview
+We now have a proper sequence and a response with some of the stored data, but what if we want to know when the data was stored? We have that in the information in the database, and currently it is not coming back in the response. How do we do that? Let's look.
+
 <hr>
 
-```js
+### The Code
+Go into the `testcontroller.js` file and add the following method. Add it to the bottom of the file, but above the export statement. 
 
-//STEP 6 - Use this with Postman
-router.post('/test/six', function (req, res) {
+```js
+/*********************
+ * Route 6: Return response as JSON
+ **********************/
+router.post('/six', function (req, res) {
   var testData = req.body.testdata.item;
   TestModel
     .create({
@@ -15,27 +24,46 @@ router.post('/test/six', function (req, res) {
     })
     .then(
       function message(testdata) {
-        //send a response as json
-        res.json({ //1 //2
-          testdata: testdata //3
+        res.json({ //1
+          testdata: testdata  //2
         });
-        console.log("step six"); //4
       }
     );
 });
-
 ```
-
-
-
 <hr >
 
 ### Analysis
-1. Previously, you've seen Postman get stuck on "Waiting for response". Now that we're actually sending a response, it can do something with it, rather than get stuck waiting forever.
-2. Just like the API `fetch`, we use the `json()` method to turn the response into a JSON object that can be displayed by the client.
-3. The same object that was added to the database is now being sent back to the client.
-4. This `console.log()` still prints regardless of the result of the request, but it prints AFTER a response is received.
+1. In our callback, rather than `res.send()`, we will invoke the `.json()` method. This will, of course, package our response as json.
+3. The same object that was added to the database is now being sent back to the client and stored in a `testdata` property.
 
-### Challenge
-Send your request to the new route. You should receive a response in Postman that looks like ![this](../assets/06-responsedata6.png) <br>
-Go back to your database and refresh it. It should now look like ![this](../assets/06-testdata6.png)
+<hr >
+
+### Testing
+Let's use Postman to test this:
+1. Make sure your server is running.
+2. Open Postman.
+3. Open a new request. 
+4. Change the dropdown to POST.
+5. Enter the endpoint into the URL: `http://localhost:3000/test/six`.
+6. Click on the body tab under the url input field.
+7. Choose the `raw` radio button. 
+8. In the dropdown choose `JSON (application/json)`.
+9. In the empty space add a JSON object like the one below:
+
+```json
+{
+    "testdata":{
+        "item":"step 6"
+    }
+}
+```
+10. Press send.
+11. You should see the following:
+![screenshot](assets/06-postman.PNG)
+
+12. Notice that the data in the response matches the data in the request, but we are also getting back a full JSON object from the database, including timestamp data. 
+13. You should also go to Postgres and make sure the data is there and that the `testdata` column matches the request and response:
+
+![screenshot](assets/06-pg-admin.PNG)
+

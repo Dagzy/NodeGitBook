@@ -44,6 +44,8 @@ router.post('/one', function(req, res){
   //3
   res.send("Got a post request.") 
 });
+
+module.exports = router;
 ```
 
 <hr >
@@ -65,7 +67,7 @@ Let's test this in Postman.
 2. Open Postman.
 3. Open a new request. 
 4. Change the dropdown to POST.
-5. Enter the enpoint into the URL input field: `http://localhost:3000/test/one` 
+5. Enter the endpoint into the URL input field: `http://localhost:3000/test/one` 
 6. Press 'Send'.
 7. You should see the following response:
 ![screenshot](assets/01-postman.PNG)

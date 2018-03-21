@@ -1,13 +1,22 @@
 #TEST POST SEVEN
 ---
+In this module we'll write code that would handle errors, should something in our server go wrong. 
 
-So far we've been assuming that our data is correctly entered into the database every time. Unfortunately, as well all know, things don't work that way, and inevitably something will go wrong. We need to create a fallback process to handle a failure.
+<hr />
+
+### Overview
+What about the idea of a network problem as we're making our request? We make the request, the network drops, and the response never comes. What if something is wrong with our server code? We're going to need to create a function that handles such errors. 
+
 <hr>
 
+### The Code
+Go into the `testcontroller.js` file and add the following method. Add it to the bottom of the file, but above the export statement. 
 
 ```js
-
-router.post('/test/seven', function (req, res) {
+/*********************
+ * Route 7: Handle errors
+ **********************/
+router.post('/seven', function (req, res) {
   var testData = req.body.testdata.item;
 
   TestModel
@@ -15,30 +24,25 @@ router.post('/test/seven', function (req, res) {
       testdata: testData
     })
     .then(
-      function createSuccess(testdata) { //1
-        //send a response as json
+      function createSuccess(testdata) {
         res.json({
           testdata: testdata
         });
-        console.log("step seven");
 
       },
-      function createError(err) { //2  //3
-        res.send(500, err.message); //4
+      function createError(err) { //1
+        res.send(500, err.message);
       }
     );
 });
+
+module.exports = router;
 ```
-
-
 <hr >
 
 ### Analysis
-1. Since we now have two functions returning a message, we change the name of the first to show that it fires upon success.
-2. Our new function fires only if something goes wrong.
-3. If we encounter a failure, the database will send back an error message. This is passed into our function as a parameter.
-4. The response for our failure can be customized however we like. Generally, this response is a numerical code followed by the error message from the database.
+1. The addition that we've made here is an error function. If the `create()` function returns an error, it will be picked up by the `createError()` method. That method will then send back a `500` error with a message. 
 
-### Challenge
-When entering data into a database, the most common reason for failure is that the object trying to be added does not match the model. Change your data in Postman to an object. You should receive something like ![this](../assets/07-test7fail.png) <br>
-Try to cause a failure in other ways. What do you see then? 
+
+
+

@@ -13,11 +13,9 @@ Don't be overwhelemed. Notice that we've added usage of our model and our databa
 
 <hr>
 
-### Controller Method Two
-Now that we know a POST route works, let's add in our model and our database. 
 
 ### Code
-Let's write another controller method. This time you'll need to import the `test.js` model. You'll put the next controller method underneath the first one:
+Now that we know a POST route works, let's add in our model and our database in another controller method. This time you'll need to import the `test.js` model. You'll put the next controller method underneath the first one:
 ```js
 var express = require('express')
 var router = express.Router()
@@ -44,6 +42,8 @@ router.post('/test/two', function (req, res) {
     })
   console.log("Test two went through.")
 });
+
+module.exports = router;
 ```
 
 ### Analysis
@@ -69,7 +69,7 @@ Let's test this code in Postman, and do some more work that should clarify this 
 2. Open Postman.
 3. Open a new request. 
 4. Change the dropdown to POST.
-5. Enter the enpoint into the URL: `http://localhost:3000/test/two`
+5. Enter the endpoint into the URL: `http://localhost:3000/test/two`
 6. Press 'Send'.
 7. You should see the following response:
 ![screenshot](assets/02-postman.PNG)

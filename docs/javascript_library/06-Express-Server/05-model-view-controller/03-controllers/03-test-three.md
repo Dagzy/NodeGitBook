@@ -4,19 +4,19 @@ In this module we'll set up our Express application so that it can take incoming
 
 <hr />
 
-
 ### Overview
 Hopefully, your model works, and you were able to put something in the database. That's great, but if we continue doing a post request, we would send the same string every time. This one:
 ```js
-let testData = "Test data for endpoint two"; //2
+let testData = "Test data for endpoint two";
 ```
 
-We want to be more versatile with incoming requests To do that, we need another tool called `body-parser`, and we want to use the `req.body` middleware tool provided by Express. This is confusing, so let's step through it slowly.
+We definitely want to be more versatile with incoming requests. To do that, we need another tool called `body-parser`, and we want to use the `req.body` middleware tool provided by Express. This is confusing, so let's step through it slowly.
 
 <hr>
 
 ### The Code
-In the `testcontroller.js` file add the following code underneath the previous method:
+Go into the `testcontroller.js` file and add the following method. Add it to the bottom of the file, but above the export statement:
+
 ```js
 /****************************************
  * Controller Method #3: req.body
@@ -31,6 +31,7 @@ router.post('/three', function (req, res) {
     })
   console.log("Test three went through.")
 });
+
 
 ```
 
@@ -75,7 +76,7 @@ app.listen(3000, function(){
 2. Open Postman.
 3. Open a new request. 
 4. Change the dropdown to POST.
-5. Enter the enpoint into the URL: `http://localhost:3000/test/three`.
+5. Enter the endpoint into the URL: `http://localhost:3000/test/three`.
 6. Click on the body tab under the url input field.
 7. Choose the `raw` radio button. 
 8. In the dropdown choose `JSON (application/json)`.
