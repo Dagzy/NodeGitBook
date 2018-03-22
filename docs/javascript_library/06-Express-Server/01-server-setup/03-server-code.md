@@ -43,6 +43,7 @@ Let's analyze the code:
 2. Type in `node app.js`.
 3. In your console window, you should see your console message:
 ![screenshot](assets/03-node-appjs.PNG)
+Don't worry about the error message right now. It won't affect anything.
 4. When we go to http://localhost:3000/, we will see the application running like this:
 
 ![screenshot](assets/03-server-running-dom.png)
