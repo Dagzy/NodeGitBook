@@ -6,12 +6,15 @@ var test = require('./controllers/testcontroller');
 var user = require('./controllers/usercontroller');
 var sequelize = require('./db');
 var bodyParser = require('body-parser');
-var headers = require('./middleware/headers');
+// var headers = require('./middleware/headers');
 
 sequelize.sync(); // tip: {force: true} for resetting tables
 
 app.use(bodyParser.json());
-app.use(headers);
+
+app.use(require('./middleware/headers'));
+app.use(require('./middleware/validate-session'));
+
 
 app.use('/test', test);
 app.use('/api/user', user);
