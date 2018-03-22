@@ -49,7 +49,7 @@ Let's do some analysis of the code above. You do not need to memorize all of thi
 |8 |Identify the QL dialect being used. Could be MSSQL, SQLLite, or others |
 |9 |Use the `sequelize` variable to access methods.|
 |10 |Call the `authenticate()` method. |
-|11 |`Authenticate()` returns a promise. Use `.then()`.|
+|11 |`authenticate()` returns a promise. Use `.then()`.|
 |12 |Fire a function that shows if we're connected.|
 |13 |Fire an error if there are any errors.|
 |14 |Export the module.|
@@ -78,5 +78,5 @@ app.use('/test', test)
 ```
 
 **NOTE**: When you run your database with Sequelize, you may see the following message:
-![depreciated Strings](assets/sequelizeDepreicated.png) <br>
+![depreciated Strings](assets/sequelizeDepreciated.png) <br>
 Newer versions of sequelize make use of the new `Symbol` datatype instead of relying on strings. You can still use strings for now; this message just means that in the future they may not. We haven't covered Symbols much, but feel free to do some research on your own and try them out.
