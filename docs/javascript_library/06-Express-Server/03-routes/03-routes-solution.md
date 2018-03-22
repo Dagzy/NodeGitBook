@@ -42,7 +42,6 @@ Here is the path: `http://localhost:3000/test/contact`
 2. Create a route that sends an array of projects.
 Here is the path: `http://localhost:3000/test/projects`
 3. Create a route that sends an array of contact objects.
-
 Here is the path: `http://localhost:3000/test/mycontacts`
 
 
