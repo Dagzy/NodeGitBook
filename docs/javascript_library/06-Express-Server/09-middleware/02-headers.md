@@ -14,8 +14,10 @@ Headers are sent by the client along with the request. They contain special inst
  //1                        //2
 module.exports = function(req, res, next){
     //3                    //4
-	res.header('access-control-allow-origin', '*');
-    //5
+    res.header('access-control-allow-origin', '*');
+    res.header('access-control-allow-methods', 'GET, POST, PUT, DELETE'); //5
+	res.header('access-control-allow-headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization'); //6
+    //7
 	next();
 };
 ```
@@ -25,7 +27,9 @@ module.exports = function(req, res, next){
 2. `req` refers to the request from the client, specifically focusing on any headers present on the request object. `res` refers to the types of headers that are allowed by the server. `next` will be covered more in a moment.
 3. This contains the header that the server will allow the client to send in the request.
 4. We use the specific `Access-Control-Allow-Origin` header to tell the server the specific origin locations that are allowed to communicate with the server. The `*` is known as a `wild-card`; It means that everything is allowed. In this setting, it's saying that requests originating from any location are allowed to communicate with the database.
-5. `next` sends the request along to its next destination. This could be the API endpoint or another middleware function designed to do something else. Let's talk a little bit more about `next`.
+5. These are the HTTP methods that the sever will allow to be used. Postman allows you to send 15 different HTTP requests; our server will only accept these four.
+6. These are specific header types that the server will accept from the client. Remember when testing earlier that we sent an `Authorization` header to the server containing our token. You can find more information on these and other headers on MDN. 
+7. `next` sends the request along to its next destination. This could be the API endpoint or another middleware function designed to do something else. Let's talk a little bit more about `next`.
 
 
 ### next() 

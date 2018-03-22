@@ -25,103 +25,243 @@ Copy the following code into the `index.html` file. Before we talk more about it
 </head>
 <body>
 
-    <p id="para">This is the text in the HTML code.</p>
-    <button onclick="fetchHelloDataFromAPI();">Hello World</button>
+    <hr /> 
     
-    <p id="paraTwo">User Data.</p>
-    <button onclick="getUserDataFromAPI();">User Data</button>
+    <h1>Console Data</h1>
+    <button onclick="fetchHelloDataFromAPI();">Hello Client</button>
+    <p id="para">The data will be in the console.</p>
 
-    <p id="paraThree">User Data.</p>
-    <button onclick="getPlanetDataFromAPI();">Planet Data</button>
+    <hr /> 
+    
+    <h1>GET Fetch from endpoint /one</h1>
+    <button onclick="fetchFromOne();">Fetch from one</button>
+    <p id="one">Check the console.</p>
 
+    <hr /> 
+    
+    <h1>GET Fetch from endpoint /one</h1>
+    <button onclick="fetchFromOneCondensed();">Fetch from /one condensed method</button>
+    <p id="one">Check the console.</p>
+  
+    <hr /> 
+    
+    <h1>Fetch json example</h1>
+    <button onclick="fetchFromOneDisplayData();">Fetch from /one display data</button>
+    <ul>
+    </ul>
+    
+    <hr /> 
+
+    <h1>Post Data Starter</h1>
+    <button onclick="postData();">Post Data</button>
+    <div>
+        <p>This will show the recently posted data: <span id="test-data"></span></p>
+        <p>This was created at: <span id="created-at"></span></p>
+    </div>
+
+    <hr />
+
+    <h1>Sign Up</h1>
+    <input type="text" id="user" />
+    <input type="text" id="pass" />
+    <button onclick="userSignUp();">Submit</button>
+
+    <hr />
+    
+    <h1>Show Session Token in the Console</h1>
+    <button onclick="printSessionToken();">Print the token</button>
+  
     <script src="scripts.js"></script>
 </body>
 </html>
+
 ```
 
 <br>
-You can see that we aren't doing too much here. We have 3 `<p>` elements, each with a `<button>` that calls a different function when clicked. Each of the `<p>` elements have an id attribute so that we can access them later. Our js file is linked at the bottom, but since we don't really care what this looks like, we don't have any css file linked. You should see this when you open the page in your browser: <br> ![this](assets/testclient.png) <hr>
+We have several different things we can test. A couple print to the console, some add to the database, some retrieve data from the database, and a couple do more than one of these. This should be a good sample of tests for us to run to test our connection.
 
 ### scripts.js
-Enter the following code into the `scripts.js` file. We'll talk about it in a minute.
+Enter the following code into the `scripts.js` file. There's a lot here, so we're gonna break it into two sections, then focus on each individual function. We'll talk about it in a minute.
 
 ```js
+/********************
+ * 
+ * HTTP REQUESTS
+ * 
+ ********************/
+
+
+/*******************************
+ * GET REQUEST: /helloclient
+********************************/
 function fetchHelloDataFromAPI() {
-	var helloWorld = document.getElementById('para');
-	
-	fetch('http://localhost:3000/api/testing')
+	fetch('http://localhost:3000/test/helloclient', {
+		method: 'GET', 
+		headers: new Headers({
+		  'Content-Type': 'application/json'
+		})
+	})
 		.then(function (response) {
 			console.log("Fetch response:", response)
-			return response.text() 
+			return response.text();
 		})
 		.then(function (text) {
-			console.log("Put this in the html");
 			console.log(text);
-			helloWorld.innerHTML = text;
 		});
-  }
+}
 
-
-  function getUserDataFromAPI() {
-	var userData = document.getElementById('paraTwo');
+/******************************
+ * FETCH/GET long hand: /one - GET
+ *****************************/
+function fetchFromOne(){
+	var url = 'http://localhost:3000/test/one';
 	
-	fetch('http://localhost:3000/api/userdata')
-		.then(function (response) {
-			console.log("Fetch response:", response)
-			return response.json() 
+	fetch(url, {
+	  method: 'GET', 
+	  headers: new Headers({
+		'Content-Type': 'application/json'
+	  })
+	}).then(
+		function(response){
+			return response.json()
 		})
-		.then(function (json) {
-			console.log("Put this in the html");
-			console.log(json);
-			userData.innerHTML = json.user;
-		});
-  }
+	.catch(
+		function(error){
+			console.error('Error:', error)
+		})
+	.then(
+		function(response){
+			console.log('Success:', response);
+		})
+}
 
-  function getPlanetDataFromAPI() {
-	var userData = document.getElementById('paraThree');
+/***************************************
+ * FETCH/GET from /one : Arrow Function
+*************************************/
+function fetchFromOneCondensed(){
+	var url = 'http://localhost:3000/test/one';
 	
-	fetch('http://localhost:3000/moredata.json')
-		.then(function (response) {
-			console.log("Fetch response:", response)
-			return response.json() 
+	fetch(url, {
+	  method: 'GET', 
+	  headers: new Headers({
+		'Content-Type': 'application/json'
+	  })
+	}).then(res => res.json())
+	.catch(error => console.error('Error:', error))
+	.then(response => console.log('Success:', response));
+}
+
+/***************************************
+ * FETCH/GET FROM /ONE - Display Data
+*************************************/
+function fetchFromOneDisplayData(){
+	let url = 'http://localhost:3000/test/one';
+	let dataView = document.getElementById('display-one');
+	fetch(url, {
+	  method: 'GET', 
+	  headers: new Headers({
+		'Content-Type': 'application/json'
+	  })
+	}).then(
+		function(response){
+			return response.json()
 		})
-		.then(function (json) {
-			var residents = json.residents;
-			console.log("Put this in the html");
-			console.log(json);
-			for(r of residents){
-				console.log(r);
-				userData.innerHTML = r;
+	.catch(
+		function(error){
+			console.error('Error:', error)
+		})
+	.then(
+		function(response){
+			let text = '';
+			var myList = document.querySelector('ul');
+
+			for (r of response){
+				var listItem = document.createElement('li');
+				listItem.innerHTML = r.testdata;
+				//Console logs for lessons
+				// console.log('T:', r.testdata);
+				// console.log("TEXT:", text);
+				myList.appendChild(listItem);
 			}
-		});
-  }
-```
-
-Each of these functions is called by one of the three buttons, and each runs a fetch to a different endpoint. After the fetch, each prints a line of text the console to test that it worked and then prints the response. After this, each function uses the `innerHTML` method to put the response data into one of the `<p>` elements. <br>
-
-Notice that the third function is structured a little differently from the first two. Instead of making an API call, it's pulling from a pre-existing file. When you `fetch` data from an API, it's returned as a JSON file and is processed from that point; in this case, we already have the file, so we skip the API call and move straight to processing the data. In addition, our JSON file contains a property called residents, which we iterate over and print its contents.
-<hr>
-
-### moredata.json
-Finally, since we're fetching data from a file, we have to create that file first. Inside of your server folder, create a new folder called `data`. Inside of this folder, create a new file called `moredata.json` and add the following data to it:
-
-```json
-{
-    "climate": "Mild",
-    "diameter": "1046",
-    "gravity": "2 standard",
-    "name": "Tatooine",
-    "orbital_period": "304",
-    "population": "20000",
-    "residents": [
-        "https://swapi.co/api/people/1/",
-        "https://swapi.co/api/people/2/"
-    ],
-    "rotation_period": "23",
-    "surface_water": "1",
-    "terrain": "Dessert",
-    "url": "https://swapi.co/api/planets/1/"
+		})
 }
 ```
 
-You can see the residents property we mentioned before, as well as a lot of other data that could potentially be called. Now that our setup is out of the way, we can dive into the concept of middleware and see how it interacts with both the client and the server.
+#### fetchHelloDatafromAPI()
+
+#### fetchfromOne()
+
+#### fetchFromOneCondensed()
+
+#### fetchFromOneDisplayData()
+
+<hr>
+
+### app.js part 2
+
+```js
+/*************************************
+ * POST w/ fetch() and the Test Data
+**************************************/
+function postData() {
+	let content = { testdata: { item: 'This was saved to the DB' } };
+	let testDataAfterFetch = document.getElementById('test-data');
+	let createdAtAfterFetch = document.getElementById('created-at');
+
+	fetch('http://localhost:3000/test/seven', {
+		method: 'post',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(content)
+	})
+	.then(response => response.json())
+	.then(function (text) {
+		console.log(text);
+		testDataAfterFetch.innerHTML = text.testdata.testdata;
+		createdAtAfterFetch.innerHTML = text.testdata.createdAt;
+	});
+}
+
+
+/**********************************************
+ * POST w/ fetch() and the Test Data - This works for creating a user in Postgres
+***********************************************/
+
+function userSignUp(){
+	let userName = document.getElementById('user').value;
+	let userPass = document.getElementById('pass').value;
+	console.log(userName, userPass);
+
+	let newUserData = {user : { username: userName, password: userPass}};
+	fetch('http://localhost:3000/api/user/createuser', {
+		method: 'post',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(newUserData)
+	})
+	.then(response => response.json())
+	.then(function (response) {
+		console.log(response.sessionToken);
+		let token = response.sessionToken;
+		sessionStorage.setItem('SessionToken', token);
+	});
+}
+
+function printSessionToken(){
+	var data = sessionStorage.getItem('SessionToken');
+	console.log(data);
+}
+```
+
+#### postData()
+
+#### userSignup()
+
+#### printSessionToken()
+
+### localStorage
+One thing we haven't talked about yet is `localStorage`. This is a little bit of storage space on the client's machine where things can be held for later use. This is the perfect spot to store our session token. Remember the statelessness of HTTP requests. Since the server needs the session token with every request, the client can store it to add to every request. For more information on `localStorage` and other things you can do with it, look at the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage).
+
+Now that our setup is out of the way, we can dive into the concept of middleware and see how it interacts with both the client and the server.
