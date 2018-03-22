@@ -1,7 +1,7 @@
 # CONTROLLER INTRO
 ---
 
-In this module we'll reiterate the purpose of our controller methods and give an overview of the next seven modules.
+In this module, we'll reiterate the purpose of our controller methods and give an overview of the next seven modules.
 
 <hr>
 
