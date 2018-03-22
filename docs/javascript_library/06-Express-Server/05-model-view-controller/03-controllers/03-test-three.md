@@ -1,11 +1,11 @@
 # REQ.BODY()
 ---
-In this module we'll set up our Express application so that it can take incoming requests properly.
+In this module, we'll set up our Express application so that it can take incoming requests properly.
 
 <hr />
 
 ### Overview
-Hopefully, your model works, and you were able to put something in the database. That's great, but if we continue doing a post request, we would send the same string every time. This one:
+Hopefully, your model works, and you were able to put something in the database. That's great, but if we continue doing a POST request, we would send the same string every time. This one:
 ```js
 let testData = "Test data for endpoint two";
 ```
@@ -15,7 +15,7 @@ We definitely want to be more versatile with incoming requests. To do that, we n
 <hr>
 
 ### The Code
-Go into the `testcontroller.js` file and add the following method. Add it to the bottom of the file, but above the export statement:
+Go into the `testcontroller.js` file and add the following method. Add it to the bottom of the file, above the export statement:
 
 ```js
 /****************************************
@@ -29,15 +29,16 @@ router.post('/three', function (req, res) {
     .create({
       testdata: testData
     })
-  console.log("Test three went through.")
+  res.send("Test three went through!")
+  console.log("Test three went through!")
 });
 
 
 ```
 
-1. Here we use the `req.body` middleware provided by Express and append two more properties to it. This is what we're sending to the database. `req` is the actual request and `body` is where our data is being held. `testdata` is a property of `body`, while `item` is a property of `testdata`. We'll see this in Postman in a little while.
+1. Here we use the `req.body` middleware provided by Express and append two more properties to it. This is what we're sending to the database. `req` is the actual request, and `body` is where our data is being held. `testdata` is a property of `body`, while `item` is a property of `testdata`. We'll see this in Postman in a little while.
 
-2. `create()` is a sequelize method. It creates a SQL statement that will insert our data into the database. You'll learn more about SQL later.
+2. `create()` is a Sequelize method. It creates a SQL statement that will insert our data into the database. You'll learn more about SQL later.
 
 <hr />
 
@@ -66,9 +67,11 @@ app.listen(3000, function(){
 ### Analysis
 1. We pull in the `body-parser` library and store it in the `bodyParser` variable. 
 
-2. You should read through [this article](https://medium.com/@adamzerner/how-bodyparser-works-247897a93b90) to get a starter understanding of how `body-parser` is working with `req.body`. Warning, this will lead you down a rabbit hole of understanding. For our purposes, it's important to know that this: 
+2. You should read through [this article](https://medium.com/@adamzerner/how-bodyparser-works-247897a93b90) to get a starter understanding of how `body-parser` is working with `req.body`. Warning: this will lead you down a rabbit hole of understanding. For our purposes, it's important to know this: 
 
-`app.use(bodyParser.json())` tells the application that we want `json` to be used as we process this request.
+> `app.use(bodyParser.json())` tells the application that we want `json` to be used as we process this request.
+
+[Here](https://stackoverflow.com/questions/38306569/what-does-body-parser-do-with-express) is a little more information on `body-parser`.
 
 <hr />
 
@@ -80,8 +83,8 @@ app.listen(3000, function(){
 5. Enter the endpoint into the URL: `http://localhost:3000/test/three`.
 6. Click on the body tab under the url input field.
 7. Choose the `raw` radio button. 
-8. In the dropdown choose `JSON (application/json)`.
-9. In the empty space add a JSON object like the one below. Notice that this is `testdata.item`, the last two properties in `req.body.testdata.item`:
+8. In the dropdown, choose `JSON (application/json)`.
+9. In the empty space, add a JSON object like the one below. Notice that this is `testdata.item`, the last two properties in `req.body.testdata.item`. This information is inside `body`, which is inside `req`.
 ```json
 {
     "testdata":{
@@ -93,19 +96,19 @@ app.listen(3000, function(){
 11. You should see the following
 ![screenshot](assets/03-postman.PNG)
 
-12. Let's also go to Postgres and make sure the data is there. To update the table, you can press the `Execute` button(the lightning bolt). 
+12. Let's also go to Postgres and make sure the data is there. To update the table, you can press the `Execute` button (the lightning bolt). 
 
 ![screenshot](assets/03-pg-admin.PNG)
 
 <hr />
 
 ### Summary of the Flow
-In this module the following flow is happening:
+In this module, the following flow is happening:
 1. We make a POST request with Postman.
 2. `body-parser` breaks the request into JSON.
 3. The router sends the request to the `testcontroller`.
 4. The controller with the `/three` endpoint is called.
-5. The req.body.testdata.item is captured in the testData variable. 
+5. The `req.body.testdata.item` is captured in the `testData` variable. 
 6. We then use the Sequelize `create()` method to create the object to be sent to the DB.
-7. The object is sent and Postgres stores it. 
+7. The object is sent, and Postgres stores it. 
 8. The controller sends a response to Postman.
