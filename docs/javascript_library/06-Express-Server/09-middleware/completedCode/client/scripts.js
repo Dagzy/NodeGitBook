@@ -102,9 +102,9 @@ function fetchFromOneDisplayData(){
 }
 
 
-/**********************************************
+/*************************************
  * POST w/ fetch() and the Test Data
-******************************************* */
+**************************************/
 function postData() {
 	let content = { testdata: { item: 'This was saved to the DB' } };
 	let testDataAfterFetch = document.getElementById('test-data');
@@ -126,3 +126,34 @@ function postData() {
 }
 
 
+/**********************************************
+ * POST w/ fetch() and the Test Data - This works for creating a user in Postgres
+***********************************************/
+
+function userSignUp(){
+	let userName = document.getElementById('user').value;
+	let userPass = document.getElementById('pass').value;
+	console.log(userName, userPass);
+
+	let newUserData = {user : { username: userName, password: userPass}};
+	fetch('http://localhost:3000/api/user/createuser', {
+		method: 'post',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(newUserData)
+	})
+	.then(response => response.json())
+	.then(function (response) {
+		console.log(response.sessionToken);
+		let token = response.sessionToken;
+		sessionStorage.setItem('SessionToken', token);
+	});
+}
+
+//NEED TO TALK ABOUT THIS: https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+
+function printSessionToken(){
+	var data = sessionStorage.getItem('SessionToken');
+	console.log(data);
+}
