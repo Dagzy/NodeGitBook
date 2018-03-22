@@ -197,7 +197,7 @@ function fetchFromOneDisplayData(){
 
 <hr>
 
-### app.js part 2
+### app.js Part 2
 
 ```js
 /*************************************
