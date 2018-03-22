@@ -1,6 +1,6 @@
 ### Challenge #1 Solution:
 ---
-In this module we'll discuss the solution to the previous challenge and add a few more routes for practice.
+In this module, we'll discuss the solution to the previous challenge and add a few more routes for practice.
 
 <hr />
 
@@ -19,6 +19,8 @@ router.get('/', function (req, res) {
 router.get('/about', function (req, res) {
   res.send('This is an about route') //4
 });
+
+module.exports = router;
 ```
 
 <hr />
@@ -33,22 +35,23 @@ Just a few review notes on the challenge:
 
 <hr />
 
-### Challenge #2: More practice routes
-For more practice add three more test routes with messages of your choice: 
-1. Create a route that will return a contact object:
+### Challenge #2: More Practice Routes
+For more practice, add three more test routes with messages of your choice: 
+1. Create a route that will return a contact object.
 Here is the path: `http://localhost:3000/test/contact`
-
-Here is the screenshot:
-![screenshot](assets/03-contact.PNG)
-
-2. Create a route that sends an array of projects: 
+2. Create a route that sends an array of projects.
 Here is the path: `http://localhost:3000/test/projects`
-Here is the screenshot:
-![screenshot](assets/04-projects.PNG)
-
-3. Create a route that sends an array of contact objects
+3. Create a route that sends an array of contact objects.
 
 Here is the path: `http://localhost:3000/test/mycontacts`
-Here is the screenshot: 
+
+
+Here is the screenshot for #1:
+![screenshot](assets/03-contact.PNG)
+
+Here is the screenshot for #2:
+![screenshot](assets/04-projects.PNG)
+
+Here is the screenshot for #3: 
 ![screenshot](assets/05-mycontacts.PNG)
 
