@@ -9,11 +9,32 @@ router.get('/', function (req, res) {
 })
 
 
-// define the home page route
+// define the hello client route
 router.get('/helloclient', function (req, res) {
   res.send('This is a big ole test route for routing')
 })
 
+// define the home page route
+// router.get('/one', function (req, res) {
+//   res.send('This is a big ole test route for routing')
+// })
+
+router.get('/one', function(req, res) {
+
+  TestModel
+	.findAll({
+    attributes: ['id', 'testdata']
+	})
+	.then(
+		function findAllSuccess(data) {
+			console.log("Controller data:", data);
+			res.json(data);
+		},
+		function findAllError(err) {
+			res.send(500, err.message);
+		}
+	);
+});
 
 //http://localhost:3000/somedata.json
 // app.use(express.static('data'))
@@ -33,9 +54,9 @@ router.get('/helloclient', function (req, res) {
 /************************
  * Route 1: Simple Response to POST req
  ***********************/
-router.post('/one', function (req, res) {
-  res.send("Test 1 went through!");
-});
+// router.post('/one', function (req, res) {
+//   res.send("Test 1 went through!");
+// });
 
 /*********************************
  * Route 2: Create new TestModel instance

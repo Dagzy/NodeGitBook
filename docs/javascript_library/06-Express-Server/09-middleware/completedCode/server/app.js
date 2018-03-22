@@ -13,8 +13,8 @@ sequelize.sync(); // tip: {force: true} for resetting tables
 app.use(bodyParser.json());
 app.use(headers);
 
-app.use('/api/user', user);
 app.use('/test', test);
+app.use('/api/user', user);
 
 app.listen(3000, function(){
 	console.log('App is listening on 3000.')
