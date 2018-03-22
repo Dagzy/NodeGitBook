@@ -1,16 +1,16 @@
 # FIRST CONNECTION
 ---
-In this module we will use Sequelize to connect our Server to pgadmin.
+In this module, we will use Sequelize to connect our server to PG Admin.
 
 <hr>
 
 
 ### Orientation
-In this module we'll be working with Sequelize and Postgres:
+Right now we'll be working with Sequelize and Postgres:
 ![screenshot](assets/01-pg-youarehere.png)
 
-### Sequelize connection
-To use Sequelize, we'll have to establish a connection. This is the standard approach from the [docs](http://docs.sequelizejs.com/manual/installation/getting-started.html#test-the-connection), and it is often copy and pasted into projects for set up. Simply put, it's allowing us to connect from our project to the Postgres database. Here we do a simple breakdown of the code:
+### Sequelize Connection
+To use Sequelize, we'll have to establish a connection. This is the standard approach from the [docs](http://docs.sequelizejs.com/manual/installation/getting-started.html#test-the-connection), and it is often copy and pasted into projects for setup. Simply put, it's allowing us to connect from our project to the Postgres database. Put this code into the `db.js` file in the server folder:
 
 ```js
 //1
@@ -45,11 +45,11 @@ Let's do some analysis of the code above. You do not need to memorize all of thi
 |4 |Identify the db table to connect to.|
 |5 |The username for the db.|
 |6 |The password for the local db.|
-|7 |The host points to the localhost for sequelize. This is 5432. |
-|8 |Identify the QL dialect being used. Could be MSSQL, SQLLite, too |
-|9 |Use the sequelize variable to access methods.|
-|10 |Call the authenticate method. |
-|11 |Authenticate returns a promise. Use `.then()`.|
+|7 |The host points to the local port for Sequelize. This is 5432. |
+|8 |Identify the QL dialect being used. Could be MSSQL, SQLLite, or others |
+|9 |Use the `sequelize` variable to access methods.|
+|10 |Call the `authenticate()` method. |
+|11 |`Authenticate()` returns a promise. Use `.then()`.|
 |12 |Fire a function that shows if we're connected.|
 |13 |Fire an error if there are any errors.|
 |14 |Export the module.|
@@ -76,3 +76,7 @@ sequelize.sync(); // tip: pass in {force: true} for resetting tables
 app.use('/test', test)
 
 ```
+
+**NOTE**: When you run your database with Sequelize, you may see the following message:
+![depreciated Strings](assets/sequelizeDepreicated.png) <br>
+Newer versions of sequelize make use of the new `Symbol` datatype instead of relying on strings. You can still use strings for now; this message just means that in the future they may not. We haven't covered Symbols much, but feel free to do some research on your own and try them out.
