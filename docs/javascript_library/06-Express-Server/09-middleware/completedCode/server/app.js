@@ -14,7 +14,6 @@ app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
 app.use(require('./middleware/validate-session'));
 
-
 app.use('/test', test);
 app.use('/api/user', user);
 
