@@ -174,13 +174,20 @@ function fetchFromAuthRouteOne () {
 	const accessToken = localStorage.getItem('SessionToken')
 
 	const response = fetch(fetch_url, {
-        method: 'GET',
+		method: 'GET',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Authorization': accessToken
-        },
-    });
-    console.log("Response:", response)
+		  'Authorization': accessToken,
+		}
+		//credentials: 'same-origin'
+	})
+	.then(response => {
+		return response.json();
+	})
+	.then(data => {
+		console.log(data)
+	})   
+	// console.log("Response:", response)
 }
 
