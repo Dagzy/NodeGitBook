@@ -20,15 +20,15 @@ Next, add this code to the bottom of the `scripts.js` file. We'll talk about it 
 
 ```js
 function fetchFromAuthRouteOne () {
-	const fetch_url = `http://localhost:3000/authtest/one`
-	const accessToken = localStorage.getItem('SessionToken')
+	const fetch_url = `http://localhost:3000/authtest/one`;
+	const accessToken = localStorage.getItem('SessionToken') //1
 
 	const response = fetch(fetch_url, {
-		method: 'GET',
+		method: 'GET', //2
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-		  'Authorization': accessToken,
+          'Accept': 'application/json', //3
+          'Content-Type': 'application/json', //4
+		  'Authorization': accessToken, //5
 		}
 	})
 	.then(response => {
@@ -41,4 +41,8 @@ function fetchFromAuthRouteOne () {
 ```
 
 ### Analysis
-More to come later.
+1. Since we stored our token in `localStorage`, we use the `getItem` method to get it back from localStorage and put it in a variable.
+2. By default, `fetch` runs a `GET` request. We can use the `method` property to send other requests. In this case, we're still sending a `GET`.
+3. The `Accept` header tells the server what types of content that the client is able to understand. If multiple are present, the server picks one.
+4. The `Content-Type` header tells the server what kind of data is being sent, if any. It can also refer to the type of data the server chooses from the `Accept` header.
+5. The `Authorization` header provides some sort of encrypted data allowing acces to the server, in this case our token.

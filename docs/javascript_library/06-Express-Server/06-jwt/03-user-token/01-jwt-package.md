@@ -1,6 +1,6 @@
 # USER TOKEN
 ---
-We have successfully set up user accounts in our database. Until we set up authentication, however, it doesn't really do us much good. Let's install `jwt` and get it set up for use within our database.
+We have successfully set up user accounts in our database. Until we set up authentication, however, it doesn't really do us much good. We previously installed `jwt` when you originally made your package.json file, but now we'll get it set up for use within our database.
 
 <hr>
 

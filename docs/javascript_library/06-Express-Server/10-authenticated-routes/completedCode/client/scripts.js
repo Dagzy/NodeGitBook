@@ -180,7 +180,6 @@ function fetchFromAuthRouteOne () {
           'Content-Type': 'application/json',
 		  'Authorization': accessToken,
 		}
-		//credentials: 'same-origin'
 	})
 	.then(response => {
 		return response.json();
@@ -188,6 +187,5 @@ function fetchFromAuthRouteOne () {
 	.then(data => {
 		console.log(data)
 	})   
-	// console.log("Response:", response)
 }
 

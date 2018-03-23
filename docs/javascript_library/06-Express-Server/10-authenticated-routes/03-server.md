@@ -24,7 +24,7 @@ var AuthTestModel = sequelize.import('../models/authtest');
 
 // define the home page route
 
-  router.get('/one', function(req, res) {
+  router.get('/items', function(req, res) {
 	var userid = req.user.id;
 	AuthTestModel
 	.findAll({
@@ -40,7 +40,7 @@ var AuthTestModel = sequelize.import('../models/authtest');
 	);
 });
 
-router.get('/:id', function(req, res) {
+router.get('/item/:id', function(req, res) {
 	var data = req.params.id;
 	var userid = req.user.id;
 
@@ -49,7 +49,7 @@ router.get('/:id', function(req, res) {
 		.findOne({
 			where: { id: data, owner: userid }
 		}).then(
-			function getSucces(updateData) {
+			function getSuccess(updateData) {
 				res.json(updateData);
 			},
 
@@ -83,14 +83,15 @@ router.post('/create', function(req, res) {
 		);
 });
 ```
+These functions have the folloi
+#### GET /items
+Finds all items in the table with the user id in the token
 
-Let's talk about each function individually.
-
-#### GET /one
-
-#### GET /:id
+#### GET /item/:id
+Finds a single item in the the table. Uses both the id from the url (primary key) and the userid from the token (foreign key).
 
 #### POST /create
+Add an item to the table with the user id from the token.
 
 <hr>
 
