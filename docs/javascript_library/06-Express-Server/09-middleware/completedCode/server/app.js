@@ -6,7 +6,6 @@ var test = require('./controllers/testcontroller');
 var user = require('./controllers/usercontroller');
 var sequelize = require('./db');
 var bodyParser = require('body-parser');
-// var headers = require('./middleware/headers');
 
 sequelize.sync(); // tip: {force: true} for resetting tables
 

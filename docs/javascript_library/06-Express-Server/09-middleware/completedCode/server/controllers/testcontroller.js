@@ -15,7 +15,7 @@ router.get('/helloclient', function (req, res) {
 })
 
 /************************
- * GET #1:  Get all items in testdata column
+ * GET #1:  Get all items in testdata
  ***********************/
 router.get('/one', function(req, res) {
 
