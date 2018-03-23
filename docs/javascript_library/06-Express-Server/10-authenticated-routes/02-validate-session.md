@@ -1,3 +1,9 @@
+# VALIDATE SESSION
+---
+
+Inside of the `middleware` folder on the server side, add a file called `validate-session.js`. Put the following code inside of that file and we'll talk about what it does.
+
+```js
 var jwt = require('jsonwebtoken');
 var sequelize = require('../db');
 var User = sequelize.import('../models/user');
@@ -30,3 +36,7 @@ module.exports = function(req, res, next) {
 		}
 	}
 }
+```
+
+### What Just Happened?
+More to come later.
