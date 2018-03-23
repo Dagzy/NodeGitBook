@@ -37,6 +37,3 @@ book.mobi
 
 # VS Code stuff
 .vscode/
-
-# Temporary
-docs/javascript_library/06-Express-Server/10-authenticated-routes/completedCode/
