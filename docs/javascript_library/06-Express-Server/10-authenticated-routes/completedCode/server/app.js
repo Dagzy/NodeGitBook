@@ -2,6 +2,7 @@ require('dotenv').config();
 
 var express = require('express');
 var app = express();
+const cors = require('cors');
 var test = require('./controllers/testcontroller');
 var authTest = require('./controllers/authtestcontroller');
 
@@ -10,9 +11,7 @@ var sequelize = require('./db');
 var bodyParser = require('body-parser');
 
 sequelize.sync(); // tip: {force: true} for resetting tables
-
-
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
 /******************
