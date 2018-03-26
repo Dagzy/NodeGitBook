@@ -7,7 +7,7 @@
 
 
 /*******************************
- * GET REQUEST: /helloclient
+ *  1 - GET /helloclient
 ********************************/
 function fetchHelloDataFromAPI() {
 	fetch('http://localhost:3000/test/helloclient', {
@@ -26,32 +26,28 @@ function fetchHelloDataFromAPI() {
 }
 
 /******************************
- * FETCH/GET long hand: /one - GET
+ * 2 - GET long hand: /one 
  *****************************/
-function fetchFromOne(){
-	var url = 'http://localhost:3000/test/one';
-	
-	fetch(url, {
-	  method: 'GET', 
-	  headers: new Headers({
-		'Content-Type': 'application/json'
-	  })
-	}).then(
-		function(response){
-			return response.json()
-		})
-	.catch(
-		function(error){
-			console.error('Error:', error)
-		})
-	.then(
-		function(response){
-			console.log('Success:', response);
-		})
-}
+router.get('/one', function(req, res) {
 
-/***************************************
- * FETCH/GET from /one : Arrow Function
+    TestModel
+      .findAll({
+      attributes: ['id', 'testdata']
+      })
+      .then(
+          function findAllSuccess(data) {
+              console.log("Controller data:", data);
+              res.json(data);
+          },
+          function findAllError(err) {
+              res.send(500, err.message);
+          }
+      );
+  });
+
+
+  /***************************************
+ * 3 GET /one : Arrow Function
 *************************************/
 function fetchFromOneCondensed(){
 	var url = 'http://localhost:3000/test/one';
@@ -65,9 +61,10 @@ function fetchFromOneCondensed(){
 	.catch(error => console.error('Error:', error))
 	.then(response => console.log('Success:', response));
 }
+ 
 
 /***************************************
- * FETCH/GET FROM /ONE - Display Data
+ * 4 GET FROM /ONE - Display Data
 *************************************/
 function fetchFromOneDisplayData(){
 	let url = 'http://localhost:3000/test/one';
@@ -102,11 +99,12 @@ function fetchFromOneDisplayData(){
 }
 
 
+
 /*************************************
- * POST w/ fetch() and the Test Data
+ * 5 POST /test/seven Test Data
 **************************************/
 function postData() {
-	let content = { testdata: { item: 'This was saved to the DB' } };
+	let content = { testdata: { item: 'This was saved!' } };
 	let testDataAfterFetch = document.getElementById('test-data');
 	let createdAtAfterFetch = document.getElementById('created-at');
 
@@ -123,37 +121,4 @@ function postData() {
 		testDataAfterFetch.innerHTML = text.testdata.testdata;
 		createdAtAfterFetch.innerHTML = text.testdata.createdAt;
 	});
-}
-
-
-/**********************************************
- * POST w/ fetch() and the Test Data - This works for creating a user in Postgres
-***********************************************/
-
-function userSignUp(){
-	let userName = document.getElementById('user').value;
-	let userPass = document.getElementById('pass').value;
-	console.log(userName, userPass);
-
-	let newUserData = {user : { username: userName, password: userPass}};
-	fetch('http://localhost:3000/api/user/createuser', {
-		method: 'post',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(newUserData)
-	})
-	.then(response => response.json())
-	.then(function (response) {
-		console.log(response.sessionToken);
-		let token = response.sessionToken;
-		sessionStorage.setItem('SessionToken', token);
-	});
-}
-
-//NEED TO TALK ABOUT THIS: https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
-
-function printSessionToken(){
-	var data = sessionStorage.getItem('SessionToken');
-	console.log(data);
 }

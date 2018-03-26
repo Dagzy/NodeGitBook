@@ -6,7 +6,7 @@ In this module we're going to set up a Test Client for testing our requests.
 
 ### File Structure
 ```
-    └── 7-Express Server
+    └── 5-Express Server
             └── server
             └── client
                 └── index.html

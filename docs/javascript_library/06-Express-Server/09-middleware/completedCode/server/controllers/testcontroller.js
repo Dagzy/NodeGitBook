@@ -8,41 +8,22 @@ router.get('/', function (req, res) {
   res.send('This is a big ole test route for routing')
 })
 
-
-// define the hello client route
+/************************
+ * GET:  Get simple message from server
+ ***********************/
 router.get('/helloclient', function (req, res) {
-  res.send('This is a big ole test route for routing')
+  res.send('This is a message from the server to the client.')
 })
 
 /************************
- * GET #1:  Get all items in testdata
- ***********************/
-router.get('/one', function(req, res) {
-
-  TestModel
-	.findAll({
-    attributes: ['id', 'testdata']
-	})
-	.then(
-		function findAllSuccess(data) {
-			console.log("Controller data:", data);
-			res.json(data);
-		},
-		function findAllError(err) {
-			res.send(500, err.message);
-		}
-	);
-});
-
-/************************
- * POST 1: Simple Response to POST req
+ * Route 1: Simple Response to POST req
  ***********************/
 router.post('/one', function (req, res) {
   res.send("Test 1 went through!");
 });
 
 /*********************************
- * POST 2: Create new TestModel instance
+ * Route 2: Create new TestModel instance
  **********************************/
 router.post('/two', function (req, res) {
   let testData = "Test two";
@@ -55,7 +36,7 @@ router.post('/two', function (req, res) {
 });
 
 /*********************************
- * POST 3: Get req.body from request
+ * Route 3: Get req.body from request
  **********************************/
 router.post('/three', function (req, res) {
   var testData = req.body.testdata.item;
@@ -68,7 +49,7 @@ router.post('/three', function (req, res) {
 });
 
 /*********************
- * POST 4: Return a Promise
+ * 4: Return a Promise
  **********************/
 router.post('/four', function (req, res) {
   var testData = req.body.testdata.item;
@@ -84,7 +65,7 @@ router.post('/four', function (req, res) {
 });
 
 /*********************
- * POST 5: Return data in a Promise
+ * Route 5: Return data in a Promise
  **********************/
 router.post('/five', function (req, res) {
   var testData = req.body.testdata.item;
@@ -101,7 +82,7 @@ router.post('/five', function (req, res) {
 });
 
 /*********************
- * POST 6: Return response as JSON
+ * Route 6: Return response as JSON
  **********************/
 router.post('/six', function (req, res) {
   var testData = req.body.testdata.item;
@@ -120,11 +101,11 @@ router.post('/six', function (req, res) {
 
 
 /*********************
- * POST 7: Handle errors
+ * Route 7: Handle errors
  **********************/
 router.post('/seven', function (req, res) {
   var testData = req.body.testdata.item;
-  console.log(testData)
+
   TestModel
     .create({
       testdata: testData
