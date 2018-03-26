@@ -28,11 +28,8 @@ router.get('/helloclient', function (req, res) {
 Now, let's move over to the client side and do the following:
 1. Go into the `01-scripts.js` file.
 2. Add the following code:
-s
+
 ```js
-/*******************************
- * #1 GET: /helloclient
-********************************/
 function fetchHelloDataFromAPI() {
 	fetch('http://localhost:3000/test/helloclient', { //1
 		method: 'GET', 
@@ -50,10 +47,10 @@ function fetchHelloDataFromAPI() {
 }
 
 ```
+
+
 3. Open the index.html file and take a look at where the function gets called:
 ![screenshot](assets/02-testjs-helloclientfetch.PNG)
-
-
 
 ### Analysis
 1. Test endpoint with fixed value to verify server works.
