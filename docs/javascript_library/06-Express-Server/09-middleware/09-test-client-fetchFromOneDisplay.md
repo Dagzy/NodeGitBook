@@ -1,11 +1,9 @@
 # fetchFromOneDisplayData();
 ---
-In this module we'll access the /one endpoint and do a GET request to access data for display in the DOM.  
+In this module we'll create and access the /one endpoint and do a GET request to access data for display in the DOM.  
 
 <hr>
 
-### Overview
-Right below the `postToOneArrow` method, let's write another method. This time we'll pull in the data and think through the starter logic of showing it in the DOM. This book assumes that you have some knowledge of the DOM and DOM manipulation, but we also will try to talk in a way that starts from square one.
 
 ### Server Addition
 When writing applications, it's common to have to toggle between the front end and back end. With that being said, let's add another route in the `testcontroller.js` file. This can be anywhere in the file. 
@@ -33,14 +31,15 @@ router.get('/one', function(req, res) {
 ```
 
 ###Analysis
-1. Notice that we find the attributes for two of the columns: `id` & `testdata`. The other columns will not be pulled from. Be sure to save!
+1. Notice that we find the `attributes` for two of the columns: `id` & `testdata`. This is part of sequelize. If you are querying an entire table, you can choose which columns you want to grab from. The other columns will not be queried, which can save time for a giant table. 
 
-After we add that, let's go add our `fetch` display. 
-
+Be sure to save the chances to your server.
 <hr />
 
-### Scripts
-Let's add the function now. It should go directly below the last function in `01-scripts.js`:
+### Overview
+Let's go back to the client and into the `01-scripts.js` file. Right below the `postData` method, let's write another method. This time we'll pull in the data and think through the starter logic of showing it in the DOM. This book assumes that you have some knowledge of the DOM and DOM manipulation, but we also will try to talk in a way that starts from square one.
+
+Let's add the function now:
 
 ```js
 /***************************************
@@ -79,6 +78,7 @@ function fetchFromOneDisplayData(){
 ```
 
 ### Quick Summary
+TODO: Explain this in bullets and more clearly. 
 This is the same function as the one above it, only we use arrow functions instead of callbacks. You can see how much more simplified and easier to read this can be, saving us from potential "Callback Hell". Our function is doing the same thing. We're reaching out to an endpoint with a POST request. We add the appropriate headers. We are asking for a json response. We handle an error, if there is one. In the end we simply print the data to the console.  
 
 <hr>
