@@ -1,6 +1,6 @@
 # HEADERS IN OUR SERVER
 ---
-In this module we'll add header files in our server.
+In this module, we'll add header files in our server.
 
 <hr />
 
@@ -12,8 +12,7 @@ We added some routes to `app.js` earlier, but didn't cover what was really happe
 ### Referencing the middleware
 We exported the middleware, now we need to use it when we spin up our server. Follow the steps:
 1. Go into `app.js`.
-2. Add the following two lines of code under the `bodyParser` variable:
-
+2. Add the following line of code under the `bodyParser` variable:
 ```js
 
 sequelize.sync(); // tip: {force: true} for resetting tables
@@ -39,8 +38,8 @@ app.listen(3000, function(){
 ### Test Client
 Let's test this in our client now with the following steps.
 
-TODO: Put this into numerical steps. 
-Your server should still be running, so we just need to start the client. Open up a new terminal window. Navigate to your client folder and run `http-server`. Go to your client and try clicking on the buttons. You should see the text change when you click the buttons, as well as information stored in the database and printed to the console. We are finally displaying the response we've received back from our server!
+1. Your server should still be running, so we just need to start the client. Switch to the client terminal window and start it.
+2. Go to your client and try clicking on the buttons. You should see the text change when you click the buttons, as well as information stored in the database and printed to the console. We are finally displaying the response we've received back from our server!
 
 ![screenshot](assets/05-server-fix.PNG)
 

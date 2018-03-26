@@ -72,35 +72,36 @@ function postToOneArrow(){
 /***************************************
  * 4 GET FROM /ONE - Display Data
 *************************************/
-function fetchFromOneDisplayData(){
+function fetchFromOneDisplayData() {
 	let url = 'http://localhost:3000/test/one';
 	let dataView = document.getElementById('display-one');
 	fetch(url, {
-	  method: 'GET', 
-	  headers: new Headers({
-		'Content-Type': 'application/json'
-	  })
-	}).then(
-		function(response){
-			return response.json()
+		method: 'GET',
+		headers: new Headers({
+			'Content-Type': 'application/json'
 		})
+	}).then(function(response) {
+		return response.text()
+	})
 	.catch(
-		function(error){
+		function(error) {
 			console.error('Error:', error)
 		})
-	.then(
-		function(response){
-			let text = '';
-			var myList = document.querySelector('ul');
-
-			for (r of response){
-				var listItem = document.createElement('li');
-				listItem.innerHTML = r.testdata;
-				//Console logs for lessons
-				// console.log('T:', r.testdata);
-				// console.log("TEXT:", text);
-				myList.appendChild(listItem);
-			}
+		.then(
+			function(response) {
+				let text = '';
+				let myList = document.querySelector('ul');
+				
+				for (r of response) {
+					let listItem = document.createElement('li');
+					listItem.innerHTML = r.testdata;
+					console.log(r)
+					// Console logs for lessons
+					// console.log('T:', r.testdata);
+					break;
+					// console.log("TEXT:", text);
+					//myList.appendChild(listItem);
+				}
 		})
 }
 
