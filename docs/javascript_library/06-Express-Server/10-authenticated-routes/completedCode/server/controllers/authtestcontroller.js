@@ -21,7 +21,7 @@ router.get('/one', function(req, res) {
 	);
 });
 
-router.get('/:id', function(req, res) {
+router.get('/id', function(req, res) {
 	var data = req.params.id;
 	var userid = req.user.id;
 

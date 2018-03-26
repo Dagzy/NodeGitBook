@@ -16,7 +16,6 @@ module.exports = function(req, res, next) {
 		console.log(sessionToken)
 		if (!sessionToken) 
 			return res.status(403).send({ auth: false, message: 'No token provided.' });
-			//next();
 		if (!req.body.user && sessionToken){
 			jwt.verify(sessionToken, process.env.JWT_SECRET, (err, decoded) => {
 				if(decoded){

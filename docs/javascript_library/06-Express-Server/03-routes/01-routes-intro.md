@@ -14,14 +14,12 @@ Here's a rough diagram of what's happening with our recent code that was used as
 
 ### Analysis
 1. A GET request is made to localhost:3000/api/test.
-2. When the route is requested, Express finds the method for the specific route. The method that we already added for testing Postman is posted below.
-3. So when we go to the `/api/test/` endpoint, we fire off an Express function `res.send`.
-4. `res` (short for `response`) handles packaging up the response object.
-5. The `.send()` method does the job of sending off the response.
-
-Code block for #2: <br>
+2. When the route is requested, Express finds the method for the specific route. The method that we already added for testing Postman is below:
 ```js
 app.use('/api/test', function(req, res){
 	res.send("This is data from the /api/test endpoint. It's from the server.");
 });
 ```
+3. So when we go to the `/api/test/` endpoint, we fire off an Express function `res.send`.
+4. `res` (short for `response`) handles packaging up the response object.
+5. The `.send()` method does the job of sending off the response.

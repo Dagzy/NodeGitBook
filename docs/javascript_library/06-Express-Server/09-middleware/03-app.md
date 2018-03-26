@@ -39,7 +39,7 @@ Let's use Postman to test this api use the following steps:
 ![screenshot](assets/3-api-test-success.PNG) 
 
 ### Test Client
-Now that we've seen how the routes work, let's try the ones we added earlier for our test client. Your server should still be running, so we just need to start the client. Open up a new terminal window. Navigate to your client folder and run `http-server`. Go to your client and try clicking on the buttons. You should see the text change when you click the buttons, as well as information stored in the database and printed to the console.. We are finally displaying the response we've received back from our server!
+Now that we've seen how the routes work, let's try the ones we added earlier for our test client. Your server should still be running, so we just need to start the client. Open up a new terminal window. Navigate to your client folder and run `http-server`. Go to your client and try clicking on the buttons. You should see the text change when you click the buttons, as well as information stored in the database and printed to the console. We are finally displaying the response we've received back from our server!
 
 ### Further Study
 Look at this picture of the client-server relationship:
