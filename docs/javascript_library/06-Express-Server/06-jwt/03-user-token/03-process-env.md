@@ -1,11 +1,11 @@
-# PROCESS.ENV
+# DOTENV/.env
 ---
-In this module we'll work on making our signature private with the `dotenv` file. 
+In this module, we'll work on making our signature private with the `.env` file. 
 
 <hr/>
 
 ### Overview
-As mentioned before, our signature is currently available to anyone who wants it on GitHub. We can use a package called `dotenv` to hold data that we want hidden, then we can have the program reach out to that file when the data is needed. We can then prevent this file from being uploaded to GitHub. Dotenv provides a way to allow you to create secret keys that your application needs to function and keep them from going public.
+As mentioned before, our signature is currently available to anyone who wants it on GitHub. We can use a package called `dotenv` to hold data that we want hidden, then we can have the program reach out to that file when the data is needed. We can then prevent this file from being uploaded to GitHub. `dotenv` provides a way to allow you to create secret keys that your application needs to function and keep them from going public.
 
 <hr />
 
@@ -24,11 +24,11 @@ javascript-library
             └── db.js
 ```
 
-### Import dotenv package
-We have already installed the `dotenv` package, so to use it we need to go to `app.js` and require it at the top of the file
+### Import dotenv Package
+We have already installed the `dotenv` package. In order to use it we need to go to `app.js` and require it at the top of the file:
 
 ```js
-require('dotenv').config();//1
+require('dotenv').config();//1 <--- ADD THIS LINE
 
 var express = require('express');
 var app = express();
@@ -39,17 +39,17 @@ var bodyParser = require('body-parser');
 
 ```
 
-1. With this we can make items in an .env file available to our whole application.
+1. With this we can make items in an `.env` file available to our whole application.
 
-### process.env file
+### .env File
 1. Add `*.env` to your `.gitignore` to prevent it from being published to GitHub.
-2. In the `.env` file add the secret. Put it in exactly like this:
+2. In the `.env` file, add the secret. Put it in exactly like this:
 ```
 JWT_SECRET="i_am_secret"
 ```
 
-### Adding the process variable
-Now, let's add the process.env variable to our method. See the comment below:
+### Adding the Process Variable
+Now, let's add the `process.env` variable to our method. See the comment below:
 
 ```js
 

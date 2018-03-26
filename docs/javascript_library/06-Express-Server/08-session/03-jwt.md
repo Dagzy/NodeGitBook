@@ -24,7 +24,7 @@ router.post('/signin', function(req, res) {
 							sessionToken: token
 						});
 					}else { //4
-						res.status(500).send({ error: "you failed, yo" });
+						res.status(502).send({ error: "you failed, yo" });
 					}
 				});
 			} else {
@@ -32,7 +32,7 @@ router.post('/signin', function(req, res) {
 			}
 		},
 		function(err) {
-			res.status(500).send({ error: "you failed, yo" });
+			res.status(501).send({ error: "you failed, yo" });
 		}
 	);
 });
