@@ -4,7 +4,7 @@ In this module we'll add header files in our server.
 
 <hr />
 
-### M
+### Overview
 We added some routes to `app.js` earlier, but didn't cover what was really happening there. In this module we'll add to the `app.js` file, giving it the ability to use middleware. We'll also try testing out the additional routes we added earlier, as well as use the test client to see how the client and server sides work together.
 
 <hr />
@@ -12,39 +12,37 @@ We added some routes to `app.js` earlier, but didn't cover what was really happe
 ### Referencing the middleware
 We exported the middleware, now we need to use it when we spin up our server. Follow the steps:
 1. Go into `app.js`.
-2. Add the following code under the `bodyParser` variable:
+2. Add the following two lines of code under the `bodyParser` variable:
 
 ```js
-var bodyParser = require('body-parser');
-//1
-var headers = require('./middleware/headers');
 
 sequelize.sync(); // tip: {force: true} for resetting tables
 
 app.use(bodyParser.json());
-//2
-app.use(headers);
 
+app.use(require('./middleware/headers')); //1 Add it here.
+
+app.use('/test', test);
+app.use('/api/user', user);
+
+app.listen(3000, function(){
+	console.log('App is listening on 3000.')
 });
+
 
 ```
 ### Analysis
-1. We're creating a variable instance to our headers file just like we do for packages.
-2. This allows our server access to the headers file so that it can use the headers
-
-### Testing
-Let's use Postman to test this api use the following steps:
-1. Start the server using `nodemon app.js`.
-2. Open up Postman.
-3. Enter the URL:
-`http://localhost:3000/api/test`
-4. Press send in Postman. 
-5. You should see the following result:
-
-![screenshot](assets/3-api-test-success.PNG) 
+1. Here we activate our headers in the `app.js`. Keep in mind that this in order, so the file will be read and sequentially, which means that the headers must come before the routes are declared.
+ 
+<hr />
 
 ### Test Client
-Now that we've seen how the routes work, let's try the ones we added earlier for our test client. Your server should still be running, so we just need to start the client. Open up a new terminal window. Navigate to your client folder and run `http-server`. Go to your client and try clicking on the buttons. You should see the text change when you click the buttons, as well as information stored in the database and printed to the console. We are finally displaying the response we've received back from our server!
+Let's test this in our client now with the following steps.
+
+TODO: Put this into numerical steps. 
+Your server should still be running, so we just need to start the client. Open up a new terminal window. Navigate to your client folder and run `http-server`. Go to your client and try clicking on the buttons. You should see the text change when you click the buttons, as well as information stored in the database and printed to the console. We are finally displaying the response we've received back from our server!
+
+![screenshot](assets/05-server-update.md)
 
 ### Further Study
 Look at this picture of the client-server relationship:

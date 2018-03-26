@@ -11,8 +11,7 @@ sequelize.sync(); // tip: {force: true} for resetting tables
 
 app.use(bodyParser.json());
 
-// app.use(require('./middleware/headers'));
-app.use(require('./middleware/validate-session'));
+app.use(require('./middleware/headers'));
 
 app.use('/test', test);
 app.use('/api/user', user);
