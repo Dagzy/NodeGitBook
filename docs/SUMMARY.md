@@ -75,18 +75,19 @@
             * [03 - Server Refactoring](javascript_library/06-Express-Server/10-authenticated-routes/03-server.md)
             * [04 - Testing](javascript_library/06-Express-Server/10-authenticated-routes/04-testing.md)
         
-        <!-- * [11 - SQL Fundamentals]()
-            * [00 - SQL Intro](javascript_library/06-Express-Server/11-sql-intro/00-sql-intro.md)
-            * [01 - SQL Basics](javascript_library/06-Express-Server/11-sql-intro/01-sql-basics.md)
-        * [12 - Migrations]()
-            * [00 - Intro](javascript_library/06-Express-Server/12-migrations/00-migrations-intro.md)
-            * [01 - init and config](javascript_library/06-Express-Server/12-migrations/01-init-config.md)
-            * [02 - Creating the First Migration](javascript_library/06-Express-Server/12-migrations/02-first-migration.md)
-            * [03 - Running Migrations](javascript_library/06-Express-Server/12-migrations/03-running-migrations.md)
-            * [04 - Reverting Migrations](javascript_library/06-Express-Server/12-migrations/04-reverting.md)
-            * [05 - Seeds](javascript_library/06-Express-Server/12-migrations/05-seeds.md)
-            * [06 - Reverting Seeds](javascript_library/06-Express-Server/12-migrations/06-reverting-seeds.md)
-        * [13 - Workout Log Server]()
-            * [00 - Intro](javascript_library/06-Express-Server/13-workoutlog-api/00-intro.md) -->
+        <!-- Each line needs to be commented/uncommented separately to show what is desired -->
+        <!-- * [11 - SQL Fundamentals]() -->
+            <!-- * [00 - SQL Intro](javascript_library/06-Express-Server/11-sql-intro/00-sql-intro.md) -->
+            <!-- * [01 - SQL Basics](javascript_library/06-Express-Server/11-sql-intro/01-sql-basics.md) -->
+        <!-- * [12 - Migrations]() -->
+            <!-- * [00 - Intro](javascript_library/06-Express-Server/12-migrations/00-migrations-intro.md) -->
+            <!-- * [01 - init and config](javascript_library/06-Express-Server/12-migrations/01-init-config.md) -->
+            <!-- * [02 - Creating the First Migration](javascript_library/06-Express-Server/12-migrations/02-first-migration.md) -->
+            <!-- * [03 - Running Migrations](javascript_library/06-Express-Server/12-migrations/03-running-migrations.md) -->
+            <!-- * [04 - Reverting Migrations](javascript_library/06-Express-Server/12-migrations/04-reverting.md) -->
+            <!-- * [05 - Seeds](javascript_library/06-Express-Server/12-migrations/05-seeds.md) -->
+            <!-- * [06 - Reverting Seeds](javascript_library/06-Express-Server/12-migrations/06-reverting-seeds.md) -->
+        <!-- * [13 - Workout Log Server]() -->
+            <!-- * [00 - Intro](javascript_library/06-Express-Server/13-workoutlog-api/00-intro.md)  -->
 
 <!-- * [Eleven Fifty Style Guide](StyleGuide/StyleGuide.md) -->
