@@ -26,32 +26,6 @@ function fetchHelloDataFromAPI() {
 }
 
 
-/******************************
- * FETCH/GET long hand: /one - GET
- *****************************/
-function fetchFromOne(){
-	var url = 'http://localhost:3000/test/one';
-	
-	fetch(url, {
-	  method: 'GET', 
-	  headers: new Headers({
-		'Content-Type': 'application/json'
-	  })
-	}).then(
-		function(response){
-			return response.json()
-		})
-	.catch(
-		function(error){
-			console.error('Error:', error)
-		})
-	.then(
-		function(response){
-			console.log('Success:', response);
-		})
-}
-
-
   /***************************************
  * 3 GET /one : Arrow Function
 *************************************/

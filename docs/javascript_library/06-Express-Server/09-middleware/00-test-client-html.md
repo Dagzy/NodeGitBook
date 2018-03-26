@@ -171,4 +171,5 @@ To test this, we'll work in a web browser using `http-server` using the followin
 2. Run `http-server`.
 3. Open a browser and go to localhost:8080.
 4. You should see the following:
-![screenshot](01-starterhtml.PNG)
+<br />
+![screenshot](assets/01-starterhtml.PNG)
