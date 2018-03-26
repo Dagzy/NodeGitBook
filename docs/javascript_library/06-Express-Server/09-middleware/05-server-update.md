@@ -1,5 +1,10 @@
-# APP.JS UPDATE
+# HEADERS IN OUR SERVER
 ---
+In this module we'll add header files in our server.
+
+<hr />
+
+### M
 We added some routes to `app.js` earlier, but didn't cover what was really happening there. In this module we'll add to the `app.js` file, giving it the ability to use middleware. We'll also try testing out the additional routes we added earlier, as well as use the test client to see how the client and server sides work together.
 
 <hr />
