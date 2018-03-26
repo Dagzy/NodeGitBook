@@ -81,7 +81,7 @@ Copy the following code into the `index.html` file. Before we talk more about it
 We have several different things we can test. A couple print to the console, some add to the database, some retrieve data from the database, and a couple do more than one of these. This should be a good sample of tests for us to run to test our connection.
 
 ### scripts.js
-Enter the following code into the `scripts.js` file. There's a lot here, so we're gonna break it into two sections, then focus on each individual function. We'll talk about it in a minute.
+Enter the following code into the `scripts.js` file. There's a lot here, so we're gonna break it into two sections, then focus on each individual function.
 
 ```js
 /********************
@@ -188,13 +188,16 @@ function fetchFromOneDisplayData(){
 ```
 
 #### fetchHelloDatafromAPI()
+In this function, we're fetching data from the `/test/helloclient` endpoint. Many, if not most, APIs use a similar endpoint for initial testing, which will usually hold a set value. This allows us to ensure that the server is working before we start pulling information from a database. We also use the `Headers()` constructor object to hold our headers, which we'll talk more about in a later module. Finally, we use the `.text()` method here instead of the `.json()` method as we're only returning a single string.
 
 #### fetchfromOne()
+This time, we're fetching data from the `test/one` endpoint, which will pull from the database instead of a pre-defined value. We chain promises together to create the a flow chart for our `fetch`: If successful, perform the action in the second `.then()`. If not, go to the `catch()`. Just another way of handling errors.
 
 #### fetchFromOneCondensed()
+This is the same function as the one above it, only we use arrow functions instead of callbacks. You can see how much more simplified and easier to read this can be, saving us from potential "Callback Hell".
 
 #### fetchFromOneDisplayData()
-
+The last couple of functions received data back from the database and printed it to the console. This time, we actually display that data. We use a `for of` loop to iterate through the response object and create an `<li>` element for each item, which are then added to the `<ul>` object to be shown to the user.
 <hr>
 
 ### app.js Part 2
@@ -256,10 +259,13 @@ function printSessionToken(){
 ```
 
 #### postData()
+This function will allow us to add content to the database instead than just retrieving it. We have a pre-defined object that we pass into the `fetch` with the `body` property. Notice that the `method` property is now `POST` instead of `GET`. Our response is printed to the console, then also displayed to the user along with the timestamp.
 
 #### userSignup()
+This time, we take the username and password supplied by the user and create the object `newUserData` to hold them, which is then passed into the `body` property. Notice how both callback and arrow functions are used in the promise chain as another demonstration that both can be used interchangeably. Finally, we print the `sessionToken` received back in the response to the console, then store it inside of `localStorage`.
 
 #### printSessionToken()
+This function looks for a key of `SessionToken` inside of `localStorage`, then prints the value to the console. If no key by that name is present, `null` will print instead. 
 
 ### localStorage
 One thing we haven't talked about yet is `localStorage`. This is a little bit of storage space on the client's machine where things can be held for later use. This is the perfect spot to store our session token. Remember the statelessness of HTTP requests. Since the server needs the session token with every request, the client can store it to add to every request. For more information on `localStorage` and other things you can do with it, look at the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage).
