@@ -28,12 +28,8 @@ router.get('/helloclient', function (req, res) {
 Now, let's move over to the client side and do the following:
 1. Go into the `01-scripts.js` file.
 2. Add the following code:
+s
 ```js
-/********************
- * 
- * HTTP REQUESTS
- * 
- ********************/
 /*******************************
  * #1 GET: /helloclient
 ********************************/
