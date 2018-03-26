@@ -1,4 +1,4 @@
-# BCRYPT SETUP
+# bcrypt SETUP
 ---
 
 In this module we'll set up `bcrypt.js` in our application.
@@ -6,9 +6,10 @@ In this module we'll set up `bcrypt.js` in our application.
 <hr/>
 
 ### Import
-We already have the `bcryptjs` package in our `package.json` file. Once installed, we have to add it to the database. Just like with `jwt`, create a new variable. For its declaration, use the `require` statement for `bcryptjs`.
+We already have the `bcryptjs` package in our `package.json` file. Once installed, we have to add it to the database. Just like with `jwt`, create a new variable inside of `usercontroller.js`. For its declaration, use the `require` statement for `bcryptjs`.
 
 ```js
+var express = require('express');
 var router = require('express').Router();
 var sequelize = require('../db.js');
 var User = sequelize.import('../models/user');
@@ -50,12 +51,12 @@ module.exports = router;
 Here's a short diagram to give you an overview:
 ![screenshot](assets/03-bcrypt-diagram.png)
 
-We're adding the `hashSync()` function to our new User object so that we don't store the password in a format that is easy to read. We supply the original password and tell bcrypt to use the salt 10 times.
+We're adding the `hashSync()` function to our new User object so that we don't store the password in a format that is easy to read. In our code, we supply the original password and tell bcrypt to use the salt 10 times.
 
 Like JWT, there is a lot more to know and do with bcrypt. We are giving you enough to get started, but it would be wise to take a look through the [bcryptjs Docs](https://github.com/dcodeIO/bcrypt.js).
 
-### POSTMAN
-Test in Postman. 
+### Postman and Postgres
+Test in Postman: 
 ![screenshot](assets/01-bcrypt-success.PNG)
 
 Test in Postgres:
