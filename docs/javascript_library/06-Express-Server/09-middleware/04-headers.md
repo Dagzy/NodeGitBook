@@ -1,5 +1,5 @@
 # MIDDLEWARE Setup
-In this module we'll use Express to begin allowing CORS for client and server request/response cycle. 
+In this module, we'll use Express to begin allowing CORS for client and server request/response cycle. 
 
 <hr />
 
@@ -7,20 +7,16 @@ In this module we'll use Express to begin allowing CORS for client and server re
 Headers are sent by the client along with the request. They contain special instructions for the server. For more information on headers and CORS, take a look at the [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). A word of caution: there is a lot of information packed into this page, and much of it focuses on things that we haven't covered yet. Take it slow and do your own research, too.
 
 1. Go into the server folder and create a new folder called `middleware` and add the following files:
-
 ```
     └── 5-Express Server
             └── server
                 └── controllers
                 └── middleware
-                    └── headers.js
-                    └── validate-session.js                
+                    └── headers.js                
                 └── models
             └── client
 ```
-
 2. Go into `headers.js` and add the following code:
-
 ```js
  //1                        //2
 module.exports = function(req, res, next){
