@@ -71,7 +71,8 @@
             * [02 - Validate Session](javascript_library/06-Express-Server/10-authenticated-routes/02-validate-session.md)
             * [03 - Server Refactoring](javascript_library/06-Express-Server/10-authenticated-routes/03-server.md)
             * [04 - Testing](javascript_library/06-Express-Server/10-authenticated-routes/04-testing.md)
-        * [11 - SQL Fundamentals]()
+        
+        <!-- * [11 - SQL Fundamentals]()
             * [00 - SQL Intro](javascript_library/06-Express-Server/11-sql-intro/00-sql-intro.md)
             * [01 - SQL Basics](javascript_library/06-Express-Server/11-sql-intro/01-sql-basics.md)
         * [12 - Migrations]()
@@ -83,6 +84,6 @@
             * [05 - Seeds](javascript_library/06-Express-Server/12-migrations/05-seeds.md)
             * [06 - Reverting Seeds](javascript_library/06-Express-Server/12-migrations/06-reverting-seeds.md)
         * [13 - Workout Log Server]()
-            * [00 - Intro](javascript_library/06-Express-Server/13-workoutlog-api/00-intro.md)
+            * [00 - Intro](javascript_library/06-Express-Server/13-workoutlog-api/00-intro.md) -->
 
 <!-- * [Eleven Fifty Style Guide](StyleGuide/StyleGuide.md) -->
