@@ -69,8 +69,31 @@ function postToOneArrow(){
 }
  
 
+/*************************************
+ * 4 POST /test/seven Test Data
+**************************************/
+function postData() {
+	let content = { testdata: { item: 'This was saved!' } };
+	let testDataAfterFetch = document.getElementById('test-data');
+	let createdAtAfterFetch = document.getElementById('created-at');
+
+	fetch('http://localhost:3000/test/seven', {
+		method: 'post',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(content)
+	})
+	.then(response => response.json())
+	.then(function (text) {
+		console.log(text);
+		testDataAfterFetch.innerHTML = text.testdata.testdata;
+		createdAtAfterFetch.innerHTML = text.testdata.createdAt;
+	});
+}
+
 /***************************************
- * 4 GET FROM /ONE - Display Data
+ * 5 GET FROM /ONE - Display Data
 *************************************/
 function fetchFromOneDisplayData(){
 	let url = 'http://localhost:3000/test/one';
@@ -105,26 +128,3 @@ function fetchFromOneDisplayData(){
 }
 
 
-
-/*************************************
- * 5 POST /test/seven Test Data
-**************************************/
-function postData() {
-	let content = { testdata: { item: 'This was saved!' } };
-	let testDataAfterFetch = document.getElementById('test-data');
-	let createdAtAfterFetch = document.getElementById('created-at');
-
-	fetch('http://localhost:3000/test/seven', {
-		method: 'post',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(content)
-	})
-	.then(response => response.json())
-	.then(function (text) {
-		console.log(text);
-		testDataAfterFetch.innerHTML = text.testdata.testdata;
-		createdAtAfterFetch.innerHTML = text.testdata.createdAt;
-	});
-}

@@ -66,8 +66,10 @@
             * [03 - Middleware intro](javascript_library/06-Express-Server/09-middleware/03-middleware-intro.md)
             * [04 - Headers intro](javascript_library/06-Express-Server/09-middleware/04-headers.md)
             * [05 - Server Update](javascript_library/06-Express-Server/09-middleware/05-server-update.md)
-            * [06 - Client Test Post](javascript_library/06-Express-Server/09-middleware/05-server-update.md)
-
+            * [06 - Test Post](javascript_library/06-Express-Server/09-middleware/06-test-client-postToOne.md)
+            * [07 - Test Post Refactor](javascript_library/06-Express-Server/09-middleware/07-test-client-postToOneArrow.md)
+            * [08 - Post Data](javascript_library/06-Express-Server/09-middleware/08-test-client-postData.md)
+            * [09 - Fetch From One](javascript_library/06-Express-Server/09-middleware/09-test-client-fetchFromOneDisplay.md)
         * [10 - Authenticated Routes]()
             * [00 - Intro](javascript_library/06-Express-Server/10-authenticated-routes/00-intro.md)
             * [01 - Client](javascript_library/06-Express-Server/10-authenticated-routes/01-client.md)

@@ -1,4 +1,4 @@
-# fetchFromOne() Method
+# postToOneArrow() Method
 ---
 In this module we'll refactor our last method so that it is more streamlined and using ES6 principles. 
 

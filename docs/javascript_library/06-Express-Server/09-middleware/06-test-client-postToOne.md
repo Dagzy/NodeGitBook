@@ -1,4 +1,4 @@
-# fetchFromOne() Method
+# postToOne() Method
 ---
 In this module we'll write another client side function that access our server. 
 
@@ -39,14 +39,11 @@ function postToOne(){
 ```
 ### Quick Summary
 We are not seeing new stuff here, but let's do a quick summary:
-TODO:
+TODO: Short summaries of the code.
 1. 
 2. 
 3. 
 4. 
-
-Leftover description:
- If successful, perform the action in the second `.then()`. If not, go to the `catch()`. Just another way of handling errors.
 
 
 <hr>
