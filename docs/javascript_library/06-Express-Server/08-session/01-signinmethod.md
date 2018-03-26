@@ -15,7 +15,7 @@ router.post('/signin', function(req, res) {
     
         //5
         function(user) {
-			if (user !== null) {
+			if (user) {
 				res.json(user);
 			} else {
 				res.status(500).send({ error: "you failed, yo" }); //6

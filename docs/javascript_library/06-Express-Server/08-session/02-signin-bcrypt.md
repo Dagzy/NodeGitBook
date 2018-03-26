@@ -23,7 +23,7 @@ router.post('/signin', function (req, res) {
 			}
 		},
 		function (err) {
-			res.status(500).send({ error: "you failed, yo" });
+			res.status(501).send({ error: "you failed, yo" });
 		}
 	);
 });

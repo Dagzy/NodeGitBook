@@ -1,6 +1,6 @@
 # USER CREATE
 ---
-In this module we'll start to set up the necessary items for creating a new user. 
+In this module, we'll start to set up the necessary items for creating a new user. 
 
 <hr />
 
@@ -10,26 +10,27 @@ So far, we've just been putting data into a table in our database. However, if s
 
 ### User Model
 
-Let's set up a new user model.
+Let's set up a new user model. Create a file `user.js` in the `models` folder.
 
 ```js
 module.exports = function (sequelize, DataTypes) {
+           //1      //2
     return sequelize.define('user', {
-        username: DataTypes.STRING,
-        passwordhash: DataTypes.STRING
+        username: DataTypes.STRING, //3
+        passwordhash: DataTypes.STRING //3
     });
 };
 ```
 
 ### Analysis
 This should look familiar:
-1. A function with a sequelize object that calls the `define` method.
+1. A function with a Sequelize object that calls the `define` method.
 2. A first parameter that will create a `users` table in Postgres.
-3. An object with `username` and `passwordhash` that will be the columns in the table.
+3. An object with `username` and `passwordhash` that will be the columns in the table. We'll talk more about a `passwordhash` later.
 
 <hr />
 
-### App.js
+### app.js
 We'll need to set up a route to the user controller methods in `app.js`. We have added the entire file for orientation:
 ```js
 var express = require('express');
@@ -64,7 +65,7 @@ app.listen(3000, function(){
 <hr />
 
 ### usercontroller.js
-We'll need to add some code in our `usercontroller.js` file. Note, if Lebowski isn't your style, enter in your own flavor for the string values:
+We'll need to add some code in our `usercontroller.js` file. Note: if Lebowski isn't your style, enter in your own flavor for the string values:
 
 ```js
 
@@ -99,13 +100,13 @@ module.exports = router;
 ### Analysis
 This should look familiar again:
 1. We bring in our necessary imports. Same as the testcontroller, just with a User model now.
-2. We start out our post method for a `createuser` endpoint.
+2. We start out our `POST` method for a `createuser` endpoint.
 3. Inside the method, we have the basics for creating a new user and returning a message in the response. 
 
 ### Postman
 Let's quickly test this with Postman.
 1. Start your server then open Postman. 
-2. Figure out the endpoint to send a post request to. 
+2. Figure out the endpoint to send a `POST` request to. 
 3. Press send.
 4. You should see the response string:
 ![screenshot](assets/01-postman.PNG)
