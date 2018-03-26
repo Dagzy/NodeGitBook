@@ -10,6 +10,42 @@ In the `app.js` file on the server side, make the following changes:
 2. Move`app.use('/test', test);` and `app.use('/api/user', user);` `ABOVE app.use(require('./middleware/validate-session'));`
 3. BENEATH the `validate-session` line, add the following: `app.use('/authtest', authTest);`
 
+The final code should look like this: 
+```js
+require('dotenv').config();
+
+var express = require('express');
+var app = express();
+const cors = require('cors');
+var test = require('./controllers/testcontroller');
+var authTest = require('./controllers/authtestcontroller');
+
+var user = require('./controllers/usercontroller');
+var sequelize = require('./db');
+var bodyParser = require('body-parser');
+
+sequelize.sync(); // tip: {force: true} for resetting tables
+app.use(bodyParser.json());
+app.use(require('./middleware/headers'));
+/******************
+ * EXPOSED ROUTES
+*******************/
+app.use('/test', test);
+app.use('/api/user', user);
+
+/******************
+ * PROTECTED ROUTES
+*******************/
+
+app.use(require('./middleware/validate-session'));
+app.use('/authtest', authTest);
+
+
+app.listen(3000, function(){
+	console.log('App is listening on 3000.')
+});
+```
+
 ### What Did We Just Do?
 Anything beneath the `validate-session` will require a token to access, thus becoming protected. Anything above it will not require a token, remaining unprotected. Therefore the `test` and `user` routes are not protected, while the `authtest` route is protected. We also added a require statement for a new controller `authtestcontroller`. Let's make that now.
 
@@ -83,15 +119,13 @@ router.post('/create', function(req, res) {
 		);
 });
 ```
-These functions have the folloi
-#### GET /items
-Finds all items in the table with the user id in the token
+The functions should seem somewhat familiar to you, based on previous server functions. Here is a quick explanation for each:
 
-#### GET /item/:id
-Finds a single item in the the table. Uses both the id from the url (primary key) and the userid from the token (foreign key).
-
-#### POST /create
-Add an item to the table with the user id from the token.
+|Function|Purpose|
+|:--------|:------|
+|/item    |Finds all items in the table with the user id in the token|
+|/item/:id|Finds a single item in the the table. Uses both the id from the url (primary key) and the userid from the token (foreign key).|
+|/create  |Adds an item to the table with the user id from the token.|
 
 <hr>
 
