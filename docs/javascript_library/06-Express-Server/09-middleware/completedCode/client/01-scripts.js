@@ -27,26 +27,26 @@ function fetchHelloDataFromAPI() {
 
 
 /******************************
- * FETCH/GET long hand: /one - GET
+ * 2 POST long hand: /one 
  *****************************/
-function fetchFromOne(){
+function postToOne(){
 	var url = 'http://localhost:3000/test/one';
 	
 	fetch(url, {
-	  method: 'GET', 
+	  method: 'POST', 			//1
 	  headers: new Headers({
 		'Content-Type': 'application/json'
 	  })
 	}).then(
-		function(response){
-			return response.json()
+		function(response){   //2
+			return response.text()
 		})
 	.catch(
-		function(error){
+		function(error){   //3
 			console.error('Error:', error)
 		})
 	.then(
-		function(response){
+		function(response){   //4
 			console.log('Success:', response);
 		})
 }

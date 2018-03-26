@@ -82,21 +82,21 @@ Copy the following code into the `index.html` file. Before we talk more about it
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>GET 
+                    <td>POST 
                         <code>/test/one</code>
                     </td>
                     <td>
-                        <button onclick="fetchFromOne();">Fetch from one</button>
+                        <button onclick="postToOne();">Fetch from one</button>
                     </td>
                     <td>See Console</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>GET (arrow function)
+                    <td>POST (arrow function)
                         <code>/test/one</code>
                     </td>
                     <td>
-                        <button onclick="fetchFromOneCondensed();">Fetch method</button>
+                        <button onclick="postToOneCondensed();">Fetch method</button>
                     </td>
                     <td>See Console</td>
                 </tr>

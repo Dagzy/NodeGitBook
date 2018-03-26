@@ -42,7 +42,7 @@ Let's test this in our client now with the following steps.
 TODO: Put this into numerical steps. 
 Your server should still be running, so we just need to start the client. Open up a new terminal window. Navigate to your client folder and run `http-server`. Go to your client and try clicking on the buttons. You should see the text change when you click the buttons, as well as information stored in the database and printed to the console. We are finally displaying the response we've received back from our server!
 
-![screenshot](assets/05-server-update.md)
+![screenshot](assets/05-server-fix.PNG)
 
 ### Further Study
 Look at this picture of the client-server relationship:
