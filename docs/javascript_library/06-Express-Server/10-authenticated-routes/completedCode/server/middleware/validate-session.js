@@ -22,7 +22,7 @@ module.exports = function(req, res, next) {
 							res.status(401).send({error: 'Not authorized'});
 						});
 				} else {
-					res.status(401).send({error: 'Not authorized'});
+					res.status(402).send({error: 'Not authorized'});
 				}
 			});
 		} else {
