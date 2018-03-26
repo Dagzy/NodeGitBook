@@ -24,7 +24,7 @@ router.post('/signin', function(req, res) {
 							sessionToken: token
 						});
 					}else { //4
-						res.status(500).send({ error: "you failed, yo" });
+						res.status(502).send({ error: "you failed, yo" });
 					}
 				});
 			} else {
@@ -32,7 +32,7 @@ router.post('/signin', function(req, res) {
 			}
 		},
 		function(err) {
-			res.status(500).send({ error: "you failed, yo" });
+			res.status(501).send({ error: "you failed, yo" });
 		}
 	);
 });
@@ -54,7 +54,7 @@ router.post('/signin', function(req, res) {
 ![screenshot](assets/03-signin-user.PNG)
 3. Also, stop and notice the token in the response.
 4. Try logging in with a user that doesn't exist or with a user exists with the wrong password:
-![fail](assets/03-sigin-fail.png)
+![fail](assets/03-signin-fail.png)
 
 <hr />
 
@@ -62,4 +62,3 @@ router.post('/signin', function(req, res) {
 1. Here we've added bcrypt to compare passwords entered by the client with the password in the database. 
 2. If the sign in is successful, we send a token back to the user. 
 3. If the sign in is not successful, we send an authentication error.
-

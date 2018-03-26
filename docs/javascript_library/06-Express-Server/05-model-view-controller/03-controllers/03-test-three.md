@@ -26,14 +26,14 @@ router.post('/three', function (req, res) {
   var testData = req.body.testdata.item; 
 
   TestModel
-    .create({
+    .create({ //2
       testdata: testData
     })
   res.send("Test three went through!")
   console.log("Test three went through!")
 });
 
-
+module.exports = router;
 ```
 
 1. Here we use the `req.body` middleware provided by Express and append two more properties to it. This is what we're sending to the database. `req` is the actual request, and `body` is where our data is being held. `testdata` is a property of `body`, while `item` is a property of `testdata`. We'll see this in Postman in a little while.
@@ -65,9 +65,9 @@ app.listen(3000, function(){
 ```
 
 ### Analysis
-1. We pull in the `body-parser` library and store it in the `bodyParser` variable. 
+1. We pull in the `body-parser` library and store it in the `bodyParser` variable.
 
-2. You should read through [this article](https://medium.com/@adamzerner/how-bodyparser-works-247897a93b90) to get a starter understanding of how `body-parser` is working with `req.body`. Warning: this will lead you down a rabbit hole of understanding. For our purposes, it's important to know this: 
+2. This `app.use` statement MUST go above any routes. Any routes above this statement will not be able to use the `bodyparser` library, so they will break. You should read through [this article](https://medium.com/@adamzerner/how-bodyparser-works-247897a93b90) to get a starter understanding of how `body-parser` is working with `req.body`. Warning: this will lead you down a rabbit hole of understanding. For our purposes, it's important to know this: 
 
 > `app.use(bodyParser.json())` tells the application that we want `json` to be used as we process this request.
 

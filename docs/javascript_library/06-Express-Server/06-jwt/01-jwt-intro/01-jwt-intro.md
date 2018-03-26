@@ -1,11 +1,11 @@
 #JWT
 ---
-In this module we'll introduce JSON Web Token(JWT), sometimes referred to as Jot.
+In this module, we'll introduce JSON Web Token (JWT), sometimes referred to as Jot.
 
 <hr />
 
 ### What is JWT?
-JWT stands for **J**SON **W**eb **T**oken. It's an identifier to be added to the body of a request. So, when you send a request, you send a token with it. Let's look at a good analogy for how JWT works:
+JWT stands for **J**SON **W**eb **T**oken. It's an identifier to be added to the body of a request, so that when you send a request, you send a token with it. Let's look at a good analogy for how JWT works:
 
 You go to a venue to see a band. The venue is charging a $15 entry fee. You pay the fee, and then the doorman stamps your hand. You go in and the show starts.  Think of this as like signing up for an app, and your stamp is the token.
 
@@ -18,15 +18,13 @@ The token deals with the issue of statelessness in HTTP. Think back to the idea 
 
 
 ### Authenticated Request
-We use a token for authenticated requests, that is when a user has to be authenticated(logged in) to do CRUD type stuff:
-* a user saves a note.
-* a user looks at a friends tweet
-* a user direct messages a friend.
-* a user loads up a bingeworthy Netflix show on their account and a record of that is stored in their parents' account because they are still freesharing. 
+We use a token for authenticated requests; which are requests for which a user has to be authenticated (logged in) to do CRUD type stuff:
+* A user saves a note.
+* A user looks at a friends tweet.
+* A user direct messages a friend.
+* A user loads up a binge-worthy Netflix show on their account, and a record of that is stored in their parents' account because they are still free-sharing. 
 
 These requests require tokens if the user is logged in. They are authenticated requests.
 
 ### Token vs. Cookie
-It's important to know about the difference between a token and a cookie, and it's drifting out side of our scope right now. We will say that we are using token-based authentication. However, the cookie and token talk is necessary reading for you. Here's a required [article.](https://auth0.com/blog/cookies-vs-tokens-definitive-guide/)
-
-And a [Stack Overflow](https://stackoverflow.com/questions/17000835/token-authentication-vs-cookies) post.
+It's important to know about the difference between a token and a cookie, and it's drifting out side of our scope right now. We will say that we are using token-based authentication. However, the cookie and token talk is necessary reading for you. Here's a required [article](https://auth0.com/blog/cookies-vs-tokens-definitive-guide/), and a [Stack Overflow](https://stackoverflow.com/questions/17000835/token-authentication-vs-cookies) post.

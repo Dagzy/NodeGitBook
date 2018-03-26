@@ -73,18 +73,18 @@ router.post('/createuser', function (req, res) {
 // module.exports = router;
 
 
-// /******************* 
-//  * STEP 1: signin
-// ********************/
+/******************* 
+ * STEP 1: signin
+********************/
 
-// //7
+//7
 // router.post('/signin', function(req, res) {
 //             //1     //2       //3                                   //4
 // 	User.findOne( { where: { username: req.body.user.username } } ).then(
-    
 //         //5
 //         function(user) {
-//             res.json(user);
+// 			if (user) res.json(user);
+// 			else res.status(500).send({ error: "you failed, yo" });
 // 		},
 // 		//6
 // 		function(err) {
@@ -96,29 +96,29 @@ router.post('/createuser', function (req, res) {
 // module.exports = router;
 
 
-// /******************* 
-//  * STEP 2: BCRYPT
-// ********************/
+// // /******************* 
+// //  * STEP 2: BCRYPT
+// // ********************/
 
-// router.post('/signin', function (req, res) {
-// 	User.findOne({ where: { username: req.body.user.username } }).then(
-// 		function (user) {
-// 			if (user) {
-// 				//1				//2						//3					//4
-// 				bcrypt.compare(req.body.user.password, user.passwordhash, function (err, matches) {
-// 					console.log(matches); //5
-// 				});
-// 			} else {
-// 				res.status(500).send({ error: "failed to authenticate" });
-// 			}
-// 		},
-// 		function (err) {
-// 			res.json(err);
-// 		}
-// 	);
-// });
+// // router.post('/signin', function (req, res) {
+// // 	User.findOne({ where: { username: req.body.user.username } }).then(
+// // 		function (user) {
+// // 			if (user) {
+// // 				//1				//2						//3					//4
+// // 				bcrypt.compare(req.body.user.password, user.passwordhash, function (err, matches) {
+// // 					console.log(matches); //5
+// // 				});
+// // 			} else {
+// // 				res.status(500).send({ error: "failed to authenticate" });
+// // 			}
+// // 		},
+// // 		function (err) {
+// // 			res.json(err);
+// // 		}
+// // 	);
+// // });
 
-// module.exports = router;
+// // module.exports = router;
 
 
 // /******************* 
