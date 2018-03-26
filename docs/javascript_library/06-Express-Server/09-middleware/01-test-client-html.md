@@ -86,7 +86,7 @@ Copy the following code into the `index.html` file. Before we talk more about it
                         <code>/test/one</code>
                     </td>
                     <td>
-                        <button onclick="postToOne();">Fetch from one</button>
+                        <button onclick="postToOne();">POST to /one</button>
                     </td>
                     <td>See Console</td>
                 </tr>
@@ -96,7 +96,7 @@ Copy the following code into the `index.html` file. Before we talk more about it
                         <code>/test/one</code>
                     </td>
                     <td>
-                        <button onclick="postToOneCondensed();">Fetch method</button>
+                        <button onclick="postToOneArrow();">POST to /one</button>
                     </td>
                     <td>See Console</td>
                 </tr>

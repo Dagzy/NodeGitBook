@@ -53,17 +53,17 @@ function postToOne(){
 
 
   /***************************************
- * 3 GET /one : Arrow Function
+ * 3 POST /one : Arrow Function
 *************************************/
-function fetchFromOneCondensed(){
+function postToOneArrow(){
 	var url = 'http://localhost:3000/test/one';
 	
 	fetch(url, {
-	  method: 'GET', 
+	  method: 'POST', 
 	  headers: new Headers({
 		'Content-Type': 'application/json'
 	  })
-	}).then(res => res.json())
+	}).then(res => res.text())
 	.catch(error => console.error('Error:', error))
 	.then(response => console.log('Success:', response));
 }

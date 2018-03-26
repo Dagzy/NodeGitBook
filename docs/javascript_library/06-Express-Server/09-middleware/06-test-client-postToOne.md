@@ -5,7 +5,7 @@ In this module we'll write another client side function that access our server.
 <hr>
 
 ### Overview
-This time, we'll fetching data from the `test/one` endpoint that we already built, which will pull from the database instead of a pre-defined value. We'll chain promises together to create the a flow chart for our `fetch`. 
+This time, we'll be testing our POST request from the `test/one` endpoint that we already built, which will pull from the database instead of a pre-defined value. We'll chain promises together to create a flow chart for our `fetch`. 
 
 ### Scripts
 Let's add the function now. It should go directly below the first function in `01-scripts.js`:
