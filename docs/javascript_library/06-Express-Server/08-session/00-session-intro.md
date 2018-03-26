@@ -1,6 +1,6 @@
 # SESSION
 ---
-In this module we'll discuss the concept of a session.
+In this module, we'll discuss the concept of a session.
 
 <hr>
 
