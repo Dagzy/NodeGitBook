@@ -39,12 +39,10 @@ function postToOne(){
 ```
 ### Quick Summary
 We are not seeing new stuff here, but let's do a quick summary:
-TODO: Short summaries of the code.
-1. 
-2. 
-3. 
-4. 
-
+1. We are doing a fetch the url. The route in the server handles a `POST` request, so our method type is `POST`. Remember that these two must match. If a route takes a `POST` request, then the declared method in the request should `POST`. 
+2. We pass the response into a Promise that returns the response as plain text. (We'll use more JSON later)
+3. We handle an error, if an error comes back.
+4. In the final `then()` we simple print the plain text response to the console. This section is where we can do some DOM set up. 
 
 <hr>
 

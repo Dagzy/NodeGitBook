@@ -16,19 +16,24 @@ Let's add the function now. It should go directly below the first function in `0
 function postToOneArrow(){
 	var url = 'http://localhost:3000/test/one';
 	
-	fetch(url, {
+	fetch(url, {  //1
 	  method: 'POST', 
 	  headers: new Headers({
 		'Content-Type': 'application/json'
 	  })
-	}).then(res => res.json())
-	.catch(error => console.error('Error:', error))
-	.then(response => console.log('Success:', response));
+	}).then(res => res.text()) //2
+	.catch(error => console.error('Error:', error)) //3
+	.then(response => console.log('Success:', response)); //4
 }
 
 ```
 ### Quick Summary
-This is the same function as the one above it, only we use arrow functions instead of callbacks. You can see how much more simplified and easier to read this can be, saving us from potential "Callback Hell". Our function is doing the same thing. We're reaching out to an endpoint with a POST request. We add the appropriate headers. We are asking for a json response. We handle an error, if there is one. In the end we simply print the data to the console.  
+This is the same function as the one above it that we wrote in the last module, only we use arrow functions instead of callbacks. You can see how much more simplified and easier to read this can be, saving us from potential "Callback Hell". Our function is doing the same thing:
+
+1. We're reaching out to an endpoint with a POST request. We add the appropriate headers. 
+2. We are asking for a plain text response. 
+3. We handle an error, if there is one. 
+4. In the end we simply print the data to the console.  
 
 <hr>
 
