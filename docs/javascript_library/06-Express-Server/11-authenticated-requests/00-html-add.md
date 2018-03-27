@@ -105,28 +105,26 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                 <tr>
                     <th scope="row">13</th>
                     <td>Delete Single Item</td>
+                    <td>
+                        <button onclick="fetchFromOneDisplayData();">Display data</button>
+                    </td>
+                    <td>
+                        <ul id="thirteen">
+                        </ul>
+                    </td>
+
                     <!--TODO:
-                    Need to show all items by user.
                     See the ids by user.
                     Enter an id into an input field
                     Call the delete method w/ interpolation.
                     -->
-                    <td>
-                        Get all items: 
-                        <ul>
-
-                        </ul>
-                    </td>
-                    <td>
-                            <button onclick="deleteItem();">Delete Single Item</button>
-                    </td>
                 </tr>
 
 ```
 
 ### Analysis
 Take a minute to glance through the additions. Notice that we've added the following:
-1. 7 more table rows 
+1. 8 more table rows 
 2. Buttons, lists, and input fields added to various rows.
 3. Classes and ids in elements for future use.  
 
