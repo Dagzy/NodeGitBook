@@ -104,7 +104,7 @@ function fetchFromOneDisplayData() {
 			'Content-Type': 'application/json'
 		})
 	}).then(function(response) {
-		return response.text()
+		return response.json()
 	})
 	.catch(
 		function(error) {
@@ -118,12 +118,10 @@ function fetchFromOneDisplayData() {
 				for (r of response) {
 					let listItem = document.createElement('li');
 					listItem.innerHTML = r.testdata;
-					console.log(r)
 					// Console logs for lessons
 					// console.log('T:', r.testdata);
-					break;
 					// console.log("TEXT:", text);
-					//myList.appendChild(listItem);
+					myList.appendChild(listItem);
 				}
 		})
 }

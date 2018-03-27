@@ -71,26 +71,33 @@
             * [08 - Post Data](javascript_library/06-Express-Server/09-middleware/08-test-client-postData.md)
             * [09 - Fetch From One](javascript_library/06-Express-Server/09-middleware/09-test-client-fetchFromOneDisplay.md)
         * [10 - Authenticated Routes]()
-            * [00 - HTML Addition](javascript_library/06-Express-Server/10-authenticated-routes/00-html-add.md)
-            * [01 - Intro to Authenticated Routes](javascript_library/06-Express-Server/10-authenticated-routes/00-intro.md)
-            * [01 - Client](javascript_library/06-Express-Server/10-authenticated-routes/01-client.md)
+            * [01 - Intro to Authenticated Routes](javascript_library/06-Express-Server/10-authenticated-routes/01-auth-routes-intro.md)
             * [02 - Validate Session](javascript_library/06-Express-Server/10-authenticated-routes/02-validate-session.md)
-            * [03 - Server Refactoring](javascript_library/06-Express-Server/10-authenticated-routes/03-server.md)
-            * [04 - Testing](javascript_library/06-Express-Server/10-authenticated-routes/04-testing.md)
-        
-        <!-- Each line needs to be commented/uncommented separately to show what is desired -->
-        <!-- * [11 - SQL Fundamentals]() -->
-            <!-- * [00 - SQL Intro](javascript_library/06-Express-Server/11-sql-intro/00-sql-intro.md) -->
-            <!-- * [01 - SQL Basics](javascript_library/06-Express-Server/11-sql-intro/01-sql-basics.md) -->
-        <!-- * [12 - Migrations]() -->
-            <!-- * [00 - Intro](javascript_library/06-Express-Server/12-migrations/00-migrations-intro.md) -->
-            <!-- * [01 - init and config](javascript_library/06-Express-Server/12-migrations/01-init-config.md) -->
-            <!-- * [02 - Creating the First Migration](javascript_library/06-Express-Server/12-migrations/02-first-migration.md) -->
-            <!-- * [03 - Running Migrations](javascript_library/06-Express-Server/12-migrations/03-running-migrations.md) -->
-            <!-- * [04 - Reverting Migrations](javascript_library/06-Express-Server/12-migrations/04-reverting.md) -->
-            <!-- * [05 - Seeds](javascript_library/06-Express-Server/12-migrations/05-seeds.md) -->
-            <!-- * [06 - Reverting Seeds](javascript_library/06-Express-Server/12-migrations/06-reverting-seeds.md) -->
-        <!-- * [13 - Workout Log Server]() -->
-            <!-- * [00 - Intro](javascript_library/06-Express-Server/13-workoutlog-api/00-intro.md)  -->
+            * [03 - Changes to app.js](javascript_library/06-Express-Server/10-authenticated-routes/03-appjs-changes.md)
+            * [04 - authtestcontroller.js](javascript_library/06-Express-Server/10-authenticated-routes/04-authtestcontroller.md)
+            * [05 - Postman Testing](javascript_library/06-Express-Server/10-authenticated-routes/05-postman.md)
+        * [11 - Authenticated Requests]()
+            * [00 - Additions to index.html](javascript_library/06-Express-Server/11-authenticated-requests/00-html-add.md)
+            * [01 - Create User](javascript_library/06-Express-Server/11-authenticated-requests/01-create-user.md)
+            * [02 - Getting a Token](javascript_library/06-Express-Server/11-authenticated-requests/02-get-token.md)
+            * [03 - /authtestone](javascript_library/06-Express-Server/11-authenticated-requests/03-authtestone.md)
+            * [04 - /authtest/create](javascript_library/06-Express-Server/11-authenticated-requests/04-authtest-create.md)
+            * [05 - Get one item](javascript_library/06-Express-Server/11-authenticated-requests/05-get-single.md)
+            * [06 - Update an Item](javascript_library/06-Express-Server/11-authenticated-requests/06-update-item.md)
+            * [07 - Deleting an Item](javascript_library/06-Express-Server/11-authenticated-requests/07-delete.md)
+        * [12 - Workout Log Server]()
+            * [00 - Intro](javascript_library/06-Express-Server/12-workoutLog-challengepi/00-intro.md) 
+        * [13 - Postgres Essentials]()
+            * [01 - SQL Intro]()
+                * [00 - SQL Intro](javascript_library/06-Express-Server/13-Postrges-essentials/01-sql-intro/00-sql-intro.md)
+                * [01 - SQL Basics](javascript_library/06-Express-Server/13-Postrges-essentials/01-sql-intro/01-sql-basics.md)
+            * [02 - Migrations]()
+                * [00 - Intro](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/00-migrations-intro.md)
+                * [01 - init and config](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/01-init-config.md)
+                * [02 - Creating the First Migration](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/02-first-migration.md)
+                * [03 - Running Migrations](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/03-running-migrations.md)
+                * [04 - Reverting Migrations](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/04-reverting.md)
+                * [05 - Seeds](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/05-seeds.md)
+                * [06 - Reverting Seeds](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/06-reverting-seeds.md)
 
 <!-- * [Eleven Fifty Style Guide](StyleGuide/StyleGuide.md) -->
