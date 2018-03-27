@@ -1,6 +1,6 @@
 # postToOneArrow() Method
 ---
-In this module we'll refactor our last method so that it is more streamlined and using ES6 principles. 
+In this module, we'll refactor our last method so that it is more streamlined and using ES6 principles. 
 
 <hr>
 
@@ -33,14 +33,14 @@ This is the same function as the one above it that we wrote in the last module, 
 1. We're reaching out to an endpoint with a POST request. We add the appropriate headers. 
 2. We are asking for a plain text response. 
 3. We handle an error, if there is one. 
-4. In the end we simply print the data to the console.  
+4. In the end, we simply print the data to the console.  
 
 <hr>
 
 ### Test
 
 1. Make sure that both your client and server are running.
-2. Go to localhost:8080
+2. Go to `localhost:8080`
 3. Click the `POST to /one` button in Step #3.
 3. You should see the following success message:
 ![screenshot](assets/07-postToOneArrow.PNG)
