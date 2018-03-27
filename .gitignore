@@ -39,5 +39,5 @@ book.mobi
 .vscode/
 
 # Testing stuff
-docs/javascript_library/06-Express-Server/11-authenticated-requests/completedCode/client/03-auth-test.js
+/docs/javascript_library/06-Express-Server/11-authenticated-requests/completedCode/client/03-auth-test.js
 docs/javascript_library/06-Express-Server/11-authenticated-requests/completedCode/server/controllers/authtestcontroller.js

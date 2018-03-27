@@ -2,7 +2,7 @@
  * FETCH/GET from Auth Route
 *************************************/
 function fetchFromAuthRouteOne() {
-	const fetch_url = `http://localhost:3000/authtest/one`
+	const fetch_url = `http://localhost:3000/authtest/getall`
 	const accessToken = localStorage.getItem('SessionToken')
 
 	const response = fetch(fetch_url, {
