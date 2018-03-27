@@ -80,49 +80,6 @@ router.get('/:id', function(req, res) {
 		);
 });
 
-/******************
-* UPDATE ITEM FOR INDIVIDUAL USER
-******************/
-router.put('/update/:id', function(req, res) {
-	var data = req.params.id;
-	var authtestdata = req.body.authtestdata.item;
-
-    AuthTestModel
-    	.update({
-    		authtestdata: authtestdata
-    	},
-    	{where: {id: data}}
-    	).then(
-    		function updateSuccess(updatedLog) {
-				res.json({
-					authtestdata: authtestdata
-				});    		},
-    		function updateError(err){
-    			res.send(500, err.message);
-    		}
-    	)
-});
-
-/******************
-* DELETE ITEM FOR INDIVIDUAL USER
-******************/
-router.delete('/delete/:id', function(req, res) {
-	var data = req.params.id;
-	var userid = req.user.id;
-	
-	AuthTestModel
-		.destroy({
-			where: { id: data, owner: userid }
-		}).then(
-			function deleteLogSuccess(data){
-				res.send("you removed a log");
-			},
-			function deleteLogError(err){
-				res.send(500, err.message);
-			}
-		);
-});
-
 module.exports = router;
 ```
 
@@ -137,4 +94,4 @@ Although there are nuances that we'll discuss, the functions should seem somewha
 
 <hr>
 
-Now that our setup is done, let's test out our new routes.
+Up until now, we've only done `GET` and `POST` requests. A full CRUD app lets you update and delete stuff, however, so we need to add some `DELETE` and `UPDATE` functionality. Let's talk a little more about each and set up a route for each before we start testing.

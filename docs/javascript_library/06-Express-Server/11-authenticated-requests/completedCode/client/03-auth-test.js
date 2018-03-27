@@ -8,7 +8,6 @@ function fetchFromAuthRouteOne() {
 	const response = fetch(fetch_url, {
 		method: 'GET',
 		headers: {
-			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 			'Authorization': accessToken
 		}
@@ -36,7 +35,6 @@ function postToAuthRouteCreate() {
 	const response = fetch(fetch_url, {
 		method: 'POST',
 		headers: {
-			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 			'Authorization': accessToken
 		},
@@ -62,7 +60,6 @@ function getOneByUser() {
 	const response = fetch(fetch_url, {
 		method: 'GET',
 		headers: {
-			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 			'Authorization': accessToken
 		}
@@ -93,7 +90,6 @@ function updateItem() {
 	const response = fetch(fetch_url, {
 		method: 'PUT',
 		headers: {
-			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 			'Authorization': accessToken
 		},
@@ -116,7 +112,6 @@ function deleteItem() {
 	const response = fetch(fetch_url, {
 		method: 'DELETE',
 		headers: {
-			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 			'Authorization': accessToken
 		}
@@ -134,7 +129,6 @@ function deleteItemById(paramNum) {
 	const response = fetch(fetch_url, {
 		method: 'DELETE',
 		headers: {
-			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 			'Authorization': accessToken
 		}

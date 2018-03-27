@@ -1,6 +1,6 @@
 # VALIDATE SESSION
 ---
-In this module we'll construct a file that will check to see if the request has a token attached. 
+In this module, we'll construct a file that will check to see if the request has a token attached. 
 
 <hr />
 
@@ -17,14 +17,13 @@ var sequelize = require('../db');
 var User = sequelize.import('../models/user');
 
 module.exports = function(req, res, next) {
-	if (req.headers.accept === '*/*') { //11
-		next()
-	} else {
+	// if (req.method == 'OPTIONS') {
+	// 	next()
+	// } else {
 		var sessionToken = req.headers.authorization; //1
 		console.log(sessionToken) //2
 		if (!sessionToken) return res.status(403).send({ auth: false, message: 'No token provided.' }); //3
-
-		if (!req.body.user && sessionToken){ //4
+		else { //4
 			jwt.verify(sessionToken, process.env.JWT_SECRET, (err, decoded) => { //5
 				if(decoded){
 					User.findOne({where: { id: decoded.id}}).then(user => { //6
@@ -35,13 +34,11 @@ module.exports = function(req, res, next) {
 						res.status(401).send({error: 'Not authorized'});
 					});
 				} else { //9
-					res.status(402).send({error: 'Not authorized'});
+					res.status(400).send({error: 'Not authorized'});
 				}
 			});
-		} else { //10
-			next();
 		}
-	}
+	//}
 }
 ```
 
@@ -57,8 +54,8 @@ There's a lot here, so take it slow through this explanation. Additional informa
 7. The callback sets the `user` value for the request as the `id` value passed to it then sends the request on to its next destination. This property will be necessary later in adding to the database.
 8. If no matching `id` is found, an error message is thrown.
 9. If no value for `decoded`, an error message is thrown. 
-10. Error handling. If a value is present for `req.body.user` is found and a token is present, one can assume that the user is already signed in and the request is sent to its next destination. However, this value should NEVER be present on the request, as no `user` property is sent on `req.body`. Once decoded, `req.user` is set instead. As mentioned before, this prevents the use of a token by a different user than it was originally assigned to.
-11. Look back at the pictures in the first module of this chapter, specifically the images of the requests. The `OPTIONS` request doesn't have the session token, so an error would be thrown and the header with the token would never be sent. This conditional checks the `Accept` header in the request. The `OPTIONS` request contains a value of `*/*` for this header, while the second request contains a value of `application/json`. This lets the initial request through to the server to do its check so that the second request containing the token can also be sent.
+
+Some code is commented out in the above section. Leave it commented out for now. We'll talk more about that later once we start using our authenticated routes with a client.
 
 ### Before You Move On
 Go back and read through all that again. Make a flow chart of what's happening. Explain to a partner what is going on. Do whatever you need to do in order to understand this file. This is some very deep, very detailed code that can be tough to understand. Security should be your #1, #2, and #3 priorities when coding, so it's worth the extra time to get it right.
