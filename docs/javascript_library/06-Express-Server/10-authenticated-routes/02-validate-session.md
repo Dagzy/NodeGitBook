@@ -6,10 +6,18 @@ In this module, we'll construct a file that will check to see if the request has
 
 ### Files
 Please add the following to your server in the `middleware` folder:
-
-
+```
+    └── 5-Express Server
+            └── server
+                └── controllers
+                └── middleware
+                    └── headers.js
+					└── validate-session.js <----- ADD THIS              
+                └── models
+            └── client
+```
 ### Code
-Inside of `validate-session.js`. Put the following code inside of that file:
+Inside of `validate-session.js`. Put the following code inside of that file. There is a little bit of code that is commented out here. Leave it like that for now.
 
 ```js
 var jwt = require('jsonwebtoken');
@@ -54,8 +62,6 @@ There's a lot here, so take it slow through this explanation. Additional informa
 7. The callback sets the `user` value for the request as the `id` value passed to it then sends the request on to its next destination. This property will be necessary later in adding to the database.
 8. If no matching `id` is found, an error message is thrown.
 9. If no value for `decoded`, an error message is thrown. 
-
-Some code is commented out in the above section. Leave it commented out for now. We'll talk more about that later once we start using our authenticated routes with a client.
 
 ### Before You Move On
 Go back and read through all that again. Make a flow chart of what's happening. Explain to a partner what is going on. Do whatever you need to do in order to understand this file. This is some very deep, very detailed code that can be tough to understand. Security should be your #1, #2, and #3 priorities when coding, so it's worth the extra time to get it right.
