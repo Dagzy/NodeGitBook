@@ -90,17 +90,16 @@
             * [08 - Deleting an Item](javascript_library/06-Express-Server/11-authenticated-requests/07-delete.md)
         * [12 - Workout Log Server]()
             * [00 - Intro](javascript_library/06-Express-Server/12-workoutLog-challengepi/00-intro.md) 
-        * [13 - Postgres Essentials]()
-            * [01 - SQL Intro]()
-                * [00 - SQL Intro](javascript_library/06-Express-Server/13-Postrges-essentials/01-sql-intro/00-sql-intro.md)
-                * [01 - SQL Basics](javascript_library/06-Express-Server/13-Postrges-essentials/01-sql-intro/01-sql-basics.md)
-            * [02 - Migrations]()
-                * [00 - Intro](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/00-migrations-intro.md)
-                * [01 - init and config](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/01-init-config.md)
-                * [02 - Creating the First Migration](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/02-first-migration.md)
-                * [03 - Running Migrations](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/03-running-migrations.md)
-                * [04 - Reverting Migrations](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/04-reverting.md)
-                * [05 - Seeds](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/05-seeds.md)
-                * [06 - Reverting Seeds](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/06-reverting-seeds.md)
+        * [13 - Migrations]()
+            * [00 - Intro](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/00-migrations-intro.md)
+            * [01 - init and config](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/01-init-config.md)
+            * [02 - Creating the First Migration](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/02-first-migration.md)
+            * [03 - Running Migrations](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/03-running-migrations.md)
+            * [04 - Reverting Migrations](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/04-reverting.md)
+            * [05 - Seeds](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/05-seeds.md)
+            * [06 - Reverting Seeds](javascript_library/06-Express-Server/13-Postrges-essentials/02-migrations/06-reverting-seeds.md)
 
-<!-- * [Eleven Fifty Style Guide](StyleGuide/StyleGuide.md) -->
+<!-- * [Eleven Fifty Style Guide](StyleGuide/StyleGuide.md) -->            
+            <!-- * [01 - SQL Intro]() -->
+                <!-- * [00 - SQL Intro](javascript_library/06-Express-Server/13-Postrges-essentials/01-sql-intro/00-sql-intro.md) -->
+                <!-- * [01 - SQL Basics](javascript_library/06-Express-Server/13-Postrges-essentials/01-sql-intro/01-sql-basics.md) -->
