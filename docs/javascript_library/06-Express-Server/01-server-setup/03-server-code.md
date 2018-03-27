@@ -41,7 +41,7 @@ Let's analyze the code:
 ### Running the Code
 1. Open your terminal in VS Code. Make sure you are in the server directory.
 2. Type in `node app.js`.
-3. In your console window, you should see your console message:
+3. In your console/terminal window, you should see your console message:
 ![screenshot](assets/03-node-appjs.png)
 Don't worry about the error message right now. It won't affect anything.
 4. When we go to http://localhost:3000/, we will see the application running like this:

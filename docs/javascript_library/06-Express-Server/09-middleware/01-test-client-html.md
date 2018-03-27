@@ -1,11 +1,11 @@
 # TEST CLIENT HTML
 ---
-In this module we're going to set up the front end client HTML for testing our requests in the DOM. 
+In this module, we're going to set up the front-end client HTML for testing our requests in the DOM. 
 
 <hr />
 
 ### Overview
-In this module we'll add some basic HTML and JavaScript on the front end to allow us to learn to interact with our server in a practical way. It's important to know that Postman is acting as a proxy-client for us, a stand in until we get something built on the front end. As we transition to working with a custom client there are some additions that need to be made to our server that Postman didn't need, including more middleware and headers. We'll show you those things in future modules:
+In this module, we'll add some basic HTML and JavaScript on the front-end to allow us to learn to interact with our server in a practical way. It's important to know that Postman is acting as a proxy-client for us, a stand in until we get something built on the front-end. As we transition to working with a custom client, there are some additions that need to be made to our server that Postman didn't need, including more middleware and headers. We'll show you those things in future modules.
 
 ### File Structure
 Please add a client folder underneath the server folder:
@@ -101,7 +101,7 @@ Copy the following code into the `index.html` file. Before we talk more about it
                     <td>See Console</td>
                 </tr>
                 <tr>
-                    <th scope="row">5</th>
+                    <th scope="row">4</th>
                     <td>POST Data
                         <code>/test/seven</code>
                     </td>
@@ -123,7 +123,7 @@ Copy the following code into the `index.html` file. Before we talk more about it
                     </td>
 				</tr>            
                 <tr>
-                    <th scope="row">4</th>
+                    <th scope="row">5</th>
                     <td>GET and display json
                         <code>/test/one</code>
                     </td>
@@ -160,7 +160,7 @@ Copy the following code into the `index.html` file. Before we talk more about it
 ### Overview of the HTML
 This tutorial assumes you have a basic grasp on HTML, so we'll briefly summarize what we've done. Overall, we're create a single HTML file that will allow us to test our endpoints, but there are a few items to note here:
 1. <b>Head:</b> We're not doing any styling, so there are no links to custom CSS files in the head. However, we are going to use Bootstrap, so we did add a CDN link to the Bootstrap CSS file that is needed for building tables.
-2. <b>Body Table:</b> We're building a table that will show us how to to access and display our data from the server in the DOM. This just makes an easy to use button system for testing our endpoints.
+2. <b>Body Table:</b> We're building a table that will show us how to to access and display our data from the server in the DOM. This just makes an easy-to-use button system for testing our endpoints.
 3. We add Bootstrap.js items and our own custom JavaScript file that we'll use next.
 
 <hr />
