@@ -50,11 +50,11 @@ function postToAuthRouteCreate() {
 
 
 /***************************************
- * FETCH/GET ITEM BY USER
+ * GET: Single item by user: /authtest/:id 
 *************************************/
 
 function getOneByUser() {
-	const fetch_url = `http://localhost:3000/authtest/15`
+	const fetch_url = `http://localhost:3000/authtest/4`
 	const accessToken = localStorage.getItem('SessionToken')
 
 	const response = fetch(fetch_url, {
@@ -82,7 +82,7 @@ function getOneByUser() {
  * PUT to authtest/update/:id
 *************************************/
 function updateItem() {
-	const fetch_url = `http://localhost:3000/authtest/update/15`
+	const fetch_url = `http://localhost:3000/authtest/update/4`
 	const accessToken = localStorage.getItem('SessionToken')
 	let authTestDataInput = document.getElementById('auth-put').value;
 
@@ -106,7 +106,7 @@ function updateItem() {
 
 
 function deleteItem() {
-	const fetch_url = `http://localhost:3000/authtest/delete/16`
+	const fetch_url = `http://localhost:3000/authtest/delete/4`
 	const accessToken = localStorage.getItem('SessionToken')
 
 	const response = fetch(fetch_url, {
@@ -143,48 +143,48 @@ function deleteItemById(paramNum) {
 /********
  * 13
 ******* */
-/***************************************
- * STEP ONE: FETCH/GET FROM /ONE - Display Data
-*************************************/
-function fetchFromOneDisplayData() {
-	let url = 'http://localhost:3000/test/one';
-	let dataView = document.getElementById('display-thirteen');
-	fetch(url, {
-		method: 'GET',
-		headers: new Headers({
-			'Content-Type': 'application/json'
-		})
-	}).then(
-		function (response) {
-			return response.json()
-		})
-		.catch(
-			function (error) {
-				console.error('Error:', error)
-			})
-		.then(
-			function (response) {
-				let text = '';
-				var myList = document.querySelector('ul#thirteen');
-				console.log(response);
-				for (r of response) {
-					var listItem = document.createElement('li');
-					var textData = + r.id + ' ' + r.testdata;
-					listItem.innerHTML = textData;
+// /***************************************
+//  * STEP ONE: FETCH/GET FROM /ONE - Display Data
+// *************************************/
+// function fetchFromOneDisplayData() {
+// 	let url = 'http://localhost:3000/test/one';
+// 	let dataView = document.getElementById('display-thirteen');
+// 	fetch(url, {
+// 		method: 'GET',
+// 		headers: new Headers({
+// 			'Content-Type': 'application/json'
+// 		})
+// 	}).then(
+// 		function (response) {
+// 			return response.json()
+// 		})
+// 		.catch(
+// 			function (error) {
+// 				console.error('Error:', error)
+// 			})
+// 		.then(
+// 			function (response) {
+// 				let text = '';
+// 				var myList = document.querySelector('ul#thirteen');
+// 				console.log(response);
+// 				for (r of response) {
+// 					var listItem = document.createElement('li');
+// 					var textData = + r.id + ' ' + r.testdata;
+// 					listItem.innerHTML = textData;
 			
-					myList.appendChild(listItem);
-					myList.addEventListener('click', removeItem);
-				}
-			})
-}
+// 					myList.appendChild(listItem);
+// 					myList.addEventListener('click', removeItem);
+// 				}
+// 			})
+// }
 
 
-function removeItem(e) {
-	console.log(e);
-	var target = e.target;
-	console.log(target);
-	if(target.tagName !== 'LI') return;
-	target.parentNode.removeChild(target);
+// function removeItem(e) {
+// 	console.log(e);
+// 	var target = e.target;
+// 	console.log(target);
+// 	if(target.tagName !== 'LI') return;
+// 	target.parentNode.removeChild(target);
 
-}
+// }
 

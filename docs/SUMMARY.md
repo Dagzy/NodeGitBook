@@ -83,7 +83,7 @@
             * [01 - Anatomy of a Request](javascript_library/06-Express-Server/11-authenticated-requests/01-intro.md)
             * [02 - Create User](javascript_library/06-Express-Server/11-authenticated-requests/02-create-user.md)
             * [03 - Getting a Token](javascript_library/06-Express-Server/11-authenticated-requests/03-get-token.md)
-            * [04 - /authtestone](javascript_library/06-Express-Server/11-authenticated-requests/43-authtestone.md)
+            * [04 - /authtestone](javascript_library/06-Express-Server/11-authenticated-requests/04-authtestone.md)
             * [05 - /authtest/create](javascript_library/06-Express-Server/11-authenticated-requests/05-authtest-create.md)
             * [06 - Get one item](javascript_library/06-Express-Server/11-authenticated-requests/06-get-single.md)
             * [07 - Update an Item](javascript_library/06-Express-Server/11-authenticated-requests/07-update-item.md)

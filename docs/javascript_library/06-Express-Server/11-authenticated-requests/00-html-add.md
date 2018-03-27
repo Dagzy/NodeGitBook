@@ -66,22 +66,21 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                 <tr>
                     <th scope="row">10</th>
                     <td>GET Single Item
-                        <code>/authtest/15</code>
+                        <code>/authtest/:id</code>
                     </td>
                     <td>
                         <button onclick="getOneByUser();">Get Single Item</button>
                     </td>
                     <td>
-                        See Console
+                        See Field Below
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">11</th>
                     <td>Update Single Item
-                        <code>/authtest/15</code>
+                        <code>/authtest/:id</code>
                     </td>
                     <td>
-                        <button onclick="getOneByUser();">Get Item</button>
                         <button onclick="updateItem();">Update Item</button>
                     </td>
                     <td>
@@ -93,7 +92,7 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                 <tr>
                     <th scope="row">12</th>
                     <td>Delete Single Item
-                        <code>/authtest/15</code>
+                        <code>/authtest:id</code>
                     </td>
                     <td>
                         <button onclick="deleteItem();">Delete Single Item</button>

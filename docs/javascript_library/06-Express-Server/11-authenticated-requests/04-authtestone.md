@@ -75,5 +75,5 @@ function fetchFromAuthRouteOne () {
 1. Make sure both the server and client are running.
 2. Open the console.
 3. Go to Step 8. 
-4. Press the button. You will probably see an empty array:
+4. Press the button. Since you've just created your user, you will probably see an empty array. This is coming from the Postgres table:
 ![screenshot](assets/04-authtestone.PNG)

@@ -5,12 +5,11 @@ In this module we'll go deeper into discussing the request/response lifecycle an
 <hr />
 
 ### Anatomy of the Request
-It's important to note that there is a lot going on under the hood with requests in general. If we were using AJAX requests or general XHR requests, we would see enormous complexity under the surface. This is in part to adhere to HTTP protocols and to manage security and traffic between domains.  Let's dig in and look underneath the surface a little bit. <br />
+It's important to note that there is a lot going on under the hood with requests in general. This complexity is in part to adhere to HTTP protocols and to manage security and traffic between domains.  Let's dig in and look underneath the surface a little bit. <br />
 
 When we complete a `fetch` here, we are kicking off a multi-step process in this request. It goes something like this:
-This is big stuff, so let's see a diagram of this:
-![screenshot](assets/01-request-diagram-withpreflight.png)
 
+![screenshot](assets/01-request-diagram-withpreflight.png)
 
 ### Analysis
 1. When the method fires off, `fetch()` notifies the browser to send a Pre-Flight from `localhost:8080`.
