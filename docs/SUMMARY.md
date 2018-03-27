@@ -64,7 +64,7 @@
             * [01 - Test Client HTML](javascript_library/06-Express-Server/09-middleware/01-test-client-html.md)
             * [02 - Test Client JS](javascript_library/06-Express-Server/09-middleware/02-test-client-js.md)
             * [03 - Middleware Intro](javascript_library/06-Express-Server/09-middleware/03-middleware-intro.md)
-            * [04 - Headers intro](javascript_library/06-Express-Server/09-middleware/04-headers.md)
+            * [04 - Headers Intro](javascript_library/06-Express-Server/09-middleware/04-headers.md)
             * [05 - Server Update](javascript_library/06-Express-Server/09-middleware/05-server-update.md)
             * [06 - Test Post](javascript_library/06-Express-Server/09-middleware/06-test-client-postToOne.md)
             * [07 - Test Post Refactor](javascript_library/06-Express-Server/09-middleware/07-test-client-postToOneArrow.md)
