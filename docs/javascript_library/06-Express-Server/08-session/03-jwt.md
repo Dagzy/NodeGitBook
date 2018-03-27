@@ -1,6 +1,6 @@
 # JWT
 ---
-In this module we will write the code that will return a token in response to our sign in request.
+In this module, we will write the code that will return a token in response to our sign in request.
 
 <hr />
 
