@@ -101,7 +101,7 @@ Copy the following code into the `index.html` file. Before we talk more about it
                     <td>See Console</td>
                 </tr>
                 <tr>
-                    <th scope="row">5</th>
+                    <th scope="row">4</th>
                     <td>POST Data
                         <code>/test/seven</code>
                     </td>
@@ -123,7 +123,7 @@ Copy the following code into the `index.html` file. Before we talk more about it
                     </td>
 				</tr>            
                 <tr>
-                    <th scope="row">4</th>
+                    <th scope="row">5</th>
                     <td>GET and display json
                         <code>/test/one</code>
                     </td>
