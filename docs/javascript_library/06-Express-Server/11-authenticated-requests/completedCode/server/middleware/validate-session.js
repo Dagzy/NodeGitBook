@@ -3,14 +3,13 @@ var sequelize = require('../db');
 var User = sequelize.import('../models/user');
 
 module.exports = function(req, res, next) {
-	if (req.headers.accept === '*/*') { //11
+	if (req.method == 'OPTIONS') { //10
 		next()
 	} else {
 		var sessionToken = req.headers.authorization; //1
 		console.log(sessionToken) //2
 		if (!sessionToken) return res.status(403).send({ auth: false, message: 'No token provided.' }); //3
-
-		if (!req.body.user && sessionToken){ //4
+		else { //4
 			jwt.verify(sessionToken, process.env.JWT_SECRET, (err, decoded) => { //5
 				if(decoded){
 					User.findOne({where: { id: decoded.id}}).then(user => { //6
@@ -24,8 +23,6 @@ module.exports = function(req, res, next) {
 					res.status(402).send({error: 'Not authorized'});
 				}
 			});
-		} else { //10
-			next();
 		}
 	}
 }
