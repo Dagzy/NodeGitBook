@@ -1,33 +1,35 @@
-# FETCH DISCUSSION
-In this module we'll go deeper into discussing the `fetch()` method.
+# REQUEST DISCUSSION
 ---
+In this module we'll go deeper into discussing the request/response lifecycle and examine how requests interact with our middleware and server.
 
 <hr />
 
-### The Anatmoy of the Request
-Fetch is handling a multistep process in this request. The process is complex and requires time to understand. Let's look at it:
+### Anatomy of the Request
+It's important to note that there is a lot going on under the hood with requests in general. If we were using AJAX requests or general XHR requests, we would see enormous complexity under the surface. This is in part to adhere to HTTP protocols and to manage security and traffic between domains.  Let's dig in and look underneath the surface a little bit. <br />
 
-1. When the method fires off, `fetch()` notifies the browser to send a Pre-Flight from `localhost:8080`.
-2. The browser fires off an OPTIONS request. See more below about OPTIONS.
+When we complete a `fetch` here, we are kicking off a multi-step process in this request. It goes something like this:
+This is big stuff, so let's see a diagram of this:
+![screenshot](assets/01-request-diagram-withpreflight.png)
+
+
+### Analysis
+1. When the method fires off, `fetch()` notifies the browser to send a Pre-Flight from `localhost:8080`. <br />
+2. The browser fires off an OPTIONS request. `OPTIONS` is an HTTP verb, like GET, POST, PUT, DELETE. Check on the Postman list, you'll see it there. <br />
+
+The `OPTIONS` verb allows the client to determine the options associated with our server without having to dig in and do data retrieval or deal with resources in the server. It's an intermediary between domains that says, "Hey, will we be able to do this here if we come in?"<br />
+
 3. The OPTIONS HTTP protocol checks in with the Headers on the server for the request type. So, if we fire off a GET request for a certain route, the server does an initial scan and checks to be sure that the type of request can happen.
-4. If the request type is enabled in the headers, the OPTIONS response is sent back with the listing of that request type.
-![screenshot]()
-5. If the PreFlight OPTIONS request determines that the request is allowed, the fetch method fires off.
+<br />
+4. If the request type is enabled in the server, specifically the headers, the OPTIONS response is sent back with the listing of that request type. 
+5. If the PreFlight OPTIONS request determines that the request is allowed, the fetch method fires off and the request for data can be made.Notice the Allow: POST in the Response.
+[screenshot](assets/01-fetchOPTIONSrequest.PNG)<br />
 6. The fetch() script fires off the second request approved by the PreFlight check. 
 7. The second request makes it to the server endpoint and processes the request.
 8. The server sends back a response. 
-
-This is big stuff, so let's see a diagram of this:
-![screenshot](01-request-diagram-withpreflight.png)
+![screenshot](assets/01-fetch2ndrequest.png)<br />
 
 ### The important points:
 1. Before it sends off the GET or POST request to the server, the browser performs a  `CORS`, or `pre-flight` check. `CORS` stands for Cross Origin Resource Sharing. This phase is going to call out and look for the headers in the server.
 
 2. If everything checks out with our PreFlight request, the server responds with a `200 OK` and fetch follows with the request it's been given (`GET`, `POST`, `PUT`, etc.), seen here: <br> ![2nd request](assets/01-fetch2ndrequest.png) <br>
 
-### The OPTIONS verb
-Just an aside on the `OPTIONS` verb:
-
-`OPTIONS` is an HTTP verb, like GET, POST, PUT, DELETE. Check on the Postman list, you'll see it there. <br />
-
-The `OPTIONS` verb allows the client to determine the options associated with our server, without having to dig in and do data retrieval or deal with resources in the server. It's an intermediary between domains that says, "Hey, will we be able to do this here if we come in?"

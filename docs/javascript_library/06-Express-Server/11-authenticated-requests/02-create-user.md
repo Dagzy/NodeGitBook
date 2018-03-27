@@ -1,7 +1,6 @@
 # CLIENT SETUP
 ---
 In this module we'll add a client method for creating a user. 
-
 <hr />
 
 ### User Scripts

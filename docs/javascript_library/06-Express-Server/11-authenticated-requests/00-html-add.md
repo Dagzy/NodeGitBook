@@ -1,14 +1,14 @@
 # HTML ADDITIONS
 ---
-Before we get started on making authenticated requests to our authenticated routes, we'll add more code to our HTML file. 
+Before we get started working on our client on making authenticated requests to our authenticated routes, we'll add more code to our HTML file. 
 
 <hr />
 
 ### Code
-Add the following code to our current `index.html` file. NOTE: You will be adding to the existing table in the file. These are more rows for that table. You will add this code under the closing `</tr>` tag in the 5th row:
+Add the following code to our current `index.html` file. NOTE: You will be adding to the existing table in the file. These are more rows for that table. You will add this code under the closing `</tr>` tag in the 5th row. Please copy and paste the following code for now:
 
 ```html
-<!--INSERT THIS CODE AFTER ROW 5-->
+<!--PASTE THIS CODE AFTER ROW 5-->
                 <tr>
                     <th scope="row">6</th>
                     <td>POST Sign Up
@@ -123,10 +123,11 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
 ```
 
 ### Analysis
-Take a minute to glance through the additions. Notice that we've added the following:
+Take a minute to check through the additions. Notice that we've added the following:
 1. 8 more table rows 
 2. Buttons, lists, and input fields added to various rows.
 3. Classes and ids in elements for future use.  
+4. Names of functions that we will soon create.
 
 ### Test
 1. You should see something similar to the following when you run the application:
