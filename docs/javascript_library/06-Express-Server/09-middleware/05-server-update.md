@@ -24,6 +24,7 @@ app.listen(3000, function(){
 	console.log('App is listening on 3000.')
 });
 ```
+
 ### Analysis
 1. Here we activate our headers in the `app.js`. Keep in mind that this in order, so the file will be read sequentially, which means that the headers must come before the routes are declared.
  
