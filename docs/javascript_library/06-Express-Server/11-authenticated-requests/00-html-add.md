@@ -102,6 +102,25 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                         See Console
                     </td>
                 </tr>
+                <tr>
+                    <th scope="row">13</th>
+                    <td>Delete Single Item</td>
+                    <!--TODO:
+                    Need to show all items by user.
+                    See the ids by user.
+                    Enter an id into an input field
+                    Call the delete method w/ interpolation.
+                    -->
+                    <td>
+                        Get all items: 
+                        <ul>
+
+                        </ul>
+                    </td>
+                    <td>
+                            <button onclick="deleteItem();">Delete Single Item</button>
+                    </td>
+                </tr>
 
 ```
 
