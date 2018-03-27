@@ -1,7 +1,15 @@
 # VALIDATE SESSION
 ---
+In this module we'll construct a file that will check to see if the request has a token attached. 
 
-Inside of the `middleware` folder on the server side, add a file called `validate-session.js`. Put the following code inside of that file and we'll talk about what it does.
+<hr />
+
+### Files
+Please add the following to your server in the `middleware` folder:
+
+
+### Code
+Inside of `validate-session.js`. Put the following code inside of that file:
 
 ```js
 var jwt = require('jsonwebtoken');
@@ -40,8 +48,8 @@ module.exports = function(req, res, next) {
 ### What Just Happened?
 There's a lot here, so take it slow through this explanation. Additional information on the `verify` method can be found [here](https://github.com/auth0/node-jsonwebtoken).
 
-1. The variable `sessionToken` is created to hold the token, which is pulled from the authorization header of the request. 
-2. The token is printed to the console. This is purely for debugging purpose to verify that the token is being sent to the server, and should not be left in the final code. This is a potential security vulnerability.
+1. The variable `sessionToken` is created to hold the token, which is pulled from the authorization header of the request coming in.
+2. The token is printed to the console. This is purely for debugging purposes to verify that the token is being sent to the server. It should not be left in the final code, as it is a potential security vulnerability.
 3. If no token is present, the `403 Bad Request` error is returned as the response. We have several different error handling responses in this file, so assigning each a different error code or message is a big help in debugging.
 4. No `user` property is ever provided in the request, so this check will run whenever a token is present. This prevents unauthorized use of a token that was assigned to a different user.
 5. The `verify` method decodes the token with the provided secret, then sends a callback with two variables. If successful, `decoded` will contain the decoded payload; if not, `decoded` remains `undefined`. `err` is `null` by default.
@@ -53,4 +61,4 @@ There's a lot here, so take it slow through this explanation. Additional informa
 11. Look back at the pictures in the first module of this chapter, specifically the images of the requests. The `OPTIONS` request doesn't have the session token, so an error would be thrown and the header with the token would never be sent. This conditional checks the `Accept` header in the request. The `OPTIONS` request contains a value of `*/*` for this header, while the second request contains a value of `application/json`. This lets the initial request through to the server to do its check so that the second request containing the token can also be sent.
 
 ### Before You Move On
-Go back and read through all that again. Make a flow chart of what's happening. Explain to a partner what is going on. Do whatever you need to do in order to understand this file. This is some very deep, very detailed code that can be tough to understand. In fact, this code had been used in projects going back over a year while not functioning properly, which was not discovered until the writing of this GitBook. Security should be your #1, #2, and #3 priorities when coding, so it's worth the extra time to get it right.
+Go back and read through all that again. Make a flow chart of what's happening. Explain to a partner what is going on. Do whatever you need to do in order to understand this file. This is some very deep, very detailed code that can be tough to understand. Security should be your #1, #2, and #3 priorities when coding, so it's worth the extra time to get it right.

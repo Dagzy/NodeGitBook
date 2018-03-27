@@ -1,24 +1,30 @@
-# CLIENT SETUP
+# AUTH TEST
 ---
+In this module we'll add a client method for creating a user. 
 
-Before we look at the `validate session` file, let's add a little bit of stuff to our client side. This will allow us to test the route later.
+<hr />
 
-### index.html
-Add the following above to the bottom of `index.html`, above the `script` tag:
+### User Scripts
+Please add a `02-user-scripts.js` file inside of the client folder:
 
-```html
-    <hr />
-
-    <h1>Make Authenticated Request</h1>
-    <button onclick="fetchFromAuthRouteOne();">Fetch Data From Auth Route One</button>
 ```
-This will give us a way to test the authenticated route once we're ready.
+    └── 5-Express Server
+            └── server
+            └── client
+                └── 01-scripts.js
+                └── 02-user-scripts.js
+                └── 03-auth-test.js
+                └── index.html
+```
+We'll add all of our authenticated request logic in there.
 
-### scripts.js
-
-Next, add this code to the bottom of the `scripts.js` file. We'll talk about it in a moment.
+### Code
+Add the following code to `03-auth-test.js`:
 
 ```js
+/***************************************
+ * GET from /authtest/one
+*************************************/
 function fetchFromAuthRouteOne () {
 	const fetch_url = `http://localhost:3000/authtest/one`;
 	const accessToken = localStorage.getItem('SessionToken') //1
@@ -38,6 +44,7 @@ function fetchFromAuthRouteOne () {
 		console.log(data)
 	})   
 }
+
 ```
 
 ### Analysis
@@ -46,3 +53,7 @@ function fetchFromAuthRouteOne () {
 3. The `Accept` header tells the server what types of content that the client is able to understand. If multiple are present, the server picks one.
 4. The `Content-Type` header tells the server what kind of data is being sent, if any. It can also refer to the type of data the server chooses from the `Accept` header.
 5. The `Authorization` header provides some sort of encrypted data allowing acces to the server, in this case our token.
+
+
+### Test
+TODO: Run in HTML. Explain.

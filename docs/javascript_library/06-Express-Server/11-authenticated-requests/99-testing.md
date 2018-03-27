@@ -1,8 +1,7 @@
 # TESTING AUTHENTICATION
 ---
 
-Time to test our routes. Open up two terminal windows. In one, start your server with `nodemon`. In the other, start your client with `http-server`. This is the part of the page we want to be working with:
-![this](assets/04-testing.png) <br>
+Time to test our routes. Open up two terminal windows. In one, start your server with `nodemon`. In the other, start your client with `http-server`. 
 
 In the signup area, create a new user with a username and password, then click submit. The session token should print to the console. Then click the "print token" button beneath it to print the token to the console again. This verifies that you have a token. It should look like this:
 ![this](assets/04-testUser.png) <br>
