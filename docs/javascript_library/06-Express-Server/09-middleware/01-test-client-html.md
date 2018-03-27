@@ -31,11 +31,11 @@ In order for our client to run on `localhost:8080`, we'll need to add `http-serv
     └── 5-Express Server
             └── server
             └── client
+                └── 01-scripts.js
                 └── node_modules
                 └── index.html
-                └── package-lock.json
+                └── package-lock.json(this might be created. might not though)
                 └── package.json
-                └── scripts.js
 ```
 
 ### index.html
