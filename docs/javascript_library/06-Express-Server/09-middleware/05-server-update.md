@@ -34,7 +34,7 @@ app.listen(3000, function(){
 Let's test this in our client now with the following steps:
 
 1. Your server should still be running, so we just need to start the client. Switch to the client terminal window and start it.
-2. Go to your client and try clicking on the buttons. You should see the text change when you click the buttons, as well as information stored in the database and printed to the console. We are finally displaying the response we've received back from our server!
+2. Go to your client and try clicking on the button that says **Hello Client**. You should see the text change when you click the buttons, as well as information stored in the database and printed to the console. We are finally displaying the response we've received back from our server! Please note this is the only button that currently works.
 
 ![screenshot](assets/05-server-fix.PNG)
 
