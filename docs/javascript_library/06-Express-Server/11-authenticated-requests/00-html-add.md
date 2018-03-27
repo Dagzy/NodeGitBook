@@ -1,11 +1,12 @@
 # HTML ADDITIONS
 ---
-In this module we'll add more code to our HTML file. This code will be used for learning about authenticated requests and sharing data in the DOM.
+Before we get started on making authenticated requests to our authenticated routes, we'll add more code to our HTML file. 
 
 <hr />
 
 ### Code
-Let's add some code to our current `index.html` file. Note that you are putting more table rows into the existing table. You will under the closing `</tr>` tag in the 5th row and paste the following code:
+Add the following code to our current `index.html` file. NOTE: You will be adding to the existing table in the file. These are more rows for that table. You will add this code under the closing `</tr>` tag in the 5th row:
+
 ```html
 <!--INSERT THIS CODE AFTER ROW 5-->
                 <tr>
@@ -104,6 +105,12 @@ Let's add some code to our current `index.html` file. Note that you are putting 
 
 ```
 
+### Analysis
+Take a minute to glance through the additions. Notice that we've added the following:
+1. 7 more table rows 
+2. Buttons, lists, and input fields added to various rows.
+3. Classes and ids in elements for future use.  
+
 ### Test
-You should see something similar to the following when you run the application:
+1. You should see something similar to the following when you run the application:
 ![screenshot](assets/00-html.PNG)
