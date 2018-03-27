@@ -19,7 +19,7 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                         <input type="text" id="user" />
                         </span>
                         <span></span>
-                        <input type="text" id="pass" />
+                        <input type="password" id="pass" />
                         </span>
                         <span></span>
                         <button onclick="userSignUp();">Submit</button>
@@ -53,7 +53,7 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                 </tr>
                 <tr>
                     <th scope="row">9</th>
-                    <td>Authenticated POST Reques to /authtest/create</td>
+                    <td>Authenticated POST Request to /authtest/create</td>
                     <td>
                         <input type="text" id="authTestData" />
                         <button onclick="postToAuthRouteCreate();">POST</button>
