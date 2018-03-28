@@ -89,7 +89,7 @@
             * [07 - Update an Item](javascript_library/06-Express-Server/11-authenticated-requests/07-update-item.md)
             * [08 - Deleting an Item](javascript_library/06-Express-Server/11-authenticated-requests/08-delete.md)
         * [12 - Workout Log Server]()
-            * [00 - Intro](javascript_library/06-Express-Server/12-workoutLog-challengepi/00-intro.md) 
+            * [00 - Intro](javascript_library/06-Express-Server/12-workoutLog-challenge/00-intro.md) 
         * [13 - Migrations]()
             * [00 - Intro](javascript_library/06-Express-Server/13-migrations/00-migrations-intro.md)
             * [01 - init and config](javascript_library/06-Express-Server/13-migrations/01-init-config.md)
