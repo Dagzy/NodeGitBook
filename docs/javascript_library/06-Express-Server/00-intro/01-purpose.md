@@ -4,7 +4,6 @@ In this chapter of our `javascript_library`, we'll learn to build a custom serve
 
 <hr >
 
-
 ### Client/Server Model
 In the API lessons and challenge, we interacted with the client side. Here, we will be connecting and building on the back-end using Postman and PostgreSQL.
 
