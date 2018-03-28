@@ -123,11 +123,11 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
 
 ### Analysis
 Take a minute to check through the additions. Notice that we've added the following:
-1. 8 more table rows 
+1. 8 more table rows. 
 2. Buttons, lists, and input fields added to various rows.
-3. Classes and ids in elements for future use.  
+3. `classes` and `ids` in elements for future use.  
 4. Names of functions that we will soon create.
 
 ### Test
-1. You should see something similar to the following when you run the application:
+You should see something similar to the following when you run the application:
 ![screenshot](assets/00-html.PNG)
