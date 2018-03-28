@@ -42,7 +42,7 @@ app.listen(3000, function(){
 ```
 
 ### Analysis
-In this file we changed the `app.js` to do the following:
+In this file, we changed the `app.js` to do the following:
 1. We imported the `authtestcontroller` file for access to the endpoints. 
 2. We imported the `validate-session` middleware, which will check to see if the incoming request has a token.
-3. Anything beneath the `validate-session` will require a token to access, thus becoming protected. Anything above it will not require a token, remaining unprotected. Therefore the `test` and `user` routes are not protected, while the `authtest` route is protected.
+3. Anything beneath the `validate-session` will require a token to access, thus becoming protected. Anything above it will not require a token, remaining unprotected. Therefore, the `test` and `user` routes are not protected, while the `authtest` route is protected.
