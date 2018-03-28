@@ -11,7 +11,7 @@ In this module, we'll quickly test our routes with Postman. We want to run 8 tes
 7. Update an item for a specific user.
 8. Delete an item for a specific user.
 
-Try to do each by yourself first. There are screenshots below to help if you need.
+After each step, check the relevant table in your database to make sure that everything worked properly. There are screenshots below to show you how each request should look, but try to do them by yourself first.
 
 <hr />
 
