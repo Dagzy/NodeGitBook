@@ -76,7 +76,7 @@
             * [03 - Changes to app.js](javascript_library/06-Express-Server/10-authenticated-routes/03-appjs-changes.md)
             * [04 - authtestcontroller.js](javascript_library/06-Express-Server/10-authenticated-routes/04-authtestcontroller.md)
             * [05 - Delete an Item](javascript_library/06-Express-Server/10-authenticated-routes/05-delete-item.md)
-            * [06 - Update an item](javascript_library/06-Express-Server/10-authenticated-routes/06-update-item.md)
+            * [06 - Update an Item](javascript_library/06-Express-Server/10-authenticated-routes/06-update-item.md)
             * [07 - Postman Testing](javascript_library/06-Express-Server/10-authenticated-routes/07-postman.md)
         * [11 - Authenticated Requests]()
             * [00 - Additions to index.html](javascript_library/06-Express-Server/11-authenticated-requests/00-html-add.md)
