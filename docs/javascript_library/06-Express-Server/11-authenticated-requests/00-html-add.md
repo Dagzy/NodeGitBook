@@ -15,13 +15,13 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                         <code>/authtest/createuser</code>
                     </td>
                     <td>
-                        <span></span>
-                        <input type="text" id="user" />
+                        <span>
+                        <input type="text" id="user" placeholder="Username" />
                         </span>
-                        <span></span>
-                        <input type="password" id="pass" />
+                        <span>
+                        <input type="password" id="pass" placeholder="Password" />
                         </span>
-                        <span></span>
+                        <span>
                         <button onclick="userSignUp();">Submit</button>
                         </span>
                     </td>
@@ -42,10 +42,10 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                 <tr>
                     <th scope="row">8</th>
                     <td>Authenticated Request
-                        <code>/authtest/one</code>
+                        <code>/authtest/getall</code>
                     </td>
                     <td>
-                        <button onclick="fetchFromAuthRouteOne();">GET</button>
+                        <button onclick="fetchAllFromAuthRoute();">GET</button>
                     </td>
                     <td>
                         See Console
@@ -55,46 +55,48 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                     <th scope="row">9</th>
                     <td>Authenticated POST Request to /authtest/create</td>
                     <td>
-                        <input type="text" id="authTestData" />
+                        <input type="text" id="authTestData" placeholder="Enter Data"/>
                         <button onclick="postToAuthRouteCreate();">POST</button>
                     </td>
                     <td>
                         See Console
                     </td>
                 </tr>
-
                 <tr>
                     <th scope="row">10</th>
                     <td>GET Single Item
-                        <code>/authtest/:id</code>
+                        <code>/authtest/id</code>
                     </td>
                     <td>
+                        <input type="text" id="getNumber" placeholder="Post ID #"/>
                         <button onclick="getOneByUser();">Get Single Item</button>
                     </td>
                     <td>
-                        See Field Below
+                        <label id="getItemValue"></label>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">11</th>
                     <td>Update Single Item
-                        <code>/authtest/:id</code>
+                        <code>/authtest/update/id</code>
                     </td>
                     <td>
+                        <input type="text" id="updateNumber" placeholder="Post ID #"/>
+                        <input type="text" id="updateValue" placeholder="New Data"/>
                         <button onclick="updateItem();">Update Item</button>
                     </td>
                     <td>
-                        <section class="auth-test-put">
-                        </section>
+                        <label id="newItemValue"></label>
                     </td>
                 </tr>
 
                 <tr>
                     <th scope="row">12</th>
                     <td>Delete Single Item
-                        <code>/authtest:id</code>
+                        <code>/authtest/delete/id</code>
                     </td>
                     <td>
+                        <input type="text" id="deleteNumber" placeholder="Post ID #"/>
                         <button onclick="deleteItem();">Delete Single Item</button>
                     </td>
                     <td>
@@ -111,21 +113,14 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                         <ul id="thirteen">
                         </ul>
                     </td>
-
-                    <!--TODO:
-                    See the ids by user.
-                    Enter an id into an input field
-                    Call the delete method w/ interpolation.
-                    -->
                 </tr>
-
 ```
 
 ### Analysis
 Take a minute to check through the additions. Notice that we've added the following:
-1. 8 more table rows. 
-2. Buttons, lists, and input fields added to various rows.
-3. `classes` and `ids` in elements for future use.  
+1. 8 more table rows 
+2. Buttons, lists, labels, and input fields added to various rows.
+3. Classes and ids in elements for future use.  
 4. Names of functions that we will soon create.
 
 ### Test

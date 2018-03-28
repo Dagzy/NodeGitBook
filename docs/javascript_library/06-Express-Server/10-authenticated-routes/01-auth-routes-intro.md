@@ -32,7 +32,6 @@ module.exports = function(sequelize, DataTypes) {
             });
     };
 ```
-
 3. Notice that we will be providing two properties: `authtestdata` and `owner`.
 4. Think of `authtestdata` as a string like `testData`.
 5. The `owner` is a number, a foreign key, that will point to a specific `user` on the `users` table. 
