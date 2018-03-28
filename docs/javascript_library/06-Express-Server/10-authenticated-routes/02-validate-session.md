@@ -17,7 +17,7 @@ Please add the following to your server in the `middleware` folder:
             └── client
 ```
 ### Code
-Inside of `validate-session.js`. Put the following code inside of that file. There is a little bit of code that is commented out here. Leave it like that for now.
+Put the following code inside of `validate-session.js`. There is a little bit of code that is commented out here, leave it like that for now.
 
 ```js
 var jwt = require('jsonwebtoken');
@@ -56,9 +56,9 @@ There's a lot here, so take it slow through this explanation. Additional informa
 1. The variable `sessionToken` is created to hold the token, which is pulled from the authorization header of the request coming in.
 2. The token is printed to the console. This is purely for debugging purposes to verify that the token is being sent to the server. It should not be left in the final code, as it is a potential security vulnerability.
 3. If no token is present, the `403 Forbidden` error is returned as the response. We have several different error handling responses in this file, so assigning each a different error code or message is a big help in debugging.
-4. If a token is present, we run the verification. The token is continually rechecked to ensure it is still valid.
+4. No `user` property is ever provided in the request, so only tokens will get checked. This prevents unauthorized use of a token that was assigned to a different user.
 5. The `verify` method decodes the token with the provided secret, then sends a callback with two variables. If successful, `decoded` will contain the decoded payload; if not, `decoded` remains `undefined`. `err` is `null` by default.
-6. If `decoded` has a value, the Sequelize `findOne` method looks for an id in the `users` table that matches the `decoded.id` property. This value is then passed into a callback.
+6. If `decoded` has a value, the Sequelize `findOne` method looks for an `id` in the `users` table that matches the `decoded.id` property. This value is then passed into a callback.
 7. The callback sets the `user` value for the request as the `id` value passed to it then sends the request on to its next destination. This property will be necessary later in adding to the database.
 8. If no matching `id` is found, an error message is thrown.
 9. If no value for `decoded`, an error message is thrown. 

@@ -1,6 +1,6 @@
-# CLIENT SETUP
+# CREATE USER
 ---
-In this module we'll add a client method for creating a user. 
+In this module, we'll add a client method for creating a user. 
 <hr />
 
 ### User Scripts
@@ -19,7 +19,7 @@ We'll add some of our auth logic in this file.
 ### Script Tags
 Follow these steps to wire up the `js` file:
 1. Go to `index.html`.
-2. Go to the bottom of that same file, under the Bootstrap scripts and the `01-scripts.js` file, and add the `02-user-scripts.js` tag like this:
+2. Go to the bottom of that same file, underneath the Bootstrap scripts and the `01-scripts.js` file, and add the `02-user-scripts.js` tag like this:
 
 ```html
 
@@ -66,20 +66,20 @@ function userSignUp(){
 <hr />
 
 ### Analysis
-1. Here we are grab the value of the data from the input field in the `index.html` file.
+1. Here, we grab the value of the user/password data from the `createuser` input field in the `index.html` file.
 2. The variables used to store the sign up info from the DOM get passed into the values of the `username` and `password` properties. We package everything up in a user object.
-3. In the request object in our fetch call, we pass in the `newUserData` variable to be sent off in the body of our request to the server.
-4. We get the token from the response and store it in a `token` variable.
-5. In our `localStorage` we call the `setItem` function and store the token in localStorage. This will keep our token safely stored in our local window.
+3. In the request object in our `fetch()` call, we pass in the `newUserData` variable to be sent off in the body of our request to the server.
+4. We get the `sessionToken` from the response and store it in a `token` variable.
+5. In our `localStorage`, we call the `setItem` function and store the token in `localStorage`. This will keep our token safely stored in our local window.
 
 <hr />
 
 ### Test
-1. Let's run the client and server again. 
-2. Open up the client in the browser. Go to step 6. 
+1. Make sure the client and server are running. 
+2. Open up the client in the browser. Go to **Step #6: POST Sign Up** on the table. 
 3. Sign up with a new user and press send. You should see the following:
 ![screenshot](assets/02-signup-dom-screenshot.PNG)
-4. Notice that we have a token printing in the console window.
+4. Notice that we have the username, password, and a token printing in the console window.
 5. You should also crack open Postgres, refresh your database, and look at the User table. You should see the new user added there now.
 
 

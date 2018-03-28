@@ -1,7 +1,7 @@
 # UPDATE AN ITEM
 ---
 
-Many great apps and sites do not have the ability to update things that have been posted, such as Twitter and Snapchat. These are known as CRD apps. We want a full CRUD app, however, so let's get to work. This is the last major addition we need for our server to be complete.
+Many great apps and sites do not have the ability to update things that have been posted, such as Twitter and Snapchat. These are known as CRD apps. In our case, we want a full CRUD app, so let's get to work. This is the last major addition we need for our server to be complete.
 
 ### The Code
 Add the following at the bottom of `authtestcontroller.js`, right above the export statement.
@@ -34,14 +34,14 @@ router.put('/update/:id', function(req, res) {
 ```
 
 ### Analysis
-1. `PUT` is one of the HTTP verbs that has to be weird and not just tell you what it does. `PUT` replaces whatever is already there with what we give it. In other words, `PUT` means update.
-2. To make it easier on the user, we use update in our route. We also allow a variable to be passed through the URL again.
+1. `PUT` is one of the HTTP verbs that has to be weird by not telling you what it does. `PUT` replaces whatever is already there with what we give it. In other words, `PUT` means update.
+2. To make it easier on the user, we use `update` in our route. We also allow a variable (`id`) to be passed through the URL again.
 3. The parameter taken from the URL.
 4. Our data we want to put into the database, replacing what already exists.
 5. `update` is a Sequelize method which takes two arguments.
 6. First argument of `update`. Contains an object holding the new value we want to edit into the database.
 7. Second argument of `update`. Tells Sequelize where to place the new data if a match is found.
-8. Callback function. Runs if update is successful and returns the data entered.
-9. Callback function. Runs if update is not successful and returns the error message.
+8. Callback function. Runs if update is successful, and returns the data entered.
+9. Callback function. Runs if update is not successful, and returns the error message.
 
-And that's it! Our server is done! Let's do some final testing with Postman, then move on to setting up our client to navigate these authenticated routes.
+And that's it! Our server is done! Let's do some final testing with Postman, and then move on to setting up our client to navigate these authenticated routes.

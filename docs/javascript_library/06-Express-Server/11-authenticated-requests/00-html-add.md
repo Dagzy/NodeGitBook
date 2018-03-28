@@ -124,5 +124,5 @@ Take a minute to check through the additions. Notice that we've added the follow
 4. Names of functions that we will soon create.
 
 ### Test
-1. You should see something similar to the following when you run the application:
+You should see something similar to the following when you run the application:
 ![screenshot](assets/00-html.PNG)
