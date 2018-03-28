@@ -175,7 +175,7 @@ function deleteItemById(paramNum) {
  * 13
 ******* */
 // /***************************************
-//  * STEP ONE: FETCH/GET FROM /ONE - Display Data
+//  * STEP ONE: FETCH/GET FROM /getall - Display Data
 // *************************************/
 function fetchFromOneDisplayData() {
 	let url = 'http://localhost:3000/authtest/getall';
@@ -208,7 +208,7 @@ function fetchFromOneDisplayData() {
 				console.log(response);
 				for (r of response) {
 					var listItem = document.createElement('li');
-					var textData = + r.id + ' ' + r.authtestdata;
+					var textData = r.id + ' ' + r.authtestdata;
 					listItem.innerHTML = textData;
 					listItem.setAttribute('id', r.id);
 					myList.appendChild(listItem);
@@ -221,10 +221,11 @@ function fetchFromOneDisplayData() {
 function removeItem(e) {
 	console.log(e);
 	var target = e.target;
-	if(target.tagName !== 'LI') return;
-	target.parentNode.removeChild(target);
+	if (target.tagName !== 'LI') return;
+	else target.parentNode.removeChild(target);
 
 	let x = target.getAttribute("id")
 	deleteItemById(x);
+	// console.log("The id number for this item is " + x)
 }
 
