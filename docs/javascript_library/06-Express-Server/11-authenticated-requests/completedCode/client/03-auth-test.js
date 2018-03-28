@@ -102,8 +102,32 @@ function updateItem() {
 			console.log(data)
 			var myItem = document.getElementById('newItemValue')
 			myItem.innerHTML = data.authtestdata;
+			fetchAllFromAuthRoute();
 		})
 }
+
+function showCurrentData(e) {
+	const fetch_url = `http://localhost:3000/authtest/${e.value}`
+	const accessToken = localStorage.getItem('SessionToken')
+
+	fetch(fetch_url, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': accessToken
+		}
+	})
+		.then(response => {
+			return response.json();
+		})
+		.then(function (response) {
+			console.log(response);
+			var myItem = document.getElementById('updateValue');
+			if (!response) return;
+			else myItem.value = response.authtestdata;
+		})
+}
+
 
 /***************************************
  * DELETE to authtest/delete/:id
