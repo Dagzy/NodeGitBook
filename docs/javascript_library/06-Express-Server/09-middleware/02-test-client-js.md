@@ -56,10 +56,10 @@ function fetchHelloDataFromAPI() {
 
 ### Test
 Let's test it by doing the following:
-TODO: Make these directions very clear. Need to add instructions about the ability to have two consoles in VS Code. Up until now, they have not done that....Below is just a start....
-1. In your console window in VS Code, click the `+` sign to open a new console window. You can switch between windows using the dropdown next to the `+`. You can also right-click a folder in the File Explorer and select `Open in Command Prompt` to open a console window in that specific folder.
+
+1. In your console window in VS Code, click the `+` sign to open a new console window. You can switch between windows using the dropdown next to the `+`. You can also right-click a folder in the File Explorer and select `Open in Command Prompt`(Windows) or `Open in Terminal` (Mac) to open a console window in that specific folder.
 2. Navigate to your server folder and start the server side using `nodemon app.js`.
-3. Open another new terminal window, navigate to the client folder, and start the client side using `http-server -o`. This will start the client and automatically open a new tab in your browser at 127.0.0.1:8080 (same as localhost:8080). 
+3. *NOTE: If you client is already running, skip this step.* Open another new terminal window, navigate to the client folder, and start the client side using `http-server -o`. This will start the client and automatically open a new tab in your browser at 127.0.0.1:8080 (same as localhost:8080). 
 4. Click any of the buttons on screen. You should see an error:
 ![screenshot](assets/01-helloclient-cors-error.PNG)
 

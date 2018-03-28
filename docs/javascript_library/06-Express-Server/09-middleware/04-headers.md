@@ -35,7 +35,7 @@ module.exports = function(req, res, next){
 3. We call `res.header` so that the server will respond with what kind of headers are allowed in the request.
 4. We use the specific `access-control-allow-origin` header to tell the server the specific origin locations that are allowed to communicate with the server. The `*` is known as a `wild-card`. It means that everything is allowed. In this setting, it's saying that requests originating from any location are allowed to communicate with the database.
 5. These are the HTTP methods that the sever will allow to be used. Postman allows you to send 15 different HTTP requests; our server will only accept these four.
-6. These are specific header types that the server will accept from the client. Remember from our earlier testing we sent an `Authorization` header to the server containing our token. You can find more information on these and other headers on MDN, and we will talk about them more in the future, too. 
+6. These are specific header types that the server will accept from the client. Remember from our earlier testing we sent a `Content-Type` header to the server. Without this header, our request would not have worked. You can find more information on this and other headers on MDN, and we will talk about them more in the future as well. 
 7. `next` sends the request along to its next destination. This could be the API endpoint or another middleware function designed to do something else. Let's talk a little bit more about `next`.
 
 

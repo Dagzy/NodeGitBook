@@ -161,7 +161,7 @@ Copy the following code into the `index.html` file. Before we talk more about it
 This tutorial assumes you have a basic grasp on HTML, so we'll briefly summarize what we've done. Overall, we're create a single HTML file that will allow us to test our endpoints, but there are a few items to note here:
 1. <b>Head:</b> We're not doing any styling, so there are no links to custom CSS files in the head. However, we are going to use Bootstrap, so we did add a CDN link to the Bootstrap CSS file that is needed for building tables.
 2. <b>Body Table:</b> We're building a table that will show us how to to access and display our data from the server in the DOM. This just makes an easy-to-use button system for testing our endpoints.
-3. We add Bootstrap.js items and our own custom JavaScript file that we'll use next.
+3. We add the Bootstrap JS CDN and our own custom JavaScript file, which we'll use next.
 
 <hr />
 
