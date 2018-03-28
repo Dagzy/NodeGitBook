@@ -55,7 +55,7 @@ There's a lot here, so take it slow through this explanation. Additional informa
 
 1. The variable `sessionToken` is created to hold the token, which is pulled from the authorization header of the request coming in.
 2. The token is printed to the console. This is purely for debugging purposes to verify that the token is being sent to the server. It should not be left in the final code, as it is a potential security vulnerability.
-3. If no token is present, the `403 Bad Request` error is returned as the response. We have several different error handling responses in this file, so assigning each a different error code or message is a big help in debugging.
+3. If no token is present, the `403 Forbidden` error is returned as the response. We have several different error handling responses in this file, so assigning each a different error code or message is a big help in debugging.
 4. If a token is present, we run the verification. The token is continually rechecked to ensure it is still valid.
 5. The `verify` method decodes the token with the provided secret, then sends a callback with two variables. If successful, `decoded` will contain the decoded payload; if not, `decoded` remains `undefined`. `err` is `null` by default.
 6. If `decoded` has a value, the Sequelize `findOne` method looks for an id in the `users` table that matches the `decoded.id` property. This value is then passed into a callback.

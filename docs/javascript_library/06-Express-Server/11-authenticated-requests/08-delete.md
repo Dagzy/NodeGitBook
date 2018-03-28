@@ -9,8 +9,9 @@ Add the following method to the `03-auth-test.js` file:
 
 ```js
 function deleteItem() {
-	const fetch_url = `http://localhost:3000/authtest/delete/4` // <----Add the id number that you've been using. #1
-	
+	let postIdNumber = document.getElementById("deleteNumber").value;
+
+	const fetch_url = `http://localhost:3000/authtest/delete/${postIdNumber}` //1
 	const accessToken = localStorage.getItem('SessionToken')
 
 	const response = fetch(fetch_url, {
@@ -20,23 +21,25 @@ function deleteItem() {
 			'Authorization': accessToken
 		}
 	})
-		.then(response => {
-			console.log(response);
+		.then(response => { //3
+			console.log(response); 
+			fetchAllFromAuthRoute()
 		})
 }
 ```
 
 ### Analysis
 This method is simple so far. Let's do two simple explanations.
-1. Again we add the correct id number. Our endpoint requires an id number. 
-2. Our HTTP verb is DELETE in this case, so we use the `DELETE` method.  
+1. Again we get the id number submitted by the user and passes it into the url via a template literal.  
+2. Our HTTP verb is DELETE in this case, so we use the `DELETE` method.
+3. We print the response to the console and also run the `fetchAllFromAuthRoute` function again, which will print all remaining items for our user to the console.
 
 <hr />
 
 ### Test
 1. Run the client and server.
-2. Press the `Delete` button.
-3. Then, press the `Get Single Item` button from Step 10. 
+2. Run Step 8 first to print the current contents of the database to the console. This will show you the `id` value for each item. 
+3. Enter the `id` number for the entry you want to delete into the field in step 12, then click `Delete Single Item`.
 4. You should see the following response:
 ![screenshot](assets/08-delete.PNG)
-5. Notice that the item is now showing as NULL. Why? Because it no longer exists in the database. 
+5. You can see both the response to the `DELETE` request and the contents of the database after the item was deleted. Refresh your database to make sure that it worked properly.

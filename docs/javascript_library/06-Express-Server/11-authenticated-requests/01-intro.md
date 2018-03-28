@@ -27,4 +27,3 @@ When we complete a `fetch` here, we are kicking off a multi-step process in this
 1. Before it sends off the GET or POST request to the server, the browser performs a `pre-flight` check.  
 
 2. If everything checks out with our PreFlight request, the server responds with a `200 OK` and fetch follows with the request/response that has been proclaimed (`GET`, `POST`, `PUT`, etc.), seen here: <br> ![2nd request](assets/01-fetch2ndrequest.png) <br>
-
