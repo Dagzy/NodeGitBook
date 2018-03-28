@@ -1,14 +1,14 @@
 # AUTHTESTCONTROLLER
 ---
-In this module we'll add a new controller that requires a user token for all requests.
+In this module, we'll add a new controller that requires a user token for all requests.
 
 <hr />
 
 ### Overview 
-We are going to add a number of endpoints/routes in this controller. We are going to give you all of this code and will be analyzing it in the future.
+We are going to add a number of endpoints/routes in this controller. We will give you all of this code and will be analyzing it in the future.
 
 ### Code
-1. Inside the `authtestcontroller.js` file inside of the `controllers` folder, then add the following code:
+Create an `authtestcontroller.js` file inside of the `controllers` folder, then add the following code:
 
 ```js
 var router = require('express').Router();
@@ -84,14 +84,14 @@ module.exports = router;
 ```
 
 ### Short Analysis
-Although there are nuances that we'll discuss, the functions should seem somewhat familiar to you, based on our previous server functions. Here is a quick explanation for a few of them:
+Although there are nuances that we'll discuss, the functions should seem somewhat familiar to you based on our previous server functions. Here is a quick explanation for a few of them:
 
 |Function|Purpose|
 |:--------|:------|
-|/item    |Finds all items in the table with the user id in the token|
-|/item/:id|Finds a single item in the the table. Uses both the id from the url (primary key) and the userid from the token (foreign key).|
-|/create  |Adds an item to the table with the user id from the token.|
+|/item    |Finds all items in the table with the `user id` in the token|
+|/item/:id|Finds a single item in the the table. Uses both the `id` from the url (primary key) and the `userid` from the token (foreign key).|
+|/create  |Adds an item to the table with the `userid` from the token.|
 
 <hr>
 
-Up until now, we've only done `GET` and `POST` requests. A full CRUD app lets you update and delete stuff, however, so we need to add some `DELETE` and `UPDATE` functionality. Let's talk a little more about each and set up a route for each before we start testing.
+Up until now, we've only done `GET` and `POST` requests. However, a full CRUD app lets you update and delete stuff, so we need to add some `DELETE` and `UPDATE` functionality. Let's talk a little more about each and set up a route for each before we start testing.
