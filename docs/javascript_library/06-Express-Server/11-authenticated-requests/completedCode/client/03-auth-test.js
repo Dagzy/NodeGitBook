@@ -70,12 +70,8 @@ function getOneByUser() {
 			return response.json();
 		})
 		.then(function (response) {
-			// var myItem = document.querySelector('section.auth-test-put');
-			// var inputItem = document.createElement('label');
-			// inputItem.setAttribute("id", "auth-put");
-			var myItem = document.getElementById('getItemValue')
-			// inputItem.innerHTML = response.authtestdata;
-			// myItem.appendChild(inputItem);
+			console.log(response);
+			var myItem = document.getElementById('getItemValue');
 			myItem.innerHTML = response.authtestdata;
 		})
 }
@@ -127,6 +123,7 @@ function deleteItem() {
 	})
 		.then(response => {
 			console.log(response);
+			fetchAllFromAuthRoute();
 		})
 }
 

@@ -72,5 +72,40 @@ function fetchAllFromAuthRoute() {
 1. Make sure both the server and client are running.
 2. Open the console.
 3. Go to Step 8. 
-4. Press the button. Since you've just created your user, you will probably see an empty array. This is coming from the Postgres table:
+4. Press the button.
+
+You should have gotten some sort of error. The problem isn't with our code here. The problem lies with a file on the server side: the `validate-session.js` file, and specifically how that file handles the pre-flight `OPTIONS` request sent by our browser.
+
+### Small Refractor to `validate-session.js`
+As a reminder, here is the `validate-session` function:
+```js
+module.exports = function(req, res, next) {
+	// if (req.method == 'OPTIONS') {
+	// 	next()
+	// } else {
+		var sessionToken = req.headers.authorization; //PROBLEM IS RIGHT HERE
+		console.log(sessionToken)
+		if (!sessionToken) return res.status(403).send({ auth: false, message: 'No token provided.' });
+		else {
+			jwt.verify(sessionToken, process.env.JWT_SECRET, (err, decoded) => {
+				if(decoded){
+					User.findOne({where: { id: decoded.id}}).then(user => {
+						req.user = user;
+						next();
+					},
+					function(){
+						res.status(401).send({error: 'Not authorized'});
+					});
+				} else {
+					res.status(400).send({error: 'Not authorized'});
+				}
+			});
+		}
+	//}
+}
+```
+Notice the parts that are commented out: the `if` statement at the top and the corresponding `else`. When we used Postman to test, we never sent an `OPTIONS` request. Here is the result of that request: <br> ![OPTIONS](assets/01-fetchOPTIONSrequest.png) <br>
+You can see that there isn't an `Authorization` header on that request, so when `validate-session` looks for `req.headers.authorization`, it comes back undefined, breaking the rest of the function. That's where this conditional comes into play. One of the properties on `fetch` is `method`; This is where we tell fetch what HTTP Verb to use (`GET`, `POST`, etc.). This conditional allows us to tell the program to let any request where `req.method` is `OPTIONS` through without checking for a session token. This way the pre-flight check can occur, then the program will look for and verify a token on any other request. <br>
+
+Un-comment the `if/else` statement at the top, as well as the closing curly bracket at the bottom, then run the test above again. It should go through this time. However, since you've just created your user, you will probably see an empty array. This is coming from the Postgres table:
 ![screenshot](assets/04-authtestone.PNG)

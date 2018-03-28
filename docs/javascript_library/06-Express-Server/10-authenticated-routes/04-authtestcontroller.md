@@ -84,7 +84,7 @@ module.exports = router;
 ```
 
 ### Short Analysis
-Although there are nuances that we'll discuss, the functions should seem somewhat familiar to you, based on our previous server functions. Here is a quick explanation for a few of them:
+Although there are nuances that we'll discuss, the functions should seem somewhat familiar to you, based on our previous server functions. Here is a quick explanation for each of them:
 
 |Function|Purpose|
 |:--------|:------|
@@ -94,4 +94,4 @@ Although there are nuances that we'll discuss, the functions should seem somewha
 
 <hr>
 
-Up until now, we've only done `GET` and `POST` requests. A full CRUD app lets you update and delete stuff, however, so we need to add some `DELETE` and `UPDATE` functionality. Let's talk a little more about each and set up a route for each before we start testing.
+Up until now, we've only done `GET` and `POST` requests. A full CRUD (**C**reate **R**ead **U**pdate **D**elete) app lets you update and delete stuff, however, so we need to add some `DELETE` and `UPDATE` functionality. Let's talk a little more about each and set up a route for each before we start testing.
