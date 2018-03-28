@@ -38,28 +38,25 @@ We'll also need to add the script tag to the bottom of the `index.html` file:
 Add the following code to `03-auth-test.js`:
 
 ```js
-/***************************************
- * GET from /authtest/one
-*************************************/
-function fetchFromAuthRouteOne () {
-	const fetch_url = `http://localhost:3000/authtest/one`;
-	const accessToken = localStorage.getItem('SessionToken') //1
+function fetchAllFromAuthRoute() {
+	const fetch_url = `http://localhost:3000/authtest/getall`
+	const accessToken = localStorage.getItem('SessionToken')
 
 	const response = fetch(fetch_url, {
-		method: 'GET', //2
-        headers: {
-          'Content-Type': 'application/json', //3
-		  'Authorization': accessToken, //4
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': accessToken
 		}
 	})
-	.then(response => {
-		return response.json();
-	})
-	.then(data => {
-		console.log(data)
-	})   
-}
+		.then(response => {
+			return response.json();
+		})
+		.then(data => {
 
+			console.log(data)
+		})
+}
 ```
 
 ### Analysis

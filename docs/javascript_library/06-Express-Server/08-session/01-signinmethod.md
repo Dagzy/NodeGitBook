@@ -29,7 +29,7 @@ router.post('/signin', function(req, res) {
 Try reading the code above to see if you can get an intuitive sense of what is happening. Then, take a look at the following points for guidance or clarification:
 
 1. The `findOne()` method is a Sequelize method that does exactly what it says: it tries to find something within the database that we tell it to look for. This is called Data Retrieval. Check out the Sequelize docs [here](http://docs.sequelizejs.com/manual/tutorial/models-usage.html).
-2. `where` is an object within sequelize that tells the database to look for something matching its properties.
+2. `where` is an object within Sequelize that tells the database to look for something matching its properties.
 3. We're looking in the `username` column in the `user` table for one thing that matches the value passed from the client.
 4. The promise is handled within the `.then()` function.
 5. Here we have a function that is called when the promise is resolved, and if successful, sends the `user` object back in the response.

@@ -1,7 +1,7 @@
 /***************************************
  * FETCH/GET from Auth Route
 *************************************/
-function fetchFromAuthRouteOne() {
+function fetchAllFromAuthRoute() {
 	const fetch_url = `http://localhost:3000/authtest/getall`
 	const accessToken = localStorage.getItem('SessionToken')
 
@@ -54,7 +54,9 @@ function postToAuthRouteCreate() {
 *************************************/
 
 function getOneByUser() {
-	const fetch_url = `http://localhost:3000/authtest/4`
+	let postIdNumber = document.getElementById("getNumber").value;
+
+	const fetch_url = `http://localhost:3000/authtest/${postIdNumber}`
 	const accessToken = localStorage.getItem('SessionToken')
 
 	const response = fetch(fetch_url, {
@@ -66,15 +68,15 @@ function getOneByUser() {
 	})
 		.then(response => {
 			return response.json();
-
 		})
 		.then(function (response) {
-			console.log(response);
-			var myItem = document.querySelector('section.auth-test-put');
-			var inputItem = document.createElement('input');
-			inputItem.setAttribute("id", "auth-put");
-			inputItem.value = response.authtestdata;
-			myItem.appendChild(inputItem);
+			// var myItem = document.querySelector('section.auth-test-put');
+			// var inputItem = document.createElement('label');
+			// inputItem.setAttribute("id", "auth-put");
+			var myItem = document.getElementById('getItemValue')
+			// inputItem.innerHTML = response.authtestdata;
+			// myItem.appendChild(inputItem);
+			myItem.innerHTML = response.authtestdata;
 		})
 }
 
@@ -82,9 +84,11 @@ function getOneByUser() {
  * PUT to authtest/update/:id
 *************************************/
 function updateItem() {
-	const fetch_url = `http://localhost:3000/authtest/update/4`
+	let postIdNumber = document.getElementById("updateNumber").value;
+	let authTestDataInput = document.getElementById('updateValue').value;
+
+	const fetch_url = `http://localhost:3000/authtest/update/${postIdNumber}`
 	const accessToken = localStorage.getItem('SessionToken')
-	let authTestDataInput = document.getElementById('auth-put').value;
 
 	let authInputData = { authtestdata: { item: authTestDataInput } };
 	const response = fetch(fetch_url, {
@@ -100,13 +104,18 @@ function updateItem() {
 		})
 		.then(data => {
 			console.log(data)
+			var myItem = document.getElementById('newItemValue')
+			myItem.innerHTML = data.authtestdata;
 		})
 }
 
-
-
+/***************************************
+ * DELETE to authtest/delete/:id
+*************************************/
 function deleteItem() {
-	const fetch_url = `http://localhost:3000/authtest/delete/4`
+	let postIdNumber = document.getElementById("deleteNumber").value;
+
+	const fetch_url = `http://localhost:3000/authtest/delete/${postIdNumber}`
 	const accessToken = localStorage.getItem('SessionToken')
 
 	const response = fetch(fetch_url, {
@@ -135,6 +144,7 @@ function deleteItemById(paramNum) {
 	})
 		.then(response => {
 			console.log(response);
+			fetchAllFromAuthRoute();
 		})
 }
 
@@ -146,45 +156,54 @@ function deleteItemById(paramNum) {
 // /***************************************
 //  * STEP ONE: FETCH/GET FROM /ONE - Display Data
 // *************************************/
-// function fetchFromOneDisplayData() {
-// 	let url = 'http://localhost:3000/test/one';
-// 	let dataView = document.getElementById('display-thirteen');
-// 	fetch(url, {
-// 		method: 'GET',
-// 		headers: new Headers({
-// 			'Content-Type': 'application/json'
-// 		})
-// 	}).then(
-// 		function (response) {
-// 			return response.json()
-// 		})
-// 		.catch(
-// 			function (error) {
-// 				console.error('Error:', error)
-// 			})
-// 		.then(
-// 			function (response) {
-// 				let text = '';
-// 				var myList = document.querySelector('ul#thirteen');
-// 				console.log(response);
-// 				for (r of response) {
-// 					var listItem = document.createElement('li');
-// 					var textData = + r.id + ' ' + r.testdata;
-// 					listItem.innerHTML = textData;
-			
-// 					myList.appendChild(listItem);
-// 					myList.addEventListener('click', removeItem);
-// 				}
-// 			})
-// }
+function fetchFromOneDisplayData() {
+	let url = 'http://localhost:3000/authtest/getall';
+	let dataView = document.getElementById('display-thirteen');
+
+	const accessToken = localStorage.getItem('SessionToken')
+
+	fetch(url, {
+		method: 'GET',
+		headers: new Headers({
+			'Content-Type': 'application/json',
+			'Authorization': accessToken
+		})
+	}).then(
+		function (response) {
+			return response.json()
+		})
+		.catch(
+			function (error) {
+				console.error('Error:', error)
+			})
+		.then(
+			function (response) {
+				let text = '';
+				var myList = document.querySelector('ul#thirteen');
+				while (myList.firstChild) {
+					myList.removeChild(myList.firstChild)
+				}
+
+				console.log(response);
+				for (r of response) {
+					var listItem = document.createElement('li');
+					var textData = + r.id + ' ' + r.authtestdata;
+					listItem.innerHTML = textData;
+					listItem.setAttribute('id', r.id);
+					myList.appendChild(listItem);
+					myList.addEventListener('click', removeItem);
+				}
+			})
+}
 
 
-// function removeItem(e) {
-// 	console.log(e);
-// 	var target = e.target;
-// 	console.log(target);
-// 	if(target.tagName !== 'LI') return;
-// 	target.parentNode.removeChild(target);
+function removeItem(e) {
+	console.log(e);
+	var target = e.target;
+	if(target.tagName !== 'LI') return;
+	target.parentNode.removeChild(target);
 
-// }
+	let x = target.getAttribute("id")
+	deleteItemById(x);
+}
 
