@@ -1,12 +1,12 @@
 # fetchFromOneDisplayData();
 ---
-In this module we'll create and access the /one endpoint and do a GET request to access data for display in the DOM.  
+In this module, we'll create and access the `/one` endpoint and do a `GET` request to access data for display in the DOM.  
 
 <hr>
 
 
 ### Server Addition
-When writing applications, it's common to have to toggle between the front end and back end. With that being said, let's add another route in the `testcontroller.js` file. This can be anywhere in the file. 
+When writing applications, it's common to have to toggle between the front-end and back-end. With that being said, let's add another route in the `testcontroller.js` file. This can be anywhere in the file, but we'll put it just before `module.exports = router`. 
 
 ```js
 /************************
@@ -33,7 +33,7 @@ router.get('/one', function(req, res) {
 ###Analysis
 1. Notice that we find the `attributes` for two of the columns: `id` & `testdata`. This is part of sequelize. If you are querying an entire table, you can choose which columns you want to grab from. The other columns will not be queried, which can save time for a giant table. 
 
-Be sure to save the chances to your server.
+Be sure to save the changes to your server.
 <hr />
 
 ### Overview
@@ -77,25 +77,24 @@ function fetchFromOneDisplayData(){
 ```
 
 ### Summary
-Let's break this down some:
+Let's break this down:
 
 1. We set up our URL in one variable and target the `data-one` id in the DOM in another one. 
-2. We create a `fetch()`, with Headers, request method of GET, chained promises that handle the data when it returns or that handles an error, if one comes back. 
-3. Inside the final `.then()`, we are going to work towards showing the returned data in the DOM. We start by targeting the first `ul` in the DOM, attaching the value ot the `myList` variable. 
-![screenshot]()
+2. We create a `fetch()` with `Headers`and therequest method of `GET`. There are also chained promises that handle the data when it returns or handle an error if one comes back. 
+3. Inside the final `.then()`, we are going to work towards showing the returned data in the DOM. We start by targeting the first `ul` in the DOM and attaching the value of the `myList` variable. 
 4. We set up a `for of` loop. 
 5. We write a `console.log()` statement to show how we can access the values that come back in the object inside the response.
 6. We create another variable called `listItem`. The `createElement()` method will create that type of element in the DOM. In this case, we create a list item, `li`, every time we iterate.
-7. Each time we iterate we store the value of `r.testdata` in the newly create `li`.
+7. Each time we iterate, we store the value of `r.testdata` in the newly create `li`.
 8. We call `appendChild` on `myList`, which means that each time we iterate we put the `li` into the unordered list. 
 
-### Quick Summary for the DOM work
-Just to succinctly summarize the last `then(): 
+### Quick Summary for the DOM Work
+Just to succinctly summarize the last `then()`: 
 
 * We target a list, `myList`.
 * We iterate over the response object with a `for of` loop.
 * Each time we iterate, we create a list item.
-* The value gets stored in the innerHTML of the li.
+* The value gets stored in the `innerHTML` of the `li`.
 * We append the list item to an unordered list.  
 * We continue until we get to the end of the response object.
 
@@ -104,9 +103,9 @@ Just to succinctly summarize the last `then():
 ### Test
 
 1. Make sure that both your client and server are running.
-2. Go to localhost:8080
-3. Click the `Display Data` button in Step #4.
+2. Go to `localhost:8080`
+3. Click the `Display Data` button in Step #5.
 3. You should see the following success message:
-![screenshot](assets/07-postToOneArrow.PNG)
+![screenshot](assets/09-Fetch.PNG)
 
 
