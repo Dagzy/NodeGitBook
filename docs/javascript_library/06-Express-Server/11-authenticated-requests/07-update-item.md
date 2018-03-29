@@ -51,11 +51,11 @@ function updateItem() {
 2. Press the `GET Single Item` button from Step 11. That label should populate.
 3. Change the text in the input field so that it is something different than what you had.
 4. Press the `Update Item` button. 
-5. You should see the following response in the console. The current contents of the database should also print after the update runs:
+5. You should see the following response in the console. A label will appear in Step 11 containing the new data, and the current contents of the database should also print to the console after the update runs:
 ![screenshot](assets/07-update-item.PNG)
 6. Go ahead and refresh the page. you don't need to turn off the Client or Server.
 7. Press the `GET Single Item` button from Step 11. The label should populate again.
-8. You should see that the newly updated data in the label and console message:
+8. You should see that the newly updated data in that label and console message:
 ![screenshot](assets/07-update-item-2.PNG)
 9. We might also suggest that you check in Postgres to be sure that you have successfully added the data to the database.
 
