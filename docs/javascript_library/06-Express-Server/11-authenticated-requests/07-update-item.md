@@ -125,7 +125,7 @@ Again, this function will not run until a key is lifted after being pressed.
 3. If nothing in the database matches the `id` you've entered, you should see something like this:
 ![no match](assets/07-update-keylogger-fail.png) <br>
 4. If a match is found, you should see something like this:
-![success](assets/07-keylogger-success.png) <br>
+![success](assets/07-update-keylogger-success.png) <br>
 5. You can then change the text however you'd like. Click `Update Item` and refresh your database to make sure it worked.
 
 This process allows you to see what's in the database before you replace it. Most users, if not all, won't have direct access to the database, so this is one way that can show them what's already saved for a particular item. 
