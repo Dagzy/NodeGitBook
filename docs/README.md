@@ -1,24 +1,7 @@
 <!-- ![alt text](./images/efalogo.png =250x) -->
 <img src="./assets/efalogo.png" style="width: 400px;"/>
 
-# 1150 Starter Gitbook Instructions
+# Welcome to the Eleven Fifty Academy Node Server Gitbook
 
-1. Install the Gitbook CLI: 
-`npm install gitbook-cli -g`
-
-2. Then run: 
-`gitbook install`
-
-3. Then run:
-`gitbook serve`
-
-### To Get Started
-PartOne and PartTwo are just fill ins for you to customize your gitbook. Summary.md is started for you to customize. You'll need a decent knowledge of Markdown [here](https://guides.github.com/features/mastering-markdown/) is some Markdown info.  
-
-### Link to the Gitbook Style Guide
-Click [here](http://styleguide.gitbook.com/) for the gitbook style guide. 
-
-### EFA Style Guide
-Click [here](StyleGuide/StyleGuide.md) to go straight to the Eleven Fifty style guide.
-
+In this book we will be introducing you to the fundamentals of server-side programming and databases, using tools such as Node.js, Express, and PostgreSQL. Some of these concepts may be challenging to understand initially, but practice and experimentation should provide clarity. We'll build a small server in parts, then connect it to a database to store information. Near the end, you'll also build a small client to better understand the relationship of all three parts. You'll also get an idea of how full-stack programming works, as you'll be doing for the rest of the cohort. As always, ask questions and be sure to reflect on what each lesson means in relation to the rest of what you've learned. 
 
