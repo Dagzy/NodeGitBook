@@ -101,7 +101,7 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                         <code>/authtest/update/id</code>
                     </td>
                     <td>
-                        <input type="text" id="updateNumber" placeholder="Post ID #" onkeyup="showCurrentData(this)"/>
+                        <input type="text" id="updateNumber" placeholder="Post ID #"/>
                         <input type="text" id="updateValue" placeholder="New Data"/>
                         <button onclick="updateItem();">Update Item</button>
                     </td>
