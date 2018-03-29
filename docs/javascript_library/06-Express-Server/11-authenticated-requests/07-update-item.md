@@ -111,10 +111,12 @@ function showCurrentData(e) { //1
 
 ### Analysis
 1. `e` is the default variable name for an Event Listener. Here, `e` represents the input field `updateNumber`, which was passed as a parameter using `this` on the HTML page.
-2. We pass the value of the input field directly into the URL with a template literal. Because `e` is already defined as the input field, we don't need to use a function to get another reference to it.
+2. We pass the value of the input field supplied by the user directly into the URL with a template literal. Because `e` is already defined as the input field, we don't need to use a function to get another reference to it.
 3. We call the DOM element we want to modify and set it to a variable to be accessed later.
-4. If no item in the database matches the id we've supplied, response comes back undefined. A blank return statement tells the program not to return anything and just to move on. Remember that not only does the id have to match what's in the database, but `user.id` also has to match the `owner` property, signifying that the current user is the one who entered it.
+4. If no item in the database matches the `id` we've supplied, the response comes back undefined. A blank return statement tells the program not to return anything and just to move on. Remember that not only does the `id` have to match what's in the database, but `user.id` also has to match the `owner` property, signifying that the current user is the one who entered it.
 5. We could use `innerHTML` to set the value, but that method doesn't work with `<input>` elements. Instead, we use `value` to insert our data into the field.
+
+Again, this function will not run until a key is lifted after being pressed. 
 
 ### Testing
 1. If your client and server should still be running; if not, restart them.
