@@ -117,9 +117,9 @@ function showCurrentData(e) { //1
 5. We could use `innerHTML` to set the value, but that method doesn't work with `<input>` elements. Instead, we use `value` to insert our data into the field.
 
 ### Testing
-1. If your client and server should still be running; if not, restart them.
+1. Your client and server should still be running; if not, restart them.
 2. Refresh your browser, then type a number into the first field in step 12.
-3. If nothing in the database matches the id you've entered, you should see something like this:
+3. If nothing in the database matches the `id` you've entered, you should see something like this:
 ![no match](assets/07-update-keylogger-fail.png) <br>
 4. If a match is found, you should see something like this:
 ![success](assets/07-keylogger-success.png) <br>
