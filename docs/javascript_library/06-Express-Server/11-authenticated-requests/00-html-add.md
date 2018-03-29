@@ -125,7 +125,7 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                 </tr>
                 <tr>
                     <th scope="row">14</th>
-                    <td>Delete Single Item</td>
+                    <td>Delete Single Item From DOM</td>
                     <td>
                         <button onclick="fetchFromOneDisplayData();">Display data</button>
                     </td>
