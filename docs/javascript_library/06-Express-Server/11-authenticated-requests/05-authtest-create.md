@@ -46,7 +46,7 @@ function postToAuthRouteCreate() {
 
 ### Test
 1. Make sure your client and server are both running.
-2. Go to step 9 (Authenticated POST Request to /api/user/create) and enter something into the input field.
+2. Go to step 10 (Authenticated POST Request to /authtest/create) and enter something into the input field.
 3. Press send, then check the console. You should see something similar to following response:
 ![screenshot](assets/05-auth-create.PNG) 
 4. Note that the response will hold whatever value that you added to the input field.

@@ -48,13 +48,13 @@ function updateItem() {
 
 ### TEST
 1. Make sure that the server and client are running.
-2. Press the `GET Single Item` button from Step 10. That label should populate.
+2. Press the `GET Single Item` button from Step 11. That label should populate.
 3. Change the text in the input field so that it is something different than what you had.
 4. Press the `Update Item` button. 
 5. You should see the following response in the console. The current contents of the database should also print after the update runs:
 ![screenshot](assets/07-update-item.PNG)
 6. Go ahead and refresh the page. you don't need to turn off the Client or Server.
-7. Press the `GET Single Item` button from Step 10. The label should populate again.
+7. Press the `GET Single Item` button from Step 11. The label should populate again.
 8. You should see that the newly updated data in the label and console message:
 ![screenshot](assets/07-update-item-2.PNG)
 9. We might also suggest that you check in Postgres to be sure that you have successfully added the data to the database.
@@ -118,7 +118,7 @@ function showCurrentData(e) { //1
 
 ### Testing
 1. If your client and server should still be running; if not, restart them.
-2. Refresh your browser, then type a number into the first field in step 11.
+2. Refresh your browser, then type a number into the first field in step 12.
 3. If nothing in the database matches the id you've entered, you should see something like this:
 ![no match](assets/07-update-keylogger-fail.png) <br>
 4. If a match is found, you should see something like this:

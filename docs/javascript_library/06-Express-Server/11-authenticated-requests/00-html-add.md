@@ -16,10 +16,10 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                     </td>
                     <td>
                         <span>
-                        <input type="text" id="user" placeholder="Username" />
+                        <input type="text" id="userSignUp" placeholder="Username" />
                         </span>
                         <span>
-                        <input type="password" id="pass" placeholder="Password" />
+                        <input type="password" id="passSignUp" placeholder="Password" />
                         </span>
                         <span>
                         <button onclick="userSignUp();">Submit</button>
@@ -31,6 +31,26 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                 </tr>
                 <tr>
                     <th scope="row">7</th>
+                    <td>POST Sign In
+                        <code>/api/user/signin</code>
+                    </td>
+                    <td>
+                        <span>
+                        <input type="text" id="userSignin" placeholder="Username" />
+                        </span>
+                        <span>
+                        <input type="password" id="passSignin" placeholder="Password" />
+                        </span>
+                        <span>
+                        <button onclick="userSignIn();">Submit</button>
+                        </span>
+                    </td>
+                    <td>
+                        See Console
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
                     <td>Function: Get Session Token</td>
                     <td>
                         <button onclick="getSessionToken();">Print Token</button>
@@ -40,7 +60,7 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">8</th>
+                    <th scope="row">9</th>
                     <td>Authenticated Request
                         <code>/authtest/getall</code>
                     </td>
@@ -52,8 +72,8 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">9</th>
-                    <td>Authenticated POST Request to /authtest/create</td>
+                    <th scope="row">10</th>
+                    <td>Authenticated POST Request to <code>/authtest/create</code></td>
                     <td>
                         <input type="text" id="authTestData" placeholder="Enter Data"/>
                         <button onclick="postToAuthRouteCreate();">POST</button>
@@ -63,7 +83,7 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">10</th>
+                    <th scope="row">11</th>
                     <td>GET Single Item
                         <code>/authtest/id</code>
                     </td>
@@ -76,12 +96,12 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">11</th>
+                    <th scope="row">12</th>
                     <td>Update Single Item
                         <code>/authtest/update/id</code>
                     </td>
                     <td>
-                        <input type="text" id="updateNumber" placeholder="Post ID #"/>
+                        <input type="text" id="updateNumber" placeholder="Post ID #" onkeyup="showCurrentData(this)"/>
                         <input type="text" id="updateValue" placeholder="New Data"/>
                         <button onclick="updateItem();">Update Item</button>
                     </td>
@@ -91,7 +111,7 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                 </tr>
 
                 <tr>
-                    <th scope="row">12</th>
+                    <th scope="row">13</th>
                     <td>Delete Single Item
                         <code>/authtest/delete/id</code>
                     </td>
@@ -104,13 +124,13 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">13</th>
+                    <th scope="row">14</th>
                     <td>Delete Single Item</td>
                     <td>
                         <button onclick="fetchFromOneDisplayData();">Display data</button>
                     </td>
                     <td>
-                        <ul id="thirteen">
+                        <ul id="fourteen">
                         </ul>
                     </td>
                 </tr>

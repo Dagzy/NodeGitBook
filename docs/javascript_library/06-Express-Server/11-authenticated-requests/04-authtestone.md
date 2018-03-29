@@ -71,7 +71,7 @@ function fetchAllFromAuthRoute() {
 
 1. Make sure both the server and client are running.
 2. Open the console.
-3. Go to Step 8. 
+3. Go to Step 9. 
 4. Press the button.
 
 You should see an error similar to the following image: <br> ![pre-flight error](assets/04-preflight-error.png) <br>
