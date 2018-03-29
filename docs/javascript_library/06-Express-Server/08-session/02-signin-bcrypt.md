@@ -44,6 +44,6 @@ router.post('/signin', function (req, res) {
 1. Fire up Postman.
 2. For the sake of clarity, let's be sure we can still create a new user:
 ![screenshot](assets/02-ccreateuser.PNG)
-3. Change the request endpoint to `/signin` instead of `/createuser` and press send:
+3. Change the request endpoint to `/signin` instead of `/createuser` and press send, go back to the console since the output is a `console.log()` statement:
 ![screenshot](assets/02-signin.PNG)
-4. It's important to note that the request body has stayed the same (same user and same password as before). It's also important to note that something is missing from the response. What would that be? See the next section for the answer.
+4. We aren't able to view the response in Postman because we are missing something! You'll find out what it is in the next section.
