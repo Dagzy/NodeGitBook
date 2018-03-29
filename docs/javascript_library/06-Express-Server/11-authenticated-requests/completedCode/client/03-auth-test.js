@@ -179,8 +179,6 @@ function deleteItemById(paramNum) {
 // *************************************/
 function fetchFromOneDisplayData() {
 	let url = 'http://localhost:3000/authtest/getall';
-	let dataView = document.getElementById('display-thirteen');
-
 	const accessToken = localStorage.getItem('SessionToken')
 
 	fetch(url, {
@@ -200,7 +198,7 @@ function fetchFromOneDisplayData() {
 		.then(
 			function (response) {
 				let text = '';
-				var myList = document.querySelector('ul#thirteen');
+				var myList = document.querySelector('ul#fourteen');
 				while (myList.firstChild) {
 					myList.removeChild(myList.firstChild)
 				}

@@ -35,6 +35,6 @@ Note that we've made a spot in the DOM for the `getSessionToken()` method. Let's
 
 1. Make sure that both the server and client are running.
 2. Open the console.
-3. Go to **Step #7: Function: Get Session Token** on the table. 
+3. Go to **Step #8: Function: Get Session Token** on the table. 
 4. Click the button to print the token to the console:
 ![screenshot](assets/03-token-print.png)

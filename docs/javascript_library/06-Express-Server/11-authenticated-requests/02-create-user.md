@@ -1,6 +1,6 @@
-# CREATE USER
+# USERS
 ---
-In this module, we'll add a client method for creating a user. 
+In this module, we'll add client methods for creating and logging in as a user. 
 <hr />
 
 ### User Scripts
@@ -42,8 +42,8 @@ At the top of this new script file,`02-user-scripts.js`, let's add the code for 
  * POST - /createuser
 *********************/
 function userSignUp(){
-	let userName = document.getElementById('user').value; //1
-	let userPass = document.getElementById('pass').value;
+	let userName = document.getElementById('userSignUp').value; //1
+	let userPass = document.getElementById('passSignUp').value;
 	console.log(userName, userPass);
 
 	let newUserData = {user : { username: userName, password: userPass}}; //2
@@ -82,4 +82,30 @@ function userSignUp(){
 4. Notice that we have the username, password, and a token printing in the console window.
 5. You should also crack open Postgres, refresh your database, and look at the User table. You should see the new user added there now.
 
+### userSignIn
+The `signin` function is exactly the same as `signup`. We're just pulling from different fields and sending a request to a different endpoint. Put this code under `userSignUp`:
+```js
+function userSignIn(){
+	let userName = document.getElementById('userSignin').value; 
+	let userPass = document.getElementById('passSignin').value;
+	console.log(userName, userPass);
 
+	let userData = {user : { username: userName, password: userPass}};
+	fetch('http://localhost:3000/api/user/signin', { //<---signin route used
+		method: 'post',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(userData)
+	})
+	.then(response => response.json())
+	.then(function (response) {
+		console.log(response.sessionToken);
+		let token = response.sessionToken;
+		localStorage.setItem('SessionToken', token);
+	});
+}
+```
+
+### Testing
+Follow the `signup` instructions to create a couple more users. Then use `Step 7: POST SignIn` to sign in as each user. Notice that each one gets a different session token, which is reset in `localStorage` each time.

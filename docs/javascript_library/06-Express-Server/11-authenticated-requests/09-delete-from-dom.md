@@ -27,7 +27,7 @@ function fetchFromOneDisplayData() {
 		.then(
 			function (response) {
 				let text = '';
-				var myList = document.querySelector('ul#thirteen'); //1
+				var myList = document.querySelector('ul#fourteen'); //1
 				while (myList.firstChild) { //2
 					myList.removeChild(myList.firstChild)
 				}
@@ -46,7 +46,7 @@ function fetchFromOneDisplayData() {
 ```
 
 ### Analysis
-1. This is a little different way of making a reference to a DOM element. We're aiming for a `<ul>` element with an id of `thirteen` (the `#` signals the program to look for an id rather than a class).
+1. This is a little different way of making a reference to a DOM element. We're aiming for a `<ul>` element with an id of `fourteen` (the `#` signals the program to look for an id rather than a class).
 2. This should look familiar to you. This is the same way we cleared out the `<section>` elements in the NYT and YouTube API mini-apps.
 3. We use a `for of` loop to iterate through the values of each `key: value` object pair.
 4. Given that we're working with an `<ul>` element, each loop will create a different `<li>`.
@@ -86,7 +86,7 @@ function removeItem(e) {
 ### Testing
 
 1. If they aren't already running, start your client and server.
-2. Refresh your browser, then click on `Display data` in step 13.
+2. Refresh your browser, then click on `Display data` in step 14.
 3. You should see the items from the `authtestdata` table with the matching `owner` value for our current user token:
 ![list of items](assets/09-display-items.png)
 4. Click on one of the items. It should disappear from the list and print something like the following to the console:

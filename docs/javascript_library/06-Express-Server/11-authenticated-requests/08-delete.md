@@ -39,7 +39,7 @@ This method is simple so far. Let's do two simple explanations.
 ### Test
 1. Run the client and server.
 2. Run Step 8 first to print the current contents of the database to the console. This will show you the `id` value for each item. 
-3. Enter the `id` number for the entry you want to delete into the field in step 12, then click `Delete Single Item`.
+3. Enter the `id` number for the entry you want to delete into the field in step 13, then click `Delete Single Item`.
 4. You should see the following response:
 ![screenshot](assets/08-delete.PNG)
 5. You can see both the response to the `DELETE` request and the contents of the database after the item was deleted. Refresh your database to make sure that it worked properly.

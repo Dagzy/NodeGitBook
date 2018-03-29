@@ -48,5 +48,5 @@ function getOneByUser() {
 2. Click the `Get Single Item` button. 
 3. You should see the following:
 ![screenshot](assets/06-get-single.PNG)
-4. Notice that we have pulled the single item from the server. In our case, the item has the id of `10`. 
-5. Not only did we print to the console, we added the data pulled from the server to the DOM in the label element on step 10.
+4. Notice that we have pulled the single item from the server. In this case, the item has the id of `10`. 
+5. Not only did we print to the console, we added the data pulled from the server to the DOM in the label element on step 11.
