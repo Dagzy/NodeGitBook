@@ -1,6 +1,6 @@
 # AUTH TEST CREATE
 ---
-In this module we'll make an Authenticated POST request to an authenticated POST route and persist some simple data in the database.
+In this module, we'll make an Authenticated `POST` request to an authenticated `POST` route and persist some simple data in the database.
 
 <hr />
 
@@ -46,11 +46,11 @@ function postToAuthRouteCreate() {
 
 ### Test
 1. Make sure your client and server are both running.
-2. Go to step 9 and enter something into the input field.
-3. Press send and check the console. You should see the following response:
+2. Go to step 9 (Authenticated POST Request to /api/user/create) and enter something into the input field.
+3. Press send, then check the console. You should see something similar to following response:
 ![screenshot](assets/05-auth-create.PNG) 
 4. Note that the response will hold whatever value that you added to the input field.
-5. Just for practice and orientation, it's also a good idea to go and see how this data has saved to Postgres. You'll want to refresh the table and redo the query.
+5. Just for practice and orientation, it's also a good idea to go and see how this data has saved to Postgres. Refresh the `authtestdata` table and redo the query.
 
 ### Task
-For the next few modules you'll need an id number of the item you've just created. For instance, in the screenshot above, our id number is '4'. Your id number will probably be '1' or '2'. Just make sure that you remember that number value.  
+For the next few modules you'll need an `id` number of the item you've just created. For instance, in the screenshot above, our `id` number is '4'. Yours will probably be '1' or '2'. Just make sure that you remember that number value.  

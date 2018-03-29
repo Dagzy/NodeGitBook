@@ -12,7 +12,7 @@ Add the following code to our current `index.html` file. NOTE: You will be addin
                 <tr>
                     <th scope="row">6</th>
                     <td>POST Sign Up
-                        <code>/authtest/createuser</code>
+                        <code>/api/user/createuser</code>
                     </td>
                     <td>
                         <span>
