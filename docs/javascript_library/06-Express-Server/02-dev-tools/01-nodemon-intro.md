@@ -12,7 +12,7 @@ When you make a change to code on the client side, you just have to refresh the 
 ### Setup 
 
 1. In any directory, run `npm install -g nodemon`. This installs Nodemon globally on your machine. 
-2. Go into the server directory (where the `package.json` file is visible)  run `npm install --save-dev nodemon`. This saves Nodemon to your `devDependenies` in `package.json`.
+2. Go into the server directory (where the `package.json` file is visible)  run `npm install --save-dev nodemon`. This saves Nodemon to your `devDependencies` in `package.json`.
 3. Still in the server directory, run `nodemon app.js`. This should start the server up. You should see this:
 ![nodemon](assets/nodemon.png)
 4. The app is now running. You can stop the app with `ctrl + c`.
