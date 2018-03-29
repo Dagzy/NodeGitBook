@@ -1,6 +1,6 @@
 # DELETE
 ---
-In this module we'll write a method to delete a single item in the database. 
+In this module, we'll write a method to delete a single item in the database. 
 
 <hr />
 
@@ -29,8 +29,8 @@ function deleteItem() {
 ```
 
 ### Analysis
-This method is simple so far. Let's do two simple explanations.
-1. Again we get the id number submitted by the user and passes it into the url via a template literal.  
+This method is simple so far. Let's do three simple explanations.
+1. Again we get the `id` number submitted by the user and pass it into the url via a template literal.  
 2. Our HTTP verb is DELETE in this case, so we use the `DELETE` method.
 3. We print the response to the console and also run the `fetchAllFromAuthRoute` function again, which will print all remaining items for our user to the console.
 
@@ -38,7 +38,7 @@ This method is simple so far. Let's do two simple explanations.
 
 ### Test
 1. Run the client and server.
-2. Run Step 8 first to print the current contents of the database to the console. This will show you the `id` value for each item. 
+2. Run Step 9 (Authenticated Request) first to print the current contents of the database to the console. This will show you the `id` value for each item. 
 3. Enter the `id` number for the entry you want to delete into the field in step 13, then click `Delete Single Item`.
 4. You should see the following response:
 ![screenshot](assets/08-delete.PNG)
