@@ -37,7 +37,7 @@ function updateItem() {
 }
 ```
 
-1. We get the value of the input provided from the user fro both the `updateNumber` and `updateValue` fields, and assign each to a variable
+1. We get the value of the input provided from the user for both the `updateNumber` and `updateValue` fields and assign each to a variable.
 2. Like before, we pass in the input from the user to the url with a template literal.
 3. We create an object that packages up our request. We capture the value of `authTestDataInput` and store it in the variable `authInputData` variable.
 4. We are doing an update method, so this will be a `PUT` request. 
@@ -62,10 +62,10 @@ function updateItem() {
 <hr>
 
 ### Getting Fancy
-While we're here, let's mess around about with the stuff we're getting from the database. Go to your `index.html` file and look for Step 11. We're going to add a little bit to one of the input fields:
+While we're here, let's mess around about with the stuff we're getting from the database. Go to your `index.html` file and look for Step 12. We're going to add a little bit to one of the input fields:
 ```html
 				<tr>
-                    <th scope="row">11</th>
+                    <th scope="row">12</th>
                     <td>Update Single Item
                         <code>/authtest/update/id</code>
                     </td>
