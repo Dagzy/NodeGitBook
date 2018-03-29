@@ -46,10 +46,10 @@ function fetchFromOneDisplayData() {
 ```
 
 ### Analysis
-1. This is a little different way of making a reference to a DOM element. We're aiming for a `<ul>` element with an id of `fourteen` (the `#` signals the program to look for an id rather than a class).
+1. This is a little different way of making a reference to a DOM element. We're aiming for a `<ul>` element with an `id` of `fourteen` (the `#` signals the program to look for an `id` rather than a `class`).
 2. This should look familiar to you. This is the same way we cleared out the `<section>` elements in the NYT and YouTube API mini-apps.
 3. We use a `for of` loop to iterate through the values of each `key: value` object pair.
-4. Given that we're working with an `<ul>` element, each loop will create a different `<li>`.
+4. Given that we're working with a `<ul>` element, each loop will create a different `<li>`.
 5. We create a string with the `id` and `authtestdata` properties, then put that string into the `<li>` element.
 6. We add the `id` property of each object as an id for each `<li>`. This will allow us to call them individually later.
 7. The `<li>` child element is added to the end of the `<ul>` parent element.
@@ -57,7 +57,7 @@ function fetchFromOneDisplayData() {
 
 <br>
 
-We need to create the `removeItem` function before we test this part out or the app will break.
+We need to create the `removeItem` function before we test this part, or the app will break.
 
 ### removeItem()
 This function will delete an item from the `<ul>` element. It will also have the ability to send a `DELETE` request, but we're going to hold off on that part for a second. Add this function at the bottom of the `03-auth-test.js` file:
@@ -78,21 +78,21 @@ function removeItem(e) {
 ### Analysis
 1. Print `e` to the console to check which item we're clicking on.
 2. `target` is a nested object within `e`. This places that object inside its own variable.
-3. If the item we're clicking on isn't an `<li>` element, the empty return statement exits the conditional.
+3. If the item we're clicking on isn't an `<li>` element, the empty `return` statement exits the conditional.
 4. We remove the `<li>` child from the `<ul>` parent.
-5. Earlier we set an id for the `<li>`. Now we get it back so we can pass it to the `DELETE` request.
-6. This will become our `DELETE` request. So we can test what we have so far, we'll just print `x` to the console.
+5. Earlier we set an `id` for the `<li>`. Now we get it back so we can pass it to the `DELETE` request.
+6. This will become our `DELETE` request. In order for us to test what we have so far, we'll just print `x` to the console.
 
 ### Testing
 
 1. If they aren't already running, start your client and server.
-2. Refresh your browser, then click on `Display data` in step 14.
+2. Refresh your browser, then click on `Display data` in step 14 (Delete Single Item From DOM).
 3. You should see the items from the `authtestdata` table with the matching `owner` value for our current user token:
 ![list of items](assets/09-display-items.png)
 4. Click on one of the items. It should disappear from the list and print something like the following to the console:
 ![item removed from list](assets/09-display-items-2.png)
 
-Now that we can remove the element from it's parent, we need to send a `DELETE` request to remove the item from the database. One last step and we're done!
+Now that we can remove the element from its parent, we need to send a `DELETE` request to remove the item from the database. One last step, and we're done!
 
 ### deleteItemById()
 Since this is a `DELETE` request, put this function between the `deleteItem()` and `fetchFromOneDisplayData()` functions:
@@ -116,17 +116,17 @@ function deleteItemById(paramNum) { //1
 ```
 
 ### Analysis
-Before we go further, go to the `removeItem()` function. Comment out the last line (the `console.log`) and uncomment out the line before it, which triggers this function. This functions nearly identically to the previous delete method, so it should look familiar.
+Before we go further, go to the `removeItem()` function. Comment out the last line (the `console.log`) and uncomment out the line before it, which triggers this function. This function is nearly identical to the previous delete method, so it should look familiar.
 
 1. The `id` of the `<li>` is passed into this function as a parameter, which is then added to the url via the template literal.
 2. Print the response to the console to verify the delete worked.
 3. Run the `getall` function again to print the remaining items in the database to the console.
 
-Now for the final test. Follow the instructions above, but this time you should see something like this: <br>
+Now for the final test. Follow the instructions  from the Testing section above, but this time, you should see something like this: <br>
 **Pre-delete** <br>
 ![before delete](assets/09-pre-delete.png) <br>
 **Post-delete** <br>
 ![after delete](assets/09-post-delete.png)
 
 ### Wrap Up
-And that's it! That's everything you need to build your own CRUD app, both client side and server side. If there's anything that you find unclear, please ask us so that we can help, but try on your own first. The next step is a new challenge so when you're ready, move on to the next chapter.
+And that's it! That's everything you need to build your own CRUD app, both client side and server side. If there's anything that you find unclear, please ask us so that we can help, but try on your own first. The next step is a new challenge, so when you're ready, move on to the next chapter.
