@@ -5,7 +5,7 @@ Now that we have a model, we're ready to run a migration! Open your terminal and
 ```
 sequelize db:migrate:status
 ```
-This will show you all the database migrations we've created so far. If it says `up`, it means that the migration has been run. If it says `down`, it's waiting for us to run it. Currently. we only have the one, and it should say `down`. Let's look at that file for a moment.
+This will show you all the database migrations we've created so far. If it says `up`, it means that the migration has been run. If it says `down`, it's waiting for us to run it. Currently, we only have the one, and it should say `down`. Let's look at that file for a moment.
 
 ```js
 'use strict';
@@ -39,16 +39,16 @@ module.exports = { //1
 Every migration contains an `up` and a `down` function. These are called when the migration is run or reverted. More on that in a moment.
 
 Here's what's happening here:
-1. We export the migration so that sequelize has access to it.
+1. We export the migration so that Sequelize has access to it.
 2. The `up` function is called when we run the migration.
 3. This contains the table we're altering, as well as the changes being made.
 4. You can undo migrations to return the database to a previous point in time. When you undo (or revert) your changes, the `down` function is called.
 5. This is almost always undoing the action from the `up` function.
 
 ### Running the Migration
-To run our migration, we use the command `db:migrate`. If you add the `--help` attribute, you can see there are other options to add as well. Start your database in another terminal, then run `sequelize db:migrate`. You should see the following in your terminal: <br> ![firstMigration](assets/firstMigration.png) <br>
+To run our migration, we use the command `db:migrate`. If you add the `--help` attribute, you can see there are other options to add as well. Go to your terminal and run `sequelize db:migrate`. You should see the following in your terminal: <br> ![firstMigration](assets/firstMigration.png) <br>
 Open PG Admin and look at your `test` table. Does it look like anything changed? It shouldn't, because it hasn't yet! <br>
-Take another look at the migration file above. Notice that the functions each call a method from the `queryInterface` object. This object allows us access to sequelize functions and methods. A migration created with `model:generate` will contain the method `createTable`; that is, it will create the table with the information given if that table already exists. We already have a table called `test`, so it does nothing. We need to create a new migration to edit the table.
+Take another look at the migration file above. Notice that the functions each call a method from the `queryInterface` object, which allows us access to sequelize functions and methods. A migration created with `model:generate` will contain the method `createTable`; that is, it will create the table with the information given if that table already exists. We already have a table called `test`, so it does nothing. We need to create a new migration to edit the table.
 
 ### Creating a New Migration
 Creating a migration is almost the same as creating a model. We just use the command `migration:generate` instead. For this one, however, we only need to supply a name value. When the file is created, it will have the long string of numbers, so add something to the filename so you know what that migration is doing. Let's add a first name column to our table. Run the following command in your terminal:
