@@ -1,6 +1,6 @@
-# GET SINGLE ITEM
+# GET ONE ITEM
 ---
-In this module we'll write a GET request that grabs a single item from the database for a specific user.
+In this module, we'll write a GET request that grabs a single item from the database for a specific user.
 
 <hr />
 
@@ -36,7 +36,7 @@ function getOneByUser() {
 ```
 
 ### Analysis
-1. We get the post ID number provided in the `getNumber` field. Because we are making an authenticated request, this id has to exist for the user that you are using currently logged in as (The user that has a token stored in your localStorage).
+1. We get the post ID number provided in the `getNumber` field. Because we are making an authenticated request, this `id` has to exist in the database,  as well as match the `user.id` from the database for the user that you are using currently logged in as.
 2. We pass the post ID number into the url with a template literal.
 3. We target an element called `getItemValue`. It's a `label` tag.
 4. We set the value of the label to the value of `response.authtestdata`. This means that the data will be populated in the label when the DOM loads.

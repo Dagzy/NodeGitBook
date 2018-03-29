@@ -1,6 +1,6 @@
-# AUTH TEST
+# CREATING AN AUTHENTICATED REQUEST
 ---
-In this module we'll add a client method for making an authenticated request with a token to an authenticated route. 
+In this module, we'll add a client method for making an authenticated request with a token to an authenticated route. 
 
 <hr />
 
@@ -40,13 +40,13 @@ Add the following code to `03-auth-test.js`:
 ```js
 function fetchAllFromAuthRoute() {
 	const fetch_url = `http://localhost:3000/authtest/getall`
-	const accessToken = localStorage.getItem('SessionToken')
+	const accessToken = localStorage.getItem('SessionToken') //1
 
 	const response = fetch(fetch_url, {
-		method: 'GET',
+		method: 'GET', //2
 		headers: {
-			'Content-Type': 'application/json',
-			'Authorization': accessToken
+			'Content-Type': 'application/json', //3
+			'Authorization': accessToken //4
 		}
 	})
 		.then(response => {
@@ -74,7 +74,8 @@ function fetchAllFromAuthRoute() {
 3. Go to Step 8. 
 4. Press the button.
 
-You should have gotten some sort of error. The problem isn't with our code here. The problem lies with a file on the server side: the `validate-session.js` file, and specifically how that file handles the pre-flight `OPTIONS` request sent by our browser.
+You should see an error similar to the following image: <br> ![pre-flight error](assets/04-preflight-error.png) <br>
+The problem isn't with our code here. The problem lies with a file on the server side: the `validate-session.js` file, and specifically how that file handles the pre-flight `OPTIONS` request sent by our browser.
 
 ### Small Refractor to `validate-session.js`
 As a reminder, here is the `validate-session` function:
@@ -105,7 +106,7 @@ module.exports = function(req, res, next) {
 }
 ```
 Notice the parts that are commented out: the `if` statement at the top and the corresponding `else`. When we used Postman to test, we never sent an `OPTIONS` request. Here is the result of that request: <br> ![OPTIONS](assets/01-fetchOPTIONSrequest.png) <br>
-You can see that there isn't an `Authorization` header on that request, so when `validate-session` looks for `req.headers.authorization`, it comes back undefined, breaking the rest of the function. That's where this conditional comes into play. One of the properties on `fetch` is `method`; This is where we tell fetch what HTTP Verb to use (`GET`, `POST`, etc.). This conditional allows us to tell the program to let any request where `req.method` is `OPTIONS` through without checking for a session token. This way the pre-flight check can occur, then the program will look for and verify a token on any other request. <br>
+You can see that there isn't an `Authorization` header on that request, so when `validate-session` looks for `req.headers.authorization`, it comes back undefined, breaking the rest of the function. That's where this conditional comes into play. One of the properties on `fetch` is `method`; This is where we tell fetch what type HTTP request to send (`GET`, `POST`, etc.). This conditional allows us to tell the program to let any request where `req.method` is `OPTIONS` through without checking for a session token. This way the pre-flight check can occur, then the program will look for and verify a token on any other request. <br>
 
 Un-comment the `if/else` statement at the top, as well as the closing curly bracket at the bottom, then run the test above again. It should go through this time. However, since you've just created your user, you will probably see an empty array. This is coming from the Postgres table:
-![screenshot](assets/04-authtestone.PNG)
+![screenshot](assets/04-authtestgetall.png)
