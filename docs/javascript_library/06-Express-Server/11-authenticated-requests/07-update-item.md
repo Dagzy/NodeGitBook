@@ -43,18 +43,18 @@ function updateItem() {
 4. We are doing an update method, so this will be a `PUT` request. 
 5. Just like we did in past `POST` methods, we use the `stringify` method to convert the object to a JSON object.
 6. We print the response to our fetch to the console.
-7. We make a reference to the `<label>` in step 11, then set its value to the data we put in the database.
+7. We make a reference to the `<label>` in step 12 (Update Single Item), then set its value to the data we put in the database.
 8. We run the `getall` function again and print the new contents of the database to the console.
 
 ### TEST
 1. Make sure that the server and client are running.
-2. Press the `GET Single Item` button from Step 11. That label should populate.
-3. Change the text in the input field so that it is something different than what you had.
+2. Press the `GET Single Item` button on Step 11. That label should populate.
+3. Change the text in the input field while keeping the same ID# in the input field of Step 12 so that it is something different than what you had.
 4. Press the `Update Item` button. 
 5. You should see the following response in the console. The current contents of the database should also print after the update runs:
 ![screenshot](assets/07-update-item.PNG)
-6. Go ahead and refresh the page. you don't need to turn off the Client or Server.
-7. Press the `GET Single Item` button from Step 11. The label should populate again.
+6. Go ahead and refresh the page. You don't need to turn off the Client or Server.
+7. Press the `GET Single Item` button on Step 11. The label should populate again.
 8. You should see that the newly updated data in the label and console message:
 ![screenshot](assets/07-update-item-2.PNG)
 9. We might also suggest that you check in Postgres to be sure that you have successfully added the data to the database.
@@ -79,12 +79,12 @@ While we're here, let's mess around about with the stuff we're getting from the 
                     </td>
                 </tr>
 ```
-You've used listeners in the past, but this time instead of adding one in JavaScript, we're using the HTML attribute `onkeyup`. This listener looks for a key on the keyboard being released; in other words, after you press the key down, it waits until a key is released, then does whatever you tell it to. <br>
+You've used listeners in the past, but this time instead of adding one in JavaScript, we're using the HTML attribute `onkeyup`. This listener looks for a key on the keyboard being released; in other words, after you press the key down, it waits until a key is released then does whatever you tell it to. <br>
 We're adding the listener to the `updateNumber` input field, so anytime a key is released while that field is focus (i.e. we're typing something in the field), the function attached to the listener will run. `this` is passed as a parameter into our function. Here, `this` refers to the input field itself, which will allow us to easily access the value of the field in out function. <br>
 If you look at the button, you can see another one of these listener attributes `onclick`. That one allows us to make the button do something without having to make it a `submit` type. In fact, all of the buttons on this page have that listener attached.
 
 ### showCurrentData()
-The goal of this listener is to automatically search our database for an id that matches what we've entered into the `updateNumber` field, then populate the `updateValue` filed with the data that is returned. Add this code to the bottom of your `03-auth-test.js` file:
+The goal of this listener is to automatically search our database for an `id` that matches what we've entered into the `updateNumber` field, then populate the `updateValue` filed with the data that is returned. Add this code to the bottom of your `03-auth-test.js` file:
 ```js
 function showCurrentData(e) { //1
 	const fetch_url = `http://localhost:3000/authtest/${e.value}` //2
