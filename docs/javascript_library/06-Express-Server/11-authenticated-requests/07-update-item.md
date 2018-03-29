@@ -119,7 +119,7 @@ function showCurrentData(e) { //1
 Again, this function will not run until a key is lifted after being pressed. 
 
 ### Testing
-1. If your client and server should still be running; if not, restart them.
+1. Your client and server should still be running; if not, restart them.
 2. Refresh your browser, then type a number into the first field in step 12.
 3. If nothing in the database matches the id you've entered, you should see something like this:
 ![no match](assets/07-update-keylogger-fail.png) <br>
