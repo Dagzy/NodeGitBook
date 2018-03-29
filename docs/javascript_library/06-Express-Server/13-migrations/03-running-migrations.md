@@ -80,12 +80,12 @@ This tells sequelize what table the new column needs to be entered in to, as wel
 ```js
     return queryInterface.removeColumn('tests', 'firstName')
 ```
-This simply removes the new column so that database can revert to its previous status. Now run `db:migrate:status` again. You should see the following: <br>
+This simply removes the new column so that database can revert to its previous status. Now run `sequelize db:migrate:status` again. You should see the following: <br>
 ![migrationStatus](assets/migrationStatus2.png) <br>
-Our first migration has a status of `up` because we ran it earlier. The new migration has a status of `down` because it's waiting to be run. Go ahead and run `db:migrate`, then refresh the `test` table in PG Admin. You should see the following: <br>
+Our first migration has a status of `up` because we ran it earlier. The new migration has a status of `down` because it's waiting to be run. Go ahead and run `sequelize db:migrate`, then refresh the `test` table in PG Admin. You should see the following: <br>
 ![newMigrationConsole](assets/newMigrationConsole.png) <br>
 ![newMigrationDatabase](assets/newMigrationDatabase.png)<br>
-You can see that the new column was added to the end of the database, and all of the previous entries have a `null` value for the new column. You can force an existing user to provide that information if you want to, but for now we'll just leave it blank. <br>
+You can see that the new column was added to the end of the database and that all of the previous entries have a `null` value for the new column. You can force an existing user to provide that information if you want to, but for now we'll just leave it blank. <br>
 The last step is to add the new column to the model so that future entries will be required to enter this information. Add `firstName: DataTypes.STRING` beneath the `testdata` property in the `test` model. Don't forget to add a comma after the `testdata`.<br>
 
-Congratulations! You just migrated a table in your database! Before we move on to seeds, there are a couple of other things that we need to talk about with regards to migrations, most importantly the ability to roll back your changes. That'll be in the next module, but for now take a couple of minutes to read back over this section. We just covered a lot of information, so make sure you take it all in.
+Congratulations! You just migrated a table in your database! Before we move on to seeds, there are a couple of other things that we need to talk about with regards to migrations, most important of which is the ability to roll back your changes. That'll be in the next module, but for now take a couple of minutes to read back over this section. We just covered a lot of information, so make sure you take it all in.
