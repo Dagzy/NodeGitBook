@@ -5,7 +5,9 @@
     "database": "workoutlog",
     "host": "127.0.0.1",
     "port": "5432",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "seederStorage": "sequelize",
+    "seederStorageTableName": "sequelize_data"
   },
   "test": {
     "username": "postgres",
@@ -13,7 +15,8 @@
     "database": "workoutlog",
     "host": "127.0.0.1",
     "port": "5432",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
   },
   "production": {
     "username": "postgres",
@@ -21,6 +24,7 @@
     "database": "workoutlog",
     "host": "127.0.0.1",
     "port": "5432",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
   }
 }
