@@ -1,17 +1,17 @@
 # SEEDS
 ---
 
-So far we've only entered data into our database via Postman, but that isn't the only way to do so. You can obviously create a webpage to bring data fro the client side, but you can also add data via the sequelize-cli by using `seeds`. This can be an easy way to build in an admin-level user into your database to bypass security settings while in testing, or to create a backdoor for you to have access to later for updates.
+So far, we've only entered data into our database via Postman, but there are many other ways to do so. You can obviously create a webpage to bring data from the client side, but you can also add data via the Sequelize CLI by using `seeds`. This can be an easy way to build in an admin-level user into your database to bypass security settings while in testing or to create a backdoor for you to have access to later for updates.
 
 ### What is a Seed?
-Simply put, a seed is a file containing information that you want to enter into a database. It's nearly identical to a migration file; the only difference being that a seed adds a row of data instead of a column. The structure of a seed file is the same as a migration file: It exports an `up` and a `down` function. Seeds can be called once or multiple times.
+Simply put, a seed is a file containing information that you want to enter into a database. The structure of a seed file is the same as a migration file in that it exports both an `up` and a `down` function. It differs in its functionality, however, in that a seed adds a row of data instead of a column.  Seeds can also be run multiple times, whereas a migration can only be run once.
 
 ### Creating a Seed
 We create a seed just like a model or a migration using the command `seed:generate`. Like the migration, the ony attribute needed is `--name`. Let's create a seed called `testSeed`:
 ```
 sequelize seed:generate --name testSeed
 ```
-You should see the following in your console: <br> ![seedCreate](assets/seedCreate.png) <br> Notice that it attempts to create the seeders file, which is skipped because it already exists. It then creates a file in the seeders folder with the long string of numbers. This file is the same as the blank migration file. This time, we'll use the `bulkInsert()` and `bulkDelete()` methods. Add the following code in the designated function:
+You should see the following in your console: <br> ![seedCreate](assets/seedCreate.png) <br> Notice that it attempts to create a `seeders` file, which is skipped because it already exists. It then creates a file in the seeders folder with the long string of numbers. This file is the same as the skeleton migration file we previously created. This time, we'll use the `bulkInsert()` and `bulkDelete()` methods. Add the following code in the designated function:
 
 ```js
 //This goes in the up function
@@ -25,7 +25,7 @@ return queryInterface.bulkDelete('tests', null, {});
 ```
 
 ### Seeding the Database
-You can run a single seed by using `db:seed [filename]` We're going to use the command to send all seeds at once. When you're ready, run `sequelize db:seed:all` to push the information in the `up` function into the database. If you have more than one seed, they'll all be inserted at the same time. You should see something like this: <br> ![seedFail](assets/seedFail.png) <br>
+You can run a single seed by using `db:seed [filename]`, or run all seeds at once with `db:seed:all`. Since we only have one seed right now, it doesn't really matter which we use, but go ahead and use the second for now. When you're ready, run `sequelize db:seed:all` to push the information in the `up` function into the database. You should see something like this: <br> ![seedFail](assets/seedFail.png) <br>
 
 Can you guess why it didn't work? The `createdAt` and `updatedAt` columns must have a non-null value inside of them, and these time-stamps are usually automatically generated. However, our seed doesn't have those values at all! We can add them using the `Date` object:
 
@@ -38,6 +38,8 @@ return queryInterface.bulkInsert('tests', [{
       }], {});
 ```
 
-Run `db:seed:all` again, and here are our results:
+Run `db:seed:all` again. You should see something similar to this:
 ![seedConsole](assets/seedConsole.png) <br>
-![seedDatabase](assets/seedDatabase.png)
+![seedDatabase](assets/seedDatabase.png) <br>
+
+Our last step will be to revert the seed that we just ran, which we'll cover in the next module.
