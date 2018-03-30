@@ -7,7 +7,7 @@ So far, we've only entered data into our database via Postman, but there are man
 Simply put, a seed is a file containing information that you want to enter into a database. The structure of a seed file is the same as a migration file in that it exports both an `up` and a `down` function. It differs in its functionality, however, in that a seed adds a row of data instead of a column.  Seeds can also be run multiple times, whereas a migration can only be run once.
 
 ### Creating a Seed
-We create a seed just like a model or a migration using the command `seed:generate`. Like the migration, the ony attribute needed is `--name`. Let's create a seed called `testSeed`:
+We create a seed just like a model or a migration using the command `seed:generate`. Like the migration, the only attribute needed is `--name`. Let's create a seed called `testSeed`:
 ```
 sequelize seed:generate --name testSeed
 ```
