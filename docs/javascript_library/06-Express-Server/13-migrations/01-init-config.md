@@ -6,20 +6,19 @@ The first step in performing a migration is to create the necessary files and fo
 
 ### Running Sequelize init
 1. Open a terminal window and navigate to your server folder.
-2. In the terminal window, run `sequelize init`. This will create the following folders:
+2. In the terminal window, run `sequelize init`. This will create the following folders: `config`, `models`, `migrations`, and `seeders`. The table below goes into more detail on the purpose of each folder.
+*NOTE*: We already have a `models` folder, so that part is skipped.
+3. Look at your project in VS Code. You should see all of the new folders.
+
 |Folder|Purpose|
 |:-----|:------|
 |config|The configuration settings for your database migrations.|
 |migrations|The actual migration files. *More on this later*.|
 |models|The files used to create your tables.|
 |seeders|Files that can add data to your database. *More on this later*.|
-<br>
-*NOTE*: We already have a `models` folder, so that part is skipped.
-3. Look at your project in VS Code. You should see all of the new folders.
-4. Inside the `config` folder, open `config.js`. We need to make a few changes.
 
 ### config.js
-We need to give Sequelize some specific information in order to access our database. Currently, the `config.js` file looks like this:
+Inside the `config` folder, open `config.json`. We need to make a few changes to give Sequelize the ability to access our database. Currently, the file looks like this:
 
 ```json
 {
