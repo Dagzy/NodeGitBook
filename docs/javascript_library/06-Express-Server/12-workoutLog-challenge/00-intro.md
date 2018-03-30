@@ -29,8 +29,8 @@ The project should have the following endpoints:
 | /api/log/     | POST | Allows users to create a workout log with descriptions, results, and owner properties.|
 | /api/log/     | GET  | Gets all logs for an individual user. |
 | /api/log/:id  | GET  | Gets individual logs by `id` for an individual user. |
-| /api/log/     | PUT  | Allows individual logs to be updated by a user. |
-| /api/log/     | DELETE  | Allows individual logs to be deleted by a user. |
+| /api/log/:id  | PUT  | Allows individual logs to be updated by a user. |
+| /api/log/:id  | DELETE  | Allows individual logs to be deleted by a user. |
 
 
 ### Data Models
