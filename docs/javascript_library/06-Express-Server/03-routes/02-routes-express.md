@@ -9,8 +9,8 @@ Let's start by adding a `controllers` folder and a `testcontroller.js` file. We'
 
 ```
 javascript-library
-    └── 7-Express Server
-        └── Server
+    └── 5-Express Server
+        └── server
             └── controllers
                 └── testcontroller.js
             └── app.js

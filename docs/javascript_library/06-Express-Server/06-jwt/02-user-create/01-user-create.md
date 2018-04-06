@@ -65,7 +65,7 @@ app.listen(3000, function(){
 <hr />
 
 ### usercontroller.js
-We'll need to add some code in our `usercontroller.js` file. Note: if Lebowski isn't your style, enter in your own flavor for the string values:
+If you haven't already, create a new file inside the `controllers` folder and call it `usercontroler.js`. We'll need to add some code to that file. Note: if Lebowski isn't your style, enter in your own flavor for the string values:
 
 ```js
 

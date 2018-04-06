@@ -166,7 +166,19 @@ This tutorial assumes you have a basic grasp on HTML, so we'll briefly summarize
 <hr />
 
 ### Test
-To test this, we'll work in a web browser using `http-server` using the following steps:
+To test this, we'll work in a web browser using `http-server`. If you haven't installed this package globally, do the following first:
+1. Navigate to your client folder in your terminal window.
+2. Run the following command: `npm install http-server --save`. This will add `http-server` to your package.json so anyone cloning your project will install it. Additionally, if you install a package locally inside a project that you also have installed globally, the local version will be used unless you override it. This usually won't cause any issues, but it's good to be aware that this is happening.
+3. In your `package.json`, add the following to the `scripts` property (or create it if it's not already there):
+```json
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server" //<---ADD THIS
+  },
+```
+Without this script, the package won't be able to run.
+<br>
+Once you have `http-server` setup either locally or globally, follow these steps to get the client running:
 1. cd into your client directory.
 2. Run `http-server`.
 3. Open a browser and go to localhost:8080.

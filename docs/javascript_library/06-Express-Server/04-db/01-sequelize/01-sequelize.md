@@ -10,7 +10,7 @@ Right now we'll be working with Sequelize and Postgres:
 ![screenshot](assets/01-pg-youarehere.png)
 
 ### Sequelize Connection
-To use Sequelize, we'll have to establish a connection. This is the standard approach from the [docs](http://docs.sequelizejs.com/manual/installation/getting-started.html#test-the-connection), and it is often copy and pasted into projects for setup. Simply put, it's allowing us to connect from our project to the Postgres database. Put this code into the `db.js` file in the server folder:
+To use Sequelize, we'll have to establish a connection. This is the standard approach from the [docs](http://docs.sequelizejs.com/manual/installation/getting-started.html#test-the-connection), and it is often copy and pasted into projects for setup. Simply put, it's allowing us to connect from our project to the Postgres database. If you haven't already done so, create the file `db.js` inside your `server` folder and put this code inside of it:
 
 ```js
 //1
